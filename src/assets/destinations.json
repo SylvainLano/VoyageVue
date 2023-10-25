@@ -1,0 +1,37 @@
+[
+    {
+      "location": "Kyoto",
+      "country": "Japan",
+      "description": "Often referred to as the cultural heart of Japan, Kyoto is famous for its ancient temples, traditional tea houses, and beautiful gardens. The city's charm lies in its well-preserved historic architecture and the serene ambiance that transports visitors to a different era.",
+      "currency": "JPY",
+      "budget": "High",
+      "eat": "10",
+      "bed": "50",
+      "language": "Japanese",
+      "englishFriendly": "in tourist areas",
+      "transportation": "Easy",
+      "reach": "Kansai Airport (KIX)",
+      "local": "Bus, Subway, Car, Bicycle",
+      "bestTime": "April",
+      "bestTimeReason": "to see Cherry Blossoms",
+      "temperatureMin": "1°C in January",
+      "temperatureMax": "33°C in August",
+      "zoom": 3,
+      "center": [35.011665, 135.768326],
+      "images": [
+        {
+            "title": "Bamboos",
+            "image": "destinations/japan/kyoto/1860521.png"
+        },
+        {
+            "title": "Tori Shrine",
+            "image": "destinations/japan/kyoto/1976609.png"
+        },
+        {
+            "title": "Kinkaku-ji Temple",
+            "image": "destinations/japan/kyoto/2328557.png"
+        }
+      ]
+    }
+  ]
+  
