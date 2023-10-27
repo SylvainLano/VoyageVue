@@ -263,6 +263,112 @@
               "link": "https://unsplash.com/fr/@chris_czermak"
           }
         ]
+    },
+    {
+        "id": "es-001",
+        "location": "Barcelona",
+        "country": "Spain",
+        "description": "The capital of Catalonia in northeastern Spain, is a vibrant and cosmopolitan city known for its unique blend of historic charm and modern innovation. It's a city where Gothic architecture coexists with contemporary art, beautiful beaches, and a lively culinary scene.",
+        "currency": "EUR",
+        "budget": "Very High",
+        "eat": "20",
+        "bed": "150",
+        "language": "Spanish",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "El Prat Airport (BCN)",
+        "local": "Bus, Tram, Metro, Taxis",
+        "bestTime": "September",
+        "bestTimeReason": "- summer without the crowd",
+        "temperatureMin": "8°C in February",
+        "temperatureMax": "29°C in August",
+        "visa": "Schengen visa required",
+        "safety": "Not Very Safe",
+        "healthcare": "Good",
+        "foodToTry": "Paella, tapas, churros with chocolate, and seafood dishes like \"paella de mariscos.\"",
+        "advice": "Hop from one tapas bar to another: it's not just a meal; it's a social and culinary experience, so take your time, chat with locals, and savor the flavors of Barcelona.",
+        "expediaLink": "https://expedia.com/affiliate/9NYkwgO",
+        "zoom": 3,
+        "center": [41.390205, 2.154007],
+        "images": [
+          {
+              "title": "Güell Park",
+              "image": "destinations/spain/barcelona/photo-1593368858664-a7fe556ab936.avif",
+              "author": "D Jonez",
+              "link": "https://unsplash.com/fr/@cooljonez"
+          },
+          {
+              "title": "Barcelona",
+              "image": "destinations/spain/barcelona/photo-1583422409516-2895a77efded.avif",
+              "author": "Logan Armstrong",
+              "link": "https://unsplash.com/fr/@loganstrongarms"
+          },
+          {
+              "title": "Tibidabo",
+              "image": "destinations/spain/barcelona/photo-1578912996078-305d92249aa6.avif",
+              "author": "Ken Cheung",
+              "link": "https://unsplash.com/fr/@kencheungphoto"
+          },
+          {
+              "title": "La Barceloneta",
+              "image": "destinations/spain/barcelona/photo-1529551739587-e242c564f727.avif",
+              "author": "Benjamín Gremler",
+              "link": "https://unsplash.com/fr/@benjagremler"
+          }
+        ]
+    },
+    {
+        "id": "gr-001",
+        "location": "Santorini",
+        "country": "Greece",
+        "description": "This picturesque island in the Aegean Sea is a dreamy destination known for its stunning sunsets, white-washed buildings with blue domes, and crystal-clear waters. It's a place where natural beauty, rich history, and a relaxed Mediterranean lifestyle converge.",
+        "currency": "EUR",
+        "budget": "High",
+        "eat": "20",
+        "bed": "150",
+        "language": "Greek",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Santorini Airport (JTR)",
+        "local": "Bus, Taxis, Car, ATVs",
+        "bestTime": "Mai",
+        "bestTimeReason": "with good weather and few people",
+        "temperatureMin": "9°C in January",
+        "temperatureMax": "29°C in August",
+        "visa": "Schengen visa required",
+        "safety": "Safe",
+        "healthcare": "Average",
+        "foodToTry": "Greek salad, souvlaki, fresh grilled fish, and the famous dessert, baklava.",
+        "advice": "Wear comfortable shoes for exploring the charming villages and walking along the caldera edge.",
+        "expediaLink": "https://expedia.com/affiliate/HRAgWkG",
+        "zoom": 3,
+        "center": [36.393154, 25.461510],
+        "images": [
+          {
+              "title": "The Neighborhood",
+              "image": "destinations/greece/santorini/photo-1570077188670-e3a8d69ac5ff.avif",
+              "author": "Heidi Kaden",
+              "link": "https://unsplash.com/fr/@infinitexplorer"
+          },
+          {
+              "title": "The Sea",
+              "image": "destinations/greece/santorini/photo-1603288986894-c7cd0a74ccdd.avif",
+              "author": "Claudia Aguilar",
+              "link": "https://unsplash.com/fr/@claus0618"
+          },
+          {
+              "title": "The Cliffs",
+              "image": "destinations/greece/santorini/photo-1594048069339-42ae0e89376a.avif",
+              "author": "Yang Yang",
+              "link": "https://unsplash.com/fr/@mauriceyang"
+          },
+          {
+              "title": "The Golden Hour",
+              "image": "destinations/greece/santorini/photo-1580502304784-8985b7eb7260.avif",
+              "author": "James Ting",
+              "link": "https://unsplash.com/fr/@jamesting"
+          }
+        ]
     }
 ]
   
