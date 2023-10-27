@@ -329,6 +329,8 @@ export default {
       // Determine the class based on the language spoken
       if (this.currentDestination.safety.toLowerCase().includes("safe")) {
         return 'font-mono text-sm text-green-700 text-base text-center my-5';
+      } else if (this.currentDestination.safety.toLowerCase().includes("average")) {
+        return 'font-mono text-sm text-amber-700 text-base text-center my-5';
       } else {
         return 'font-mono text-sm text-red-700 text-base text-center my-5';
       }

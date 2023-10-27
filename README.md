@@ -1,7 +1,8 @@
 # VoyageVue
 
 ## Description
-Vue.js application using TailwindCSS to browse for travel destinations
+[Voyage Vue](https://sylvainlano.github.io/VoyageVue/index.html) is a Vue.js application using TailwindCSS and a custom made responsive design.
+The point is to browse travel destinations.
 
 ## Dependencies
 Made using [Vueper Slides](https://antoniandre.github.io/vueper-slides/) by [Antoniandre](https://github.com/antoniandre)  

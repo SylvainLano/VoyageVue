@@ -369,6 +369,59 @@
               "link": "https://unsplash.com/fr/@jamesting"
           }
         ]
+    },
+    {
+        "id": "za-001",
+        "location": "Cape Town",
+        "country": "South Africa",
+        "description": "Known as the \"Mother City\", Cape Town is a breathtaking coastal city at the southern tip of South Africa. Nestled between the majestic Table Mountain and the Atlantic Ocean, Cape Town boasts a diverse landscape, rich history, and a vibrant cultural scene.",
+        "currency": "ZAR",
+        "budget": "Average",
+        "eat": "8",
+        "bed": "80",
+        "language": "Afrikaans, Xhosa",
+        "englishFriendly": "by everyone",
+        "transportation": "Average",
+        "reach": "Cape Town Airport (CPT)",
+        "local": "Bus, Car",
+        "bestTime": "Marsh",
+        "bestTimeReason": "for clement weather and less crowds",
+        "temperatureMin": "11°C in July",
+        "temperatureMax": "29°C in January",
+        "visa": "Mostly free entry",
+        "safety": "Mostly Safe",
+        "healthcare": "High",
+        "foodToTry": "Enjoy a South African braai (barbecue), bobotie (spiced meat dish), and Cape Malay cuisine, particularly their aromatic curries.",
+        "advice": "To take in stunning panoramic views of the city and surrounding areas, consider a trip to the top of Table Mountain via the cable car.",
+        "expediaLink": "https://expedia.com/affiliate/QVFnuqa",
+        "zoom": 3,
+        "center": [-33.918861, 18.423300],
+        "images": [
+          {
+              "title": "Bakoven",
+              "image": "destinations/south-africa/cape-town/photo-1595708323549-85635381d0d1.avif",
+              "author": "Marcreation",
+              "link": "https://unsplash.com/fr/@marcreation"
+          },
+          {
+              "title": "The Beach",
+              "image": "destinations/south-africa/cape-town/photo-1554280678-c139e7e9a5d6.avif",
+              "author": "Lina Loos",
+              "link": "https://unsplash.com/fr/@linaloos"
+          },
+          {
+              "title": "Table Mountain",
+              "image": "destinations/south-africa/cape-town/photo-1624209809377-12bcddca33c0.avif",
+              "author": "Rutendo Petros",
+              "link": "https://unsplash.com/fr/@ru_petros"
+          },
+          {
+              "title": "Bo-Kaap, Schotsche Kloof",
+              "image": "destinations/south-africa/cape-town/photo-1599407384287-374f7c6ec113.avif",
+              "author": "Devon Janse van Rensburg",
+              "link": "https://unsplash.com/fr/@huntleytography"
+          }
+        ]
     }
 ]
   
