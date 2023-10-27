@@ -3,7 +3,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-body {
+body, html {
     margin: 0px;
     overflow: hidden;
+    position: relative;
 }
