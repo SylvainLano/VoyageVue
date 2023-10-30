@@ -574,6 +574,10 @@ video {
   z-index: 40;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -628,12 +632,24 @@ video {
   height: 100vh;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .w-screen {
   width: 100vw;
 }
 
+.origin-bottom-left {
+  transform-origin: bottom left;
+}
+
 .origin-top-left {
   transform-origin: top left;
+}
+
+.origin-top-right {
+  transform-origin: top right;
 }
 
 .transform {

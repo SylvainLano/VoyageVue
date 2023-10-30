@@ -1,6 +1,11 @@
 <template>
-<div class="h-screen w-screen" ref="parentContainer" @touchstart="onTouchStart" @touchmove="onTouchMove" @touchend="onTouchEnd" v-if="currentDestination">
-  <div class="absolute flex top-0 right-0 z-40">
+<div class="h-screen w-screen"
+  ref="parentContainer"
+  @touchstart="onTouchStart"
+  @touchmove="onTouchMove"
+  @touchend="onTouchEnd">
+  <div v-if="currentDestination && Object.keys(currentDestination).length > 0">
+  <div class="absolute flex top-0 right-0 z-40 origin-top-right" :style="{ transform: `scale(${scaleFactor})` }">
   <transition name="lateral-fade">
     <div class="p-2 text-xl bg-slate-50 bg-opacity-50 cursor-pointer" @click="toggleStarredMenu" v-if="showStarred">
       <span class="text-emerald-700"><font-awesome-icon :icon="['fas', 'star']" /></span>
@@ -12,7 +17,47 @@
     </div>
   </transition>
   </div>
-  <div class="absolute origin-top-left h-full z-30 right-0 top-0" :style="{ width: `${widthMenuSize}px`, transform: `scale(${scaleFactor})` }" v-if="showStarredMenu || showBannedMenu">
+  
+  <transition name="lateral-fade">
+    <div class="bg-slate-50 flex bg-opacity-50 absolute text-slate-900 overflow-auto h-full w-full top-0 left-0 z-40 p-20"
+    v-if="showFullMap && !mobileDisplay" @click="hideFullMap">
+      <div class="h-full w-full m-auto">
+        <l-map 
+          ref="starBanMap"
+          :zoom=2
+          :useGlobalLeaflet="false"
+          :center="[51.505, -0.09]"
+          :options="{ zoomControl: false, attributionControl: false }"
+        >
+          <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
+          <l-marker
+            v-for="(destination, index) in bannedDestinationData"
+            :key="'banned_' + index"
+            :lat-lng="destination.center"
+            @click="nextDestination(destination.id)"
+          >
+            <l-icon
+              :icon-url="require('@/assets/images/markers/marker-icon-red.png')"
+              :icon-anchor="[25/2,41]"
+            />
+          </l-marker>
+          <l-marker
+            v-for="(destination, index) in starredDestinationData"
+            :key="'starred_' + index"
+            :lat-lng="destination.center"
+            @click="nextDestination(destination.id)"
+          >
+            <l-icon
+              :icon-url="require('@/assets/images/markers/marker-icon-green.png')"
+              :icon-anchor="[25/2,41]"
+            />
+          </l-marker>
+        </l-map>
+      </div>
+    </div>
+  </transition>
+
+  <div class="absolute origin-top-right h-full z-30 right-0 top-0" :style="{ width: `${widthMenuSize}px`, transform: `scale(${scaleFactor})` }" v-if="(showStarredMenu || showBannedMenu) && mobileDisplay">
     <transition name="lateral-fade">
       <div class="bg-slate-50 p-4 text-2xl pt-10 text-slate-900 overflow-auto" :style="{ height: `${heightMenuSize}px`}" v-if="showStarredMenu">
         Starred Destinations :
@@ -48,8 +93,8 @@
           <font-awesome-icon :icon="['fas', 'star']" :spin="isBeating" :transform="'shrink-'+starShrink" />
         </div>
       </div>
-      <div class="font-mono text-2xl text-slate-700 text-right">
-        {{ currentDestination.country }}
+      <div class="font-mono text-2xl text-slate-700 text-right align-center">
+        <span :class="flagClass"></span>{{ currentDestination.country }}
       </div>
       <div class="font-mono text-xs text-slate-700 text-justify my-5">
         {{ currentDestination.description }}
@@ -152,7 +197,7 @@
   </div>
   <div class="absolute left-0 h-screen bg-slate-50 z-10" :style="{ width:`${leftValue}px` }" v-if="!mobileDisplay"></div>
   <transition name="slide-fade">
-  <div class="absolute left-0 bg-slate-50 z-10 bottom-0 p-4" :style="{ width:`${widthMenuSize}px` }" v-if="showCard">
+    <div class="absolute left-0 bg-slate-50 z-10 bottom-0 p-4 origin-bottom-left" :style="{ width:`${widthMenuSize}px`, transform: `scale(${scaleFactor})` }" v-if="showCard">
       <div class="font-mono text-4xl text-slate-900 text-left flex justify-between">
         <div class="mx-3 cursor-pointer" @click="upSwipe">
           {{ currentDestination.location }}
@@ -167,61 +212,61 @@
       <div class="font-mono text-2xl text-slate-700 text-right">
         {{ currentDestination.country }}
       </div>
-  </div>
-</transition>
-  <transition name="slide-fade">
-  <div class="absolute bg-slate-50" :style="{ left: `${leftValueSlides}px`, top: `${topValueSlides}px`, height: `${heightSlidesSize}px`, width: `${widthSlidesSize}px` }" v-if="showSlides">
-    <vueper-slides
-      ref="myVueperSlides"
-      :autoplay="true"
-      duration = 7500
-      :arrows="false"
-      :bullets="false"
-      :slideRatio="0.6"
-      :pause-on-hover="pauseOnHover"
-      @autoplay-pause="internalAutoPlaying = false"
-      @autoplay-resume="internalAutoPlaying = true">
-      <vueper-slide
-          v-for="(slide, i) in currentDestination.images"
-          :key="i"
-          :image="require(`@/assets/images/${slide.image}`)"
-      >
-        <template #content>
-          <div class="absolute z-10 text-left" :style="{ top: `${topValueTitle}px`, left: `${leftValueTitle}px`, transform: `scale(${scaleFactor})` }" v-if="!mobileDisplay">
-            <div class="h-12 font-mono text-4xl backdrop-brightness-50 text-slate-50 p-2">
-              {{ slide.title }}
-            </div>
-            <div class="h-8 font-mono text-xl backdrop-brightness-50 text-slate-50 px-2">
-              by <a target="_blank" class="text-pink-400" :href="slide.link">{{ slide.author }}</a>
-            </div>
-          </div>
-          <div class="absolute z-10 text-left" :style="{ top: `${topValueTitle}px`, left: `${leftValueTitle}px` }" v-if="mobileDisplay">
-            <div class="h-10 font-mono text-3xl backdrop-brightness-50 text-slate-50 p-2">
-              {{ slide.title }}
-            </div>
-            <div class="h-8 font-mono text-lg backdrop-brightness-50 text-slate-50 px-2">
-              by <a target="_blank" class="text-pink-400" :href="slide.link">{{ slide.author }}</a>
-            </div>
-          </div>
-        </template>
-      </vueper-slide> 
-      <template #pause>
-        <i class="icon pause_circle_outline"></i>
-      </template>
-    </vueper-slides> 
-  </div> 
+    </div>
   </transition>
+  <transition name="slide-fade">
+    <div class="absolute bg-slate-50"
+      :style="{ left: `${leftValueSlides}px`, top: `${topValueSlides}px`, height: `${heightSlidesSize}px`, width: `${widthSlidesSize}px` }"
+      v-if="showSlides"
+      @mousedown="startDrag"
+      @mousemove="dragging"
+      @mouseup="endDrag">
+      <vueper-slides
+        ref="myVueperSlides"
+        :autoplay="true"
+        duration = 7500
+        :arrows="false"
+        :bullets="false"
+        :slideRatio="0.6"
+        :touchable="false"
+        :pause-on-hover="pauseOnHover"
+        @autoplay-pause="internalAutoPlaying = false"
+        @autoplay-resume="internalAutoPlaying = true">
+        <vueper-slide
+            v-for="(slide, i) in currentDestination.images"
+            :key="i"
+            :image="require(`@/assets/images/${slide.image}`)"
+        >
+          <template #content>
+            <div class="absolute z-10 text-left" :style="{ top: `${topValueTitle}px`, left: `${leftValueTitle}px`, transform: `scale(${scaleFactor})` }">
+              <div class="h-12 font-mono text-4xl backdrop-brightness-50 text-slate-50 p-2">
+                {{ slide.title }}
+              </div>
+              <div class="h-8 font-mono text-xl backdrop-brightness-50 text-slate-50 px-2">
+                by <a target="_blank" class="text-pink-400" :href="slide.link">{{ slide.author }}</a>
+              </div>
+            </div>
+          </template>
+        </vueper-slide> 
+        <template #pause>
+          <i class="icon pause_circle_outline"></i>
+        </template>
+      </vueper-slides> 
+    </div> 
+  </transition>
+</div>
 </div>
 </template>
 
 <script>
-import { VueperSlides, VueperSlide } from 'vueperslides'
-import 'vueperslides/dist/vueperslides.css'
+import { VueperSlides, VueperSlide } from 'vueperslides';
+import 'vueperslides/dist/vueperslides.css';
 import '@/assets/css/tailwind.css';
 import destinationData from '@/assets/destinations.json';
 import axios from 'axios';
-import "leaflet/dist/leaflet.css"
-import { LMap, LTileLayer, LMarker } from "@vue-leaflet/vue-leaflet"
+import "leaflet/dist/leaflet.css";
+import { LMap, LTileLayer, LMarker, LIcon } from "@vue-leaflet/vue-leaflet";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default {
   name: 'App',
@@ -230,7 +275,8 @@ export default {
     VueperSlide,
     LMap,
     LTileLayer,
-    LMarker
+    LMarker,
+    LIcon
   },
   data: () => ({
     pauseOnHover: true,
@@ -276,9 +322,11 @@ export default {
     leftValue: 320,
     startX: 0,
     startY: 0,
+    isDragging: false,
     minSwipeDistance: 100,
     swipeReady: true,
     swipeCooldown: 500,
+    showFullMap: false,
   }),
   mounted() {
     setInterval(() => {
@@ -290,68 +338,86 @@ export default {
     this.updateScaleFactor(); // Initial calculation
     window.addEventListener('resize', this.updateScaleFactor);
     this.$el.addEventListener('wheel', this.onMouseWheel);
+    document.addEventListener('keydown', this.handleKeyPress);
     document.title = "Voyage Vue : You're almost there!";
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.updateScaleFactor);
     this.$el.removeEventListener('wheel', this.onMouseWheel);
+    document.removeEventListener('keydown', this.handleKeyPress);
   },
   computed: {
     budgetColorClass() {
       // Determine the class based on the budget value
-      if (this.currentDestination.budget.toLowerCase() === "low") {
-        return 'text-green-700 text-base font-mono mt-5 text-center';
-      } else if (this.currentDestination.budget.toLowerCase() === "high") {
-        return 'text-red-700 text-base font-mono mt-5 text-center';
-      } else if (this.currentDestination.budget.toLowerCase() === "very high") {
-        return 'text-rose-700 text-base font-mono mt-5 text-center';
-      } else {
-        return 'text-cyan-700 text-base font-mono mt-5 text-center';
+      if ( this.currentDestination && this.currentDestination.budget ) {
+        if (this.currentDestination.budget.toLowerCase() === "low") {
+          return 'text-green-700 text-base font-mono mt-5 text-center';
+        } else if (this.currentDestination.budget.toLowerCase() === "high") {
+          return 'text-red-700 text-base font-mono mt-5 text-center';
+        } else if (this.currentDestination.budget.toLowerCase() === "very high") {
+          return 'text-rose-700 text-base font-mono mt-5 text-center';
+        }
       }
+      return 'text-cyan-700 text-base font-mono mt-5 text-center';      
     },
     languageColorClass() {
-      // Determine the class based on the language spoken
-      if (this.currentDestination.language.toLowerCase() !== "english") {
-        return 'text-red-700 text-base';
-      } else {
-        return 'text-green-700 text-base';
+      // Determine the class based on the language spoken      
+      if ( this.currentDestination && this.currentDestination.language ) {
+        if (this.currentDestination.language.toLowerCase() !== "english") {
+          return 'text-red-700 text-base';
+        }
       }
+      return 'text-green-700 text-base';
     },
     visaColorClass() {
       // Determine the class based on the language spoken
-      if (this.currentDestination.visa.toLowerCase().includes("free")) {
-        return 'font-mono text-sm text-green-700 text-base text-center my-5';
-      } else {
-        return 'font-mono text-sm text-red-700 text-base text-center my-5';
+      if ( this.currentDestination && this.currentDestination.visa ) {
+        if (this.currentDestination.visa.toLowerCase().includes("free")) {
+          return 'font-mono text-sm text-green-700 text-base text-center my-5';
+        }
       }
+      return 'font-mono text-sm text-red-700 text-base text-center my-5';
     },
     healthcareColorClass() {
       // Determine the class based on the language spoken
-      if (this.currentDestination.healthcare.toLowerCase().includes("good")) {
-        return 'font-mono text-sm text-green-700 text-base text-center my-5';
-      } else {
-        return 'font-mono text-sm text-red-700 text-base text-center my-5';
+      if ( this.currentDestination && this.currentDestination.healthcare ) {
+        if (this.currentDestination.healthcare.toLowerCase().includes("good")) {
+          return 'font-mono text-sm text-green-700 text-base text-center my-5';
+        }
       }
+      return 'font-mono text-sm text-red-700 text-base text-center my-5';
     },
     safetyColorClass() {
       // Determine the class based on the language spoken
-      if (this.currentDestination.safety.toLowerCase().includes("safe")) {
-        return 'font-mono text-sm text-green-700 text-base text-center my-5';
-      } else if (this.currentDestination.safety.toLowerCase().includes("average")) {
-        return 'font-mono text-sm text-amber-700 text-base text-center my-5';
-      } else {
-        return 'font-mono text-sm text-red-700 text-base text-center my-5';
+      if ( this.currentDestination && this.currentDestination.safety ) {
+        if (this.currentDestination.safety.toLowerCase().includes("safe")) {
+          return 'font-mono text-sm text-green-700 text-base text-center my-5';
+        } else if (this.currentDestination.safety.toLowerCase().includes("average")) {
+          return 'font-mono text-sm text-amber-700 text-base text-center my-5';
+        }
       }
+      return 'font-mono text-sm text-red-700 text-base text-center my-5';
     },
     transportationColorClass() {
       // Determine the class based on the language spoken
-      if (this.currentDestination.transportation.toLowerCase() === "hard") {
-        return 'text-red-700 text-base font-mono text-center mt-5';
-      } else if (this.currentDestination.transportation.toLowerCase() === "easy") {
-        return 'text-green-700 text-base font-mono text-center mt-5';
-      } else {
-        return 'text-cyan-700 text-base font-mono text-center mt-5';
+      if ( this.currentDestination && this.currentDestination.transportation ) {
+        if (this.currentDestination.transportation.toLowerCase() === "hard") {
+          return 'text-red-700 text-base font-mono text-center mt-5';
+        } else if (this.currentDestination.transportation.toLowerCase() === "easy") {
+          return 'text-green-700 text-base font-mono text-center mt-5';
+        }
       }
+      return 'text-cyan-700 text-base font-mono text-center mt-5';
+    },
+    flagClass() {
+      // Determine the class based on the language spoken
+      if ( this.currentDestination && this.currentDestination.id ) {
+        // Split the string by hyphen and take the first part
+        const parts = this.currentDestination.id.split('-');
+        const countryCode = parts[0];
+        return 'fi fi-' + countryCode + ' text-xl mx-3';
+      }
+      return 'fi text-xl mx-3';
     },
   },
   methods: {
@@ -359,7 +425,8 @@ export default {
       if ( this.currentDestination.id != null ) {
         this.breadCrumbs.push(this.currentDestination.id);
       }
-      this.showMenu = this.showSlides = this.showCard = this.showStarred = this.showStarredMenu = this.showBanned = this.showBannedMenu = false;
+      this.showMenu = this.showSlides = this.showCard = this.showStarred = this.showStarredMenu =
+      this.showBanned = this.showBannedMenu = this.showFulleMap = false;
       this.goThere = false;
       // Wait for 0.5 seconds (500 milliseconds) before continuing
       setTimeout(() => {
@@ -420,7 +487,7 @@ export default {
           }
         }
         this.updateCurrencyData(this.currentDestination.currency);
-      }, 500); // 500 milliseconds delay
+      }, 300); // 300 milliseconds delay
     },
     previousDestination() {
       if (this.breadCrumbs.length > 0) {        
@@ -565,31 +632,26 @@ export default {
       const widthSize = parentContainer.getBoundingClientRect().width;
       this.screenRatio = heightSize / widthSize;
       if ( this.screenRatio > 1.2 ) {
-        if (this.mobileDisplay === false) {
-          this.mobileDisplay = true;
-          this.showCard = true;
-          if ( !this.goThere ) {
-            this.showMenu = false;
-          }
-        }
-        this.topValue = 90 * this.scaleFactor;
-        this.heightMenuSize = heightSize;
-        this.widthMenuSize = widthSize;
-        this.leftValue = 0;
-        this.scaleFactor = 1;
-      } else {
-        if (this.mobileDisplay === true) {
-          this.mobileDisplay = false;
-          this.showMenu = true;
-          this.showCard = false;
+        this.mobileDisplay = true;
+        this.showCard = true;
+        if ( !this.goThere ) {
+          this.showMenu = false;
         }
         this.scaleFactor = heightSize / 756;
-        // Calculate the new top value based on scaleFactor
-        this.topValue = 90 * this.scaleFactor;
+        this.heightMenuSize = heightSize / this.scaleFactor;
+        this.widthMenuSize = widthSize / this.scaleFactor;
+        this.leftValue = 0;
+      } else {
+        this.mobileDisplay = false;
+        this.showMenu = true;
+        this.showCard = false;
+        this.scaleFactor = heightSize / 756;
         this.widthMenuSize = 320;
         this.heightMenuSize = 756;
         this.leftValue = this.widthMenuSize * this.scaleFactor;
       }
+      // Calculate the new top value based on scaleFactor
+      this.topValue = 90 * this.scaleFactor;
       if ( heightSize / (widthSize - this.leftValue) > this.ratioSlides ) {
         this.heightSlidesSize = heightSize;
         this.widthSlidesSize = heightSize / this.ratioSlides;
@@ -601,17 +663,36 @@ export default {
         this.topValueSlides = ( heightSize - this.heightSlidesSize ) / 2;
         this.leftValueSlides = this.leftValue;
       }
-      this.leftValueTitle = this.leftValue - this.leftValueSlides;
+      this.leftValueTitle = this.leftValue - this.leftValueSlides + 100 * (this.scaleFactor - 1);
       this.topValueTitle = this.topValue - this.topValueSlides;
     },
     onTouchStart(event) {
       this.startX = event.touches[0].clientX;
       this.startY = event.touches[0].clientY;
     },
+    startDrag(event) {
+      this.isDragging = true;
+      this.startX = event.clientX;
+      this.startY = event.clientY;
+    },
     onTouchMove(event) {
-      const currentX = event.touches[0].clientX;
-      const currentY = event.touches[0].clientY;
-
+      this.onMoving( event.touches[0].clientX, event.touches[0].clientY );
+    },
+    dragging(event) {
+      if (this.isDragging) {
+        this.onMoving( event.clientX, event.clientY );
+      }
+    },
+    onTouchEnd(event) {
+      this.onMoving( event.touches[0].clientX, event.touches[0].clientY );
+    },
+    endDrag(event) {
+      if (this.isDragging) {
+        this.onMoving( event.clientX, event.clientY );
+        this.isDragging = false;
+      }
+    },
+    onMoving ( currentX, currentY ){
       const deltaX = currentX - this.startX;
       const deltaY = currentY - this.startY;
 
@@ -633,24 +714,6 @@ export default {
         this.startY = currentY;
       }
     },
-    onTouchEnd(event) {
-      const deltaX = event.changedTouches[0].clientX - this.startX;
-      const deltaY = event.changedTouches[0].clientY - this.startY;
-
-      if (Math.abs(deltaX) > this.minSwipeDistance && this.swipeReady) {
-        if (deltaX > 0) {
-          this.rightSwipe();
-        } else {
-          this.leftSwipe();
-        }
-      } else if (Math.abs(deltaY) > this.minSwipeDistance && this.swipeReady) {
-        if (deltaY > 0) {
-          this.downSwipe();
-        } else {
-          this.upSwipe();
-        }
-      }
-    },
     leftSwipe() {
       this.$refs.myVueperSlides.next();
       this.triggerSwipeCooldown();
@@ -661,33 +724,27 @@ export default {
     },
     downSwipe() {
       if ( !this.showStarredMenu && !this.showBannedMenu ) {
-        if ( this.mobileDisplay ){
-          if ( this.goThere == true ) {
-            this.goThere = false;
-          } else if ( this.showMenu ) {
-            this.showMenu = false;
-            this.showCard = true;
-            if ( this.starredDestinationData > 0 ) {
-              this.showStarred = true;
-            }
-          } else {
-            this.nextDestination();
+        if ( this.goThere == true ) {
+          this.goThere = false;
+        } else if ( this.showMenu && this.mobileDisplay ) {
+          this.showMenu = false;
+          this.showCard = true;
+          if ( this.starredDestinationData > 0 ) {
+            this.showStarred = true;
           }
         } else {
           this.nextDestination();
-        }    
+        } 
         this.triggerSwipeCooldown(); 
       }
     },
     upSwipe() {
-      if ( this.mobileDisplay ){
-        if ( this.showMenu == false ) {
-          this.showMenu = true;
-          this.showCard = false;
-          this.showStarred = false;
-        } else {
-          this.goThere = true;
-        }
+      if ( this.showMenu == false ) {
+        this.showMenu = true;
+        this.showCard = false;
+        this.showStarred = false;
+      } else {
+        this.goThere = true;
       }
       this.triggerSwipeCooldown();
     },
@@ -708,13 +765,59 @@ export default {
       }
     },
     toggleStarredMenu () {
-      this.showStarredMenu = !this.showStarredMenu;
-      this.showBannedMenu = false;
+      if ( this.starredDestinationData.length > 0 ) {
+        this.showFullMap = true;
+        this.showStarredMenu = !this.showStarredMenu;
+        this.showBannedMenu = false;
+      }
     },
     toggleBannedMenu () {
-      this.showBannedMenu = !this.showBannedMenu;
-      this.showStarredMenu = false;
-    }
+      if ( this.bannedDestinationData.length > 0 ) {
+        this.showFullMap = true;
+        this.showBannedMenu = !this.showBannedMenu;
+        this.showStarredMenu = false;
+      }
+    },
+    hideFullMap () {
+        this.showStarredMenu = false;
+        this.showBannedMenu = false;
+        this.showFullMap = false;
+    },
+    handleKeyPress(event) {
+      switch (event.key) {
+        case 'ArrowLeft':
+          this.rightSwipe();
+          break;
+        case 'ArrowRight':
+          this.leftSwipe();
+          break;
+        case 'ArrowUp':
+          this.upSwipe();
+          break;
+        case 'ArrowDown':
+          this.downSwipe();
+          break;
+        case '*':
+          this.starToggle();
+          break;
+        case 'Delete':
+          this.banToggle();
+          break;
+        case 'Enter':
+        case ' ':
+          this.nextDestination();
+          break;
+        case 'Backspace':
+          this.previousDestination();
+          break;
+        case 's':
+          this.toggleStarredMenu();
+          break;
+        case 'b':
+          this.toggleStarredMenu();
+          break;
+      }
+    },
   },
   created() {
     // Load starred destinations from local storage
