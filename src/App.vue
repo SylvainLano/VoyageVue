@@ -5,27 +5,36 @@
   @touchmove="onTouchMove"
   @touchend="onTouchEnd">
   <div v-if="currentDestination && Object.keys(currentDestination).length > 0">
-  <div class="absolute flex top-0 right-0 z-40 origin-top-right" :style="{ transform: `scale(${scaleFactor})` }">
-  <transition name="lateral-fade">
-    <div class="p-2 text-xl bg-slate-50 bg-opacity-50 cursor-pointer" @click="toggleStarredMenu" v-if="showStarred">
-      <span class="text-emerald-700"><font-awesome-icon :icon="['fas', 'star']" /></span>
-    </div>
-  </transition>
-  <transition name="lateral-fade">
-    <div class="p-2 text-xl bg-slate-50 bg-opacity-50 cursor-pointer" @click="toggleBannedMenu" v-if="showBanned">
-      <span class="text-red-700"><font-awesome-icon :icon="['fas', 'circle-xmark']" /></span>
-    </div>
-  </transition>
+
+  <div class="absolute flex top-0 right-0 z-40 origin-top-right" :style="{ transform: `scale(${scaleFactor})` }" v-if="(showBanned || showStarred) && mobileDisplay">
+    <transition name="lateral-fade">
+      <div class="p-2 text-xl bg-slate-50 bg-opacity-50 cursor-pointer" @click="toggleStarredMenu" v-if="showStarred">
+        <span class="text-green-600"><font-awesome-icon :icon="['fas', 'star']" /></span>
+      </div>
+    </transition>
+    <transition name="lateral-fade">
+      <div class="p-2 text-xl bg-slate-50 bg-opacity-50 cursor-pointer" @click="toggleBannedMenu" v-if="showBanned">
+        <span class="text-red-600"><font-awesome-icon :icon="['fas', 'circle-xmark']" /></span>
+      </div>
+    </transition>
+  </div>
+  <div class="absolute flex top-5 right-5 z-40 origin-top-right" :style="{ transform: `scale(${scaleFactor})` }" v-if="(showBanned || showStarred) && !mobileDisplay">
+    <transition name="lateral-fade">
+      <div class="text-4xl bg-lime-500 cursor-pointer rounded-full" @click="toggleStarredMenu">
+        <span class="text-cyan-700"><font-awesome-icon :icon="['fas', 'earth-africa']" :shake="isBeating" size="xl" /></span>
+      </div>
+    </transition>
   </div>
   
   <transition name="lateral-fade">
     <div class="bg-slate-50 flex bg-opacity-50 absolute text-slate-900 overflow-auto h-full w-full top-0 left-0 z-40 p-20"
-    v-if="showFullMap && !mobileDisplay" @click="hideFullMap">
-      <div class="h-full w-full m-auto">
+    v-if="showFullMap && !mobileDisplay">
+      <div class="absolute h-screen w-screen top-0 left-0" @click="hideFullMap">
+      </div>
+      <div class="relative h-full w-full m-auto">
         <l-map 
           ref="starBanMap"
           :zoom=2
-          :useGlobalLeaflet="false"
           :center="[51.505, -0.09]"
           :options="{ zoomControl: false, attributionControl: false }"
         >
@@ -104,7 +113,6 @@
           ref="map"
           :zoom="currentDestination.zoom"
           :center="currentDestination.center"
-          :useGlobalLeaflet="false"
           :options="{ zoomControl: false, attributionControl: false }"
         >
           <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
@@ -197,7 +205,7 @@
   </div>
   <div class="absolute left-0 h-screen bg-slate-50 z-10" :style="{ width:`${leftValue}px` }" v-if="!mobileDisplay"></div>
   <transition name="slide-fade">
-    <div class="absolute left-0 bg-slate-50 z-10 bottom-0 p-4 origin-bottom-left" :style="{ width:`${widthMenuSize}px`, transform: `scale(${scaleFactor})` }" v-if="showCard">
+    <div class="absolute left-0 bg-slate-50 z-20 bottom-0 p-4 origin-bottom-left" :style="{ width:`${widthMenuSize}px`, transform: `scale(${scaleFactor})` }" v-if="showCard">
       <div class="font-mono text-4xl text-slate-900 text-left flex justify-between">
         <div class="mx-3 cursor-pointer" @click="upSwipe">
           {{ currentDestination.location }}
@@ -238,11 +246,12 @@
             :image="require(`@/assets/images/${slide.image}`)"
         >
           <template #content>
-            <div class="absolute z-10 text-left" :style="{ top: `${topValueTitle}px`, left: `${leftValueTitle}px`, transform: `scale(${scaleFactor})` }">
-              <div class="h-12 font-mono text-4xl backdrop-brightness-50 text-slate-50 p-2">
+            <div class="absolute z-10 text-left origin-top-left block"
+              :style="slideTitleStyle">
+              <div class="font-mono text-4xl backdrop-brightness-50 text-slate-50 p-2">
                 {{ slide.title }}
               </div>
-              <div class="h-8 font-mono text-xl backdrop-brightness-50 text-slate-50 px-2">
+              <div class="font-mono text-xl backdrop-brightness-50 text-slate-50 p-2">
                 by <a target="_blank" class="text-pink-400" :href="slide.link">{{ slide.author }}</a>
               </div>
             </div>
@@ -418,15 +427,30 @@ export default {
         return 'fi fi-' + countryCode + ' text-xl mx-3';
       }
       return 'fi text-xl mx-3';
+    },    
+    slideTitleStyle() {
+      const style = {
+        top: `${this.topValueTitle}px`,
+        left: `${this.leftValueTitle}px`,
+        transform: `scale(${this.scaleFactor})`,
+      };
+      if (this.mobileDisplay) {
+        style['max-width'] = `${this.widthMenuSize}px`;
+      }
+      return style;
     },
   },
   methods: {
     nextDestination(index = null) {
-      if ( this.currentDestination.id != null ) {
+      if ( this.currentDestination.id != null && index !== "previous") {
         this.breadCrumbs.push(this.currentDestination.id);
       }
+      if (index === "previous") {
+        index = this.breadCrumbs.pop();
+      }
+
       this.showMenu = this.showSlides = this.showCard = this.showStarred = this.showStarredMenu =
-      this.showBanned = this.showBannedMenu = this.showFulleMap = false;
+      this.showBanned = this.showBannedMenu = this.showFullMap = false;
       this.goThere = false;
       // Wait for 0.5 seconds (500 milliseconds) before continuing
       setTimeout(() => {
@@ -450,25 +474,29 @@ export default {
           // Check if it's banned
           const isBanned = this.bannedDestinationsStorage.includes(index);
 
-          let previousDestination = null;
+          let targetDestination = null;
 
           if (isStarred) {
-            previousDestination = this.starredDestinationData.find(destination => destination.id === index);
+            targetDestination = this.starredDestinationData.find(destination => destination.id === index);
           } else if (isBanned) {
-            previousDestination = this.bannedDestinationData.find(destination => destination.id === index);
+            targetDestination = this.bannedDestinationData.find(destination => destination.id === index);
           } else {
-            previousDestination = this.destinationData.find(destination => destination.id === index);
+            targetDestination = this.destinationData.find(destination => destination.id === index);
           }
-          if (previousDestination) {
-            // Set the previous destination as the current destination
-            this.currentDestination = previousDestination;
+          if (targetDestination) {
+            // Set the target destination as the current destination
+            this.currentDestination = targetDestination;
           } else {
             index = null;
           }
         }
         if ( index == null ) {
           // Filter destinationData to remove visited destinations
-          const newDestinations = this.destinationData.filter(destination => !this.breadCrumbs.includes(destination.id));
+          const newDestinations = this.destinationData.filter(destination => {
+            // Filter out destinations with the same id as currentDestination.id
+            // and exclude the currentDestination.id itself
+            return destination.id !== this.currentDestination.id && !this.breadCrumbs.includes(destination.id);
+          });
           if (newDestinations.length > 0) {
             const index = Math.floor(Math.random() * newDestinations.length);
             this.currentDestination = newDestinations[index];
@@ -491,8 +519,7 @@ export default {
     },
     previousDestination() {
       if (this.breadCrumbs.length > 0) {        
-        const previousDestinationId = this.breadCrumbs.pop();
-        this.nextDestination(previousDestinationId);
+        this.nextDestination("previous");
       }
     },
     toggleStarFromMenu() {
@@ -522,24 +549,30 @@ export default {
       window.open(this.currentDestination.expediaLink, "_blank");
     },  
     updateCurrencyData(currencyCode) {
-      // Fetch and update currency data using the selected currency code
-      axios
-        .get('https://www.floatrates.com/daily/usd.json')
-        .then((response) => {
-          const currencyData = response.data[currencyCode.toLowerCase()];
-          if (currencyData) {
-            this.currencyData.code = currencyData.code;
-            this.currencyData.name = currencyData.name; // Update the currency name
-            const amountInUSD = 10; // The base amount in USD
-            const equivalentInCurrency = amountInUSD * currencyData.rate;
-            this.currencyData.equivalentInCurrency = equivalentInCurrency.toFixed(2);
-          } else {
-            console.error('Currency data not found for', currencyCode);
-          }
-        })
-        .catch((error) => {
-          console.error('Error fetching currency data: ', error);
-        });
+      if ( currencyCode === "USD" ) {
+        this.currencyData.code = "USD";
+        this.currencyData.name = "US Dollar";
+        this.currencyData.equivalentInCurrency = 1;
+      } else {
+        // Fetch and update currency data using the selected currency code
+        axios
+          .get('https://www.floatrates.com/daily/usd.json')
+          .then((response) => {
+            const currencyData = response.data[currencyCode.toLowerCase()];
+            if (currencyData) {
+              this.currencyData.code = currencyData.code;
+              this.currencyData.name = currencyData.name; // Update the currency name
+              const amountInUSD = 10; // The base amount in USD
+              const equivalentInCurrency = amountInUSD * currencyData.rate;
+              this.currencyData.equivalentInCurrency = equivalentInCurrency.toFixed(2);
+            } else {
+              console.error('Currency data not found for', currencyCode);
+            }
+          })
+          .catch((error) => {
+            console.error('Error fetching currency data: ', error);
+          });
+      }
     },    
     starToggle() {
       // Increase starShrink from 1 to 16
@@ -663,7 +696,11 @@ export default {
         this.topValueSlides = ( heightSize - this.heightSlidesSize ) / 2;
         this.leftValueSlides = this.leftValue;
       }
-      this.leftValueTitle = this.leftValue - this.leftValueSlides + 100 * (this.scaleFactor - 1);
+      if ( this.mobileDisplay ) {
+        this.leftValueTitle = 0 - this.leftValueSlides;
+      } else {
+        this.leftValueTitle = this.widthMenuSize * this.scaleFactor - this.leftValueSlides;
+      }
       this.topValueTitle = this.topValue - this.topValueSlides;
     },
     onTouchStart(event) {
@@ -671,9 +708,11 @@ export default {
       this.startY = event.touches[0].clientY;
     },
     startDrag(event) {
-      this.isDragging = true;
-      this.startX = event.clientX;
-      this.startY = event.clientY;
+      if (!this.showFullMap) {
+        this.isDragging = true;
+        this.startX = event.clientX;
+        this.startY = event.clientY;
+      }
     },
     onTouchMove(event) {
       this.onMoving( event.touches[0].clientX, event.touches[0].clientY );
@@ -684,7 +723,9 @@ export default {
       }
     },
     onTouchEnd(event) {
-      this.onMoving( event.touches[0].clientX, event.touches[0].clientY );
+      if (event.touches && event.touches.length > 0) {
+        this.onMoving( event.touches[0].clientX, event.touches[0].clientY );
+      }
     },
     endDrag(event) {
       if (this.isDragging) {
@@ -729,8 +770,11 @@ export default {
         } else if ( this.showMenu && this.mobileDisplay ) {
           this.showMenu = false;
           this.showCard = true;
-          if ( this.starredDestinationData > 0 ) {
+          if ( this.starredDestinationData.length > 0 ) {
             this.showStarred = true;
+          }
+          if ( this.bannedDestinationData.length > 0 ) {
+            this.showBanned = true;
           }
         } else {
           this.nextDestination();
@@ -745,6 +789,10 @@ export default {
         this.showStarred = false;
       } else {
         this.goThere = true;
+      }
+      if (this.mobileDisplay) {
+        this.showStarred = false;
+        this.showBanned = false;
       }
       this.triggerSwipeCooldown();
     },
