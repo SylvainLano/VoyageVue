@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 dist
-gh-pages-deploy.js
+scripts
 
 # local env files
 .env.local

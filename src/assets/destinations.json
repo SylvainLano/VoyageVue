@@ -422,6 +422,377 @@
               "link": "https://unsplash.com/fr/@huntleytography"
           }
         ]
+    },
+    {
+        "id": "th-001",
+        "location": "Bangkok",
+        "country": "Thailand",
+        "description": "A bustling metropolis known for its vibrant street life, ornate temples, and a rich cultural heritage. It offers a unique blend of modernity and tradition, from gleaming shopping malls to serene Buddhist temples.",
+        "currency": "THB",
+        "budget": "Low",
+        "eat": "3",
+        "bed": "30",
+        "language": "Thai",
+        "englishFriendly": "very little",
+        "transportation": "Average",
+        "reach": "Suvarnabhumi Airport (BKK)",
+        "local": "Skytrain, Subway, Tuk-tuk",
+        "bestTime": "Winter",
+        "bestTimeReason": "for the dry season",
+        "temperatureMin": "22°C in January",
+        "temperatureMax": "35°C in May",
+        "visa": "Free entry",
+        "safety": "Mostly Safe",
+        "healthcare": "High",
+        "foodToTry": "Pad Thai, Tom Yum soup, Green Curry, Som Tum (Papaya Salad), and Mango Sticky Rice. Explore street food stalls for authentic local dishes.",
+        "advice": "Bargain when shopping in markets, as it's a common practice, but respect the local customs and traditions, especially when visiting temples. Dress modestly and remove your shoes before entering.",
+        "expediaLink": "https://expedia.com/affiliate/NeUpa5h",
+        "zoom": 3,
+        "center": [13.736717, 100.523186],
+        "images": [
+          {
+              "title": "Wat Arun",
+              "image": "destinations/thailand/bangkok/photo-1510379872535-9310dc6fd6a7.avif",
+              "author": "Evan Krause",
+              "link": "https://unsplash.com/fr/@evankrause_"
+          },
+          {
+              "title": "Train Night Market",
+              "image": "destinations/thailand/bangkok/photo-1563712732824-161a0495f060.avif",
+              "author": "Kittitep Khotchalee",
+              "link": "https://unsplash.com/fr/@duckman1992"
+          },
+          {
+              "title": "Street Food",
+              "image": "destinations/thailand/bangkok/photo-1506781961370-37a89d6b3095.avif",
+              "author": "Lisheng Chang",
+              "link": "https://unsplash.com/fr/@changlisheng"
+          },
+          {
+              "title": "Sukhumvit Road",
+              "image": "destinations/thailand/bangkok/photo-1523731407965-2430cd12f5e4.avif",
+              "author": "Andreas Brücker",
+              "link": "https://unsplash.com/fr/@andreasbruecker"
+          }
+        ]
+    },
+    {
+        "id": "br-001",
+        "location": "Rio de Janeiro",
+        "country": "Brazil",
+        "description": "A city renowned for its stunning natural landscapes, vibrant culture, and lively atmosphere. Famous for its beautiful beaches, iconic landmarks like Christ the Redeemer, and an annual carnival that's one of the world's largest and most colorful celebrations.",
+        "currency": "BRL",
+        "budget": "Average",
+        "eat": "10",
+        "bed": "60",
+        "language": "Portuguese",
+        "englishFriendly": "very little",
+        "transportation": "Average",
+        "reach": "Rio-Galeão Airport (GIG)",
+        "local": "Bus, Subway, Taxi",
+        "bestTime": "April",
+        "bestTimeReason": "for the carnival",
+        "temperatureMin": "19°C in July",
+        "temperatureMax": "31°C in February",
+        "visa": "Free entry",
+        "safety": "Slightly Dangerous",
+        "healthcare": "Average",
+        "foodToTry": "Feijoada (a black bean stew with pork), Coxinha (chicken croquettes), Açaí bowls, and, of course, Churrasco (Brazilian barbecue).",
+        "advice": "Sample fresh tropical fruits and juices from local street vendors, take in the breathtaking view from the Christ the Redeemer statue on Corcovado Mountain, and enjoy the famous Copacabana and Ipanema beaches but be cautious with your belongings.",
+        "expediaLink": "https://expedia.com/affiliate/9oZYew7",
+        "zoom": 3,
+        "center": [45.421530, -75.697193],
+        "images": [
+          {
+              "title": "Corcovado",
+              "image": "destinations/brazil/rio-de-janeiro/photo-1516306580123-e6e52b1b7b5f.avif",
+              "author": "Raphael Nogueira",
+              "link": "https://unsplash.com/fr/@phaelnogueira"
+          },
+          {
+              "title": "Rio Carnival",
+              "image": "destinations/brazil/rio-de-janeiro/Desfile_Portela_2014__906185_.avif",
+              "author": "Fernando Frazão",
+              "link": "http://agenciabrasil.ebc.com.br/cultura/foto/2014-03/ultimo-dia-de-desfile-do-grupo-especial-no-rio?id=906222"
+          },
+          {
+              "title": "Leblon Beach",
+              "image": "destinations/brazil/rio-de-janeiro/photo-1605626995364-4b94598c7728.avif",
+              "author": "Raphael Souza",
+              "link": "https://unsplash.com/fr/@raphaavz"
+          },
+          {
+              "title": "Favelas",
+              "image": "destinations/brazil/rio-de-janeiro/photo-1666977375093-c3c8bd0917b5.avif",
+              "author": "AXP Photography",
+              "link": "https://unsplash.com/fr/@axpphotography"
+          }
+        ]
+    },
+    {
+        "id": "au-001",
+        "location": "Sidney",
+        "country": "Australia",
+        "description": "A dynamic and multicultural city known for its iconic landmarks, stunning harbor, and beautiful beaches. It's a thriving metropolis that offers a perfect blend of urban and outdoor experiences.",
+        "currency": "AUD",
+        "budget": "High",
+        "eat": "12",
+        "bed": "100",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Easy",
+        "reach": "Kingsford Smith Airport (SYD)",
+        "local": "Train, Bus, Ferry, Light Rail",
+        "bestTime": "January",
+        "bestTimeReason": "for summer outdoor activities",
+        "temperatureMin": "8°C in July",
+        "temperatureMax": "26°C in February",
+        "visa": "eVisitor Visa",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Tim Tams (chocolate biscuits), Vegemite (a savory spread), and local seafood including Barramundi and Sydney Rock Oysters.",
+        "advice": "Enjoy a day at the world-famous Bondi Beach and coastal walk to Bronte Beach or embrace the outdoor lifestyle and join the locals in picnics, barbecues, and coastal walks.",
+        "expediaLink": "https://expedia.com/affiliate/0zOspqP",
+        "zoom": 3,
+        "center": [-33.8678500, 151.2073200],
+        "images": [
+          {
+              "title": "Opera House",
+              "image": "destinations/australia/sydney/photo-1528072164453-f4e8ef0d475a.avif",
+              "author": "Tyler Duston",
+              "link": "https://unsplash.com/fr/@dustont12"
+          },
+          {
+              "title": "Bondi Beach",
+              "image": "destinations/australia/sydney/photo-1566155676296-132ad1edce95.avif",
+              "author": "Martyna Bober",
+              "link": "https://unsplash.com/fr/@marbo777"
+          },
+          {
+              "title": "Milsons Point",
+              "image": "destinations/australia/sydney/photo-1512477525059-e0b091e0a9ba.avif",
+              "author": "Michael Amadeus",
+              "link": "https://unsplash.com/fr/@fifthperspective"
+          },
+          {
+              "title": "Luna Park",
+              "image": "destinations/australia/sydney/photo-1577884797975-8f60e6873d5c.avif",
+              "author": "Maximalfocus",
+              "link": "https://unsplash.com/fr/@maximalfocus"
+          }
+        ]
+    },
+    {
+        "id": "eg-001",
+        "location": "Cairo",
+        "country": "Egypt",
+        "description": "A city steeped in history, serving as the capital of Egypt and one of the world's oldest cities. It's famous for its iconic pyramids, ancient temples, bustling bazaars, and a rich cultural heritage.",
+        "currency": "EGP",
+        "budget": "Very Cheap",
+        "eat": "2",
+        "bed": "13",
+        "language": "Arabic",
+        "englishFriendly": "a little",
+        "transportation": "Average",
+        "reach": "Cairo Airport (CAI)",
+        "local": "Taxi, Bus, Metro",
+        "bestTime": "October",
+        "bestTimeReason": "for comfort while exploring",
+        "temperatureMin": "10°C in January",
+        "temperatureMax": "35°C in August",
+        "visa": "Mandatory Visa",
+        "safety": "Mostly Safe",
+        "healthcare": "Low",
+        "foodToTry": "Koshari (rice, lentils and macaroni with tomato sauce), Shawarma, Ful Medames (mashed fava beans), and a variety of Middle Eastern desserts like Baklava and Basbousa.",
+        "advice": "Respect local customs and dress modestly, especially when visiting religious sites. Take a cruise on the Nile River, visit the Pyramids of Giza and the Sphinx, and consider a camel ride around the area.",
+        "expediaLink": "https://expedia.com/affiliate/VRsSW8q",
+        "zoom": 3,
+        "center": [30.033333, 31.233334],
+        "images": [
+          {
+              "title": "Pyramids Garden",
+              "image": "destinations/egypt/cairo/photo-1600520611035-84157ad4084d.avif",
+              "author": "Osama Elsayed",
+              "link": "https://unsplash.com/fr/@osamaabosaadia"
+          },
+          {
+              "title": "Mosque",
+              "image": "destinations/egypt/cairo/photo-1572252009286-268acec5ca0a.avif",
+              "author": "Omar Elsharawy",
+              "link": "https://unsplash.com/fr/@esh3rwy"
+          },
+          {
+              "title": "Seafront",
+              "image": "destinations/egypt/cairo/photo-1561714645-2b6505711ee0.avif",
+              "author": "Manuel Jiménez",
+              "link": "https://unsplash.com/fr/@mjphotovideo"
+          },
+          {
+              "title": "Camel Ride",
+              "image": "destinations/egypt/cairo/photo-1539768942893-daf53e448371.avif",
+              "author": "Simon Berger",
+              "link": "https://unsplash.com/fr/@8moments"
+          }
+        ]
+    },
+    {
+        "id": "nl-001",
+        "location": "Amsterdam",
+        "country": "Netherland",
+        "description": "A charming city known for its picturesque canals, historic architecture, and vibrant cultural scene. It's a city where you can explore world-class museums, visit iconic landmarks, and experience the laid-back atmosphere.",
+        "currency": "EUR",
+        "budget": "Very High",
+        "eat": "20",
+        "bed": "150",
+        "language": "Dutch",
+        "englishFriendly": "very well",
+        "transportation": "Easy",
+        "reach": "Amsterdam Airport (AMS)",
+        "local": "Tram, Bus, Bicycle",
+        "bestTime": "Mai",
+        "bestTimeReason": "for the blooming tulips",
+        "temperatureMin": "0°C in February",
+        "temperatureMax": "22°C in August",
+        "visa": "Schengen visa required",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Bitterballen (deep-fried meat-based snacks), Stroopwafels (thin waffle cookies with caramel-like syrup), Dutch herring, and traditional Dutch cheeses, such as Gouda and Edam.",
+        "advice": "Rent a bike and explore the city like a local; Amsterdam is known for its bike-friendly infrastructure. Be mindful of tram tracks when walking or cycling to avoid accidents.",
+        "expediaLink": "https://expedia.com/affiliate/MrllEDE",
+        "zoom": 3,
+        "center": [52.377956, 4.897070],
+        "images": [
+          {
+              "title": "The Amstel",
+              "image": "destinations/netherland/amsterdam/photo-1605101100278-5d1deb2b6498.avif",
+              "author": "Max van den Oetelaar",
+              "link": "http://www.maxvandenoetelaar.com"
+          },
+          {
+              "title": "Tulips",
+              "image": "destinations/netherland/amsterdam/photo-1673707017115-70a6efba8f22.avif",
+              "author": "Andrei Popescu",
+              "link": "https://unsplash.com/fr/@myst6395"
+          },
+          {
+              "title": "I amsterdam",
+              "image": "destinations/netherland/amsterdam/photo-1523889310790-cb91a98b017b.avif",
+              "author": "Red Morley Hewitt",
+              "link": "https://unsplash.com/fr/@redvers"
+          },
+          {
+              "title": "Zaanse Schans",
+              "image": "destinations/netherland/amsterdam/photo-1698239227821-8184e85c2095.avif",
+              "author": "Radu Iordan",
+              "link": "https://unsplash.com/fr/@iordanradu"
+          }
+        ]
+    },
+    {
+        "id": "ae-001",
+        "location": "Dubai",
+        "country": "United Arab Emirates",
+        "description": "A modern and glamorous city known for its iconic skyscrapers, luxurious shopping, and a blend of traditional and futuristic architecture. It's a destination that offers a taste of both tradition and opulence.",
+        "currency": "AED",
+        "budget": "High",
+        "eat": "14",
+        "bed": "110",
+        "language": "Arabic",
+        "englishFriendly": "widely",
+        "transportation": "Average",
+        "reach": "Dubai Airport (DXB)",
+        "local": "Taxi, Ride-share, Metro",
+        "bestTime": "February",
+        "bestTimeReason": "for weather and sightseeing",
+        "temperatureMin": "14°C in January",
+        "temperatureMax": "41°C in August",
+        "visa": "Free entry",
+        "safety": "Very Safe",
+        "healthcare": "Very High",
+        "foodToTry": "Shawarma, Falafel, Emirati cuisine (try Al Harees and Al Machboos), and international cuisines from around the world.",
+        "advice": "Visit the Burj Khalifa, the world's tallest building, for panoramic views of the city. Shop at the traditional souks, such as the Gold Souk and Spice Souk, and dress modestly when outside of tourist areas.",
+        "expediaLink": "https://expedia.com/affiliate/Mq3V4gP",
+        "zoom": 3,
+        "center": [25.276987, 55.296249],
+        "images": [
+          {
+              "title": "Burj Khalifa",
+              "image": "destinations/united-arab-emirates/dubai/photo-1512453979798-5ea266f8880c.avif",
+              "author": "David Rodrigo",
+              "link": "https://unsplash.com/fr/@david__r"
+          },
+          {
+              "title": "Burj Al Arab",
+              "image": "destinations/united-arab-emirates/dubai/photo-1606036858743-c106b6ffbff6.avif",
+              "author": "Sascha Bosshard",
+              "link": "https://unsplash.com/fr/@thesaboo"
+          },
+          {
+              "title": "Atlantis, The Palm",
+              "image": "destinations/united-arab-emirates/dubai/photo-1489516408517-0c0a15662682.avif",
+              "author": "Christoph Schulz",
+              "link": "https://unsplash.com/fr/@christoph"
+          },
+          {
+              "title": "Desert Safari",
+              "image": "destinations/united-arab-emirates/dubai/photo-1549944850-84e00be4203b.avif",
+              "author": "Fernando Jorge",
+              "link": "https://unsplash.com/fr/@fx24"
+          }
+        ]
+    },
+    {
+        "id": "cz-001",
+        "location": "Prague",
+        "country": "Czech Republic",
+        "description": "A fairytale city with a rich history and stunning architecture. It's famous for its well-preserved medieval Old Town, charming cobblestone streets, and historic landmarks like Prague Castle and Charles Bridge.",
+        "currency": "CZK",
+        "budget": "Average",
+        "eat": "9",
+        "bed": "52",
+        "language": "Czech",
+        "englishFriendly": "very little",
+        "transportation": "Easy",
+        "reach": "Václav Havel Airport (PRG)",
+        "local": "Tram, Bus, Metro",
+        "bestTime": "June",
+        "bestTimeReason": "for less crowds",
+        "temperatureMin": "-1°C in January",
+        "temperatureMax": "26°C in August",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Goulash, trdelník (sweet pastry), Svíčková (marinated beef), and a variety of traditional Czech beers.",
+        "advice": "Stroll through the charming Old Town Square and watch the astronomical clock's hourly show and explore the historic Prague Castle complex and enjoy panoramic views of the city.",
+        "expediaLink": "https://expedia.com/affiliate/mJfRBiG",
+        "zoom": 3,
+        "center": [50.073658, 14.418540],
+        "images": [
+          {
+              "title": "Prague Castle",
+              "image": "destinations/czech-republic/prague/photo-1529784237789-45cc21f5705b.avif",
+              "author": "František Zelinka",
+              "link": "https://unsplash.com/fr/@zelinka"
+          },
+          {
+              "title": "The Library",
+              "image": "destinations/czech-republic/prague/photo-1521920592574-49e0b121c964.avif",
+              "author": "Jonathan Francisca",
+              "link": "https://unsplash.com/fr/@jonathan_francisca"
+          },
+          {
+              "title": "Astronomical Clock",
+              "image": "destinations/czech-republic/prague/photo-1556715371-6264bf5f03ba.avif",
+              "author": "Jack Hunter",
+              "link": "https://unsplash.com/fr/@jacktthunter"
+          },
+          {
+              "title": "Charles Bridge",
+              "image": "destinations/czech-republic/prague/photo-1519677100203-a0e668c92439.avif",
+              "author": "Anthony DELANOIX",
+              "link": "https://unsplash.com/fr/@anthonydelanoix"
+          }
+        ]
     }
 ]
   

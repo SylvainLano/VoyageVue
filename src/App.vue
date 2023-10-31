@@ -4,7 +4,7 @@
   @touchstart="onTouchStart"
   @touchmove="onTouchMove"
   @touchend="onTouchEnd">
-  <div v-if="currentDestination && Object.keys(currentDestination).length > 0">
+  <div class="h-screen w-screen" v-if="currentDestination && Object.keys(currentDestination).length > 0">
 
   <div class="absolute flex top-0 right-0 z-40 origin-top-right" :style="{ transform: `scale(${scaleFactor})` }" v-if="(showBanned || showStarred) && mobileDisplay">
     <transition name="lateral-fade">
