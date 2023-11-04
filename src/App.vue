@@ -4,7 +4,7 @@
   @touchstart="onTouchStart"
   @touchmove="onTouchMove"
   @touchend="onTouchEnd">
-  <div class="h-screen w-screen" v-if="currentDestination && Object.keys(currentDestination).length > 0">
+  <div class="h-full w-full" v-if="currentDestination && Object.keys(currentDestination).length > 0">
 
   <div class="absolute flex top-0 right-0 z-40 origin-top-right" :style="{ transform: `scale(${scaleFactor})` }" v-if="(showBanned || showStarred) && mobileDisplay">
     <transition name="lateral-fade">
@@ -27,11 +27,29 @@
   </div>
   
   <transition name="lateral-fade">
-    <div class="bg-slate-50 flex bg-opacity-50 absolute text-slate-900 overflow-auto h-full w-full top-0 left-0 z-40 p-20"
+    <div class="bg-slate-50 flex-col bg-opacity-50 absolute text-slate-900 h-full w-full top-0 left-0 z-40 p-20 overflow-hidden"
     v-if="showFullMap && !mobileDisplay">
       <div class="absolute h-screen w-screen top-0 left-0" @click="hideFullMap">
       </div>
-      <div class="relative h-full w-full m-auto">
+      <div class="relative text-lg m-auto bg-slate-50 text-center flex flex-row mb-1">
+          <div class="basis-1/5">
+          </div>
+          <div class="basis-1/5 text-green-700">
+            <input class="mx-1" type="checkbox" id="checkbox" v-model="hideStarred" />
+            <label for="checkbox">Hide Starred</label>
+          </div>
+          <div class="basis-1/5 text-red-700">
+            <input class="mx-1" type="checkbox" id="checkbox" v-model="hideBanned" />
+            <label for="checkbox">Hide Banned</label>
+          </div>
+          <div class="basis-1/5 text-cyan-700">
+            <input class="mx-1" type="checkbox" id="checkbox" v-model="hideUnmarked" />
+            <label for="checkbox">Hide Unmarked</label>
+          </div>
+          <div class="basis-1/5">
+          </div>
+      </div>
+      <div class="h-full w-full m-auto">
         <l-map 
           ref="starBanMap"
           :zoom=2
@@ -39,6 +57,8 @@
           :options="{ zoomControl: false, attributionControl: false }"
         >
           <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
+          
+          <l-layer-group :visible="!hideBanned">
           <l-marker
             v-for="(destination, index) in bannedDestinationData"
             :key="'banned_' + index"
@@ -50,17 +70,31 @@
               :icon-anchor="[25/2,41]"
             />
           </l-marker>
-          <l-marker
-            v-for="(destination, index) in starredDestinationData"
-            :key="'starred_' + index"
-            :lat-lng="destination.center"
-            @click="nextDestination(destination.id)"
-          >
-            <l-icon
-              :icon-url="require('@/assets/images/markers/marker-icon-green.png')"
-              :icon-anchor="[25/2,41]"
-            />
-          </l-marker>
+          </l-layer-group>
+
+          <l-layer-group :visible="!hideStarred">
+            <l-marker
+              v-for="(destination, index) in starredDestinationData"
+              :key="'starred_' + index"
+              :lat-lng="destination.center"
+              @click="nextDestination(destination.id)"
+            >
+              <l-icon
+                :icon-url="require('@/assets/images/markers/marker-icon-green.png')"
+                :icon-anchor="[25/2,41]"
+              />
+            </l-marker>
+          </l-layer-group>
+
+          <l-layer-group :visible="!hideUnmarked">
+            <l-marker
+              v-for="(destination, index) in destinationData"
+              :key="'unmarked_' + index"
+              :lat-lng="destination.center"
+              @click="nextDestination(destination.id)"
+            >
+            </l-marker>
+          </l-layer-group>
         </l-map>
       </div>
     </div>
@@ -161,8 +195,24 @@
           <font-awesome-icon :icon="['fas', 'circle-xmark']" :bounce="isBeating" :transform="'shrink-'+banShrink" />
         </div>
         <div class="font-mono text-center mt-5">
-          <button class="py-2 px-3 bg-indigo-300 text-white text-sm font-semibold rounded-md shadow focus:outline-none" @click="previousDestination" v-if="breadCrumbs.length !== 0">Previous</button>
-          <button class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none" @click="nextDestination">Next Destination</button>
+          <button class="py-2 px-3 bg-indigo-300 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+          @click="previousDestination"
+          title="Go back to the previous destination!"
+          v-if="breadCrumbs.length !== 0">
+            Previous
+          </button>
+          <button class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+          @click="nextDestination"
+          title="Discover a new destination!"
+          v-if="!noMoreUnseenDestination">
+            New Destination
+          </button>
+          <button class="py-2 px-3 bg-red-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+          @click="nextDestination"
+          title="You've seen all destination, display a random one!"
+          v-if="noMoreUnseenDestination">
+            Random Destination
+          </button>
         </div> 
       </div>
     </div>
@@ -274,7 +324,7 @@ import '@/assets/css/tailwind.css';
 import destinationData from '@/assets/destinations.json';
 import axios from 'axios';
 import "leaflet/dist/leaflet.css";
-import { LMap, LTileLayer, LMarker, LIcon } from "@vue-leaflet/vue-leaflet";
+import { LMap, LTileLayer, LMarker, LIcon, LLayerGroup } from "@vue-leaflet/vue-leaflet";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default {
@@ -285,7 +335,8 @@ export default {
     LMap,
     LTileLayer,
     LMarker,
-    LIcon
+    LIcon,
+    LLayerGroup
   },
   data: () => ({
     pauseOnHover: true,
@@ -336,6 +387,9 @@ export default {
     swipeReady: true,
     swipeCooldown: 500,
     showFullMap: false,
+    hideStarred: false,
+    hideBanned: false,
+    hideUnmarked: false,
   }),
   mounted() {
     setInterval(() => {
@@ -359,7 +413,7 @@ export default {
     budgetColorClass() {
       // Determine the class based on the budget value
       if ( this.currentDestination && this.currentDestination.budget ) {
-        if (this.currentDestination.budget.toLowerCase() === "low") {
+        if (this.currentDestination.budget.toLowerCase() === "low" || this.currentDestination.budget.toLowerCase() === "cheap") {
           return 'text-green-700 text-base font-mono mt-5 text-center';
         } else if (this.currentDestination.budget.toLowerCase() === "high") {
           return 'text-red-700 text-base font-mono mt-5 text-center';
@@ -390,7 +444,7 @@ export default {
     healthcareColorClass() {
       // Determine the class based on the language spoken
       if ( this.currentDestination && this.currentDestination.healthcare ) {
-        if (this.currentDestination.healthcare.toLowerCase().includes("good")) {
+        if (this.currentDestination.healthcare.toLowerCase().includes("good") || this.currentDestination.healthcare.toLowerCase().includes("high")) {
           return 'font-mono text-sm text-green-700 text-base text-center my-5';
         }
       }
@@ -442,7 +496,7 @@ export default {
   },
   methods: {
     nextDestination(index = null) {
-      if ( this.currentDestination.id != null && index !== "previous") {
+      if ( this.currentDestination.id != null && this.currentDestination.id != index && index !== "previous" ) {
         this.breadCrumbs.push(this.currentDestination.id);
       }
       if (index === "previous") {
