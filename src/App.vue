@@ -35,16 +35,16 @@
           <div class="basis-1/5">
           </div>
           <div class="basis-1/5 text-green-700">
-            <input class="mx-1" type="checkbox" id="checkbox" v-model="hideStarred" />
-            <label for="checkbox">Hide Starred</label>
+            <input class="mx-1" type="checkbox" id="starredBox" v-model="hideStarred" :disabled="starredDestinationData.length === 0" />
+            <label for="starredBox" :style="{ color: starredDestinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ starredDestinationData.length }} Starred</label>
           </div>
           <div class="basis-1/5 text-red-700">
-            <input class="mx-1" type="checkbox" id="checkbox" v-model="hideBanned" />
-            <label for="checkbox">Hide Banned</label>
+            <input class="mx-1" type="checkbox" id="bannedBox" v-model="hideBanned" :disabled="bannedDestinationData.length === 0" />
+            <label for="bannedBox" :style="{ color: bannedDestinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ bannedDestinationData.length }} Banned</label>
           </div>
           <div class="basis-1/5 text-cyan-700">
-            <input class="mx-1" type="checkbox" id="checkbox" v-model="hideUnmarked" />
-            <label for="checkbox">Hide Unmarked</label>
+            <input class="mx-1" type="checkbox" id="unmarkedBox" v-model="hideUnmarked" :disabled="destinationData.length === 0" />
+            <label for="unmarkedBox"  :style="{ color: destinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ destinationData.length }} Unmarked</label>
           </div>
           <div class="basis-1/5">
           </div>
@@ -63,6 +63,7 @@
             v-for="(destination, index) in bannedDestinationData"
             :key="'banned_' + index"
             :lat-lng="destination.center"
+            :title="destination.location + ' - ' + destination.country"
             @click="nextDestination(destination.id)"
           >
             <l-icon
@@ -77,6 +78,7 @@
               v-for="(destination, index) in starredDestinationData"
               :key="'starred_' + index"
               :lat-lng="destination.center"
+              :title="destination.location + ' - ' + destination.country"
               @click="nextDestination(destination.id)"
             >
               <l-icon
@@ -91,6 +93,7 @@
               v-for="(destination, index) in destinationData"
               :key="'unmarked_' + index"
               :lat-lng="destination.center"
+              :title="destination.location + ' - ' + destination.country"
               @click="nextDestination(destination.id)"
             >
             </l-marker>
@@ -103,7 +106,7 @@
   <div class="absolute origin-top-right h-full z-30 right-0 top-0" :style="{ width: `${widthMenuSize}px`, transform: `scale(${scaleFactor})` }" v-if="(showStarredMenu || showBannedMenu) && mobileDisplay">
     <transition name="lateral-fade">
       <div class="bg-slate-50 p-4 text-2xl pt-10 text-slate-900 overflow-auto" :style="{ height: `${heightMenuSize}px`}" v-if="showStarredMenu">
-        Starred Destinations :
+        Starred Destinations ({{ starredDestinationData.length }}/{{ totalDestinations }}) :
         <ul class="list-disc ml-5">
           <li class="cursor-pointer text-green-600" v-for="(destination, index) in starredDestinationData" :key="index" @click="nextDestination(destination.id)">
             {{ destination.location }}
@@ -113,7 +116,7 @@
     </transition>
     <transition name="lateral-fade">
       <div class="bg-slate-50 p-4 text-2xl pt-10 text-slate-900 overflow-auto" :style="{ height: `${heightMenuSize}px`}" v-if="showBannedMenu">
-        Banned Destinations :
+        Banned Destinations ({{ bannedDestinationData.length }}/{{ totalDestinations }}) :
         <ul class="list-disc ml-5">
           <li class="cursor-pointer text-red-600" v-for="(destination, index) in bannedDestinationData" :key="index" @click="nextDestination(destination.id)">
             {{ destination.location }}
@@ -207,7 +210,7 @@
           v-if="!noMoreUnseenDestination">
             New Destination
           </button>
-          <button class="py-2 px-3 bg-red-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+          <button class="py-2 px-3 bg-slate-600 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
           @click="nextDestination"
           title="You've seen all destination, display a random one!"
           v-if="noMoreUnseenDestination">
@@ -255,10 +258,13 @@
   </div>
   <div class="absolute left-0 h-screen bg-slate-50 z-10" :style="{ width:`${leftValue}px` }" v-if="!mobileDisplay"></div>
   <transition name="slide-fade">
-    <div class="absolute left-0 bg-slate-50 z-20 bottom-0 p-4 origin-bottom-left" :style="{ width:`${widthMenuSize}px`, transform: `scale(${scaleFactor})` }" v-if="showCard">
-      <div class="font-mono text-4xl text-slate-900 text-left flex justify-between">
-        <div class="mx-3 cursor-pointer" @click="upSwipe">
+    <div class="absolute left-0 bg-slate-50 z-20 bottom-0 p-2 origin-bottom-left" :style="{ width:`${widthMenuSize}px`, transform: `scale(${scaleFactor})` }" v-if="showCard">
+      <div class="font-mono text-2xl text-slate-900 text-left flex justify-between">
+        <div class="ml-2 cursor-pointer" @click="upSwipe">
           {{ currentDestination.location }}
+          <span class="ml-2 font-mono text-lg text-slate-500 text-right">
+            {{ currentDestination.country }}
+          </span>
         </div>
         <div class="text-slate-900 cursor-pointer" v-if="!isStarred(currentDestination.id) && !isBanned(currentDestination.id)" @click="starToggle" title="Add this destination to your favorites!">
           <font-awesome-icon :icon="['far', 'star']" :bounce="isBeating" :transform="'shrink-'+starShrink" />
@@ -266,9 +272,6 @@
         <div class="text-emerald-400 cursor-pointer" v-else-if="!isBanned(currentDestination.id)" @click="starToggle" title="Remove this destination from your favorites.">
           <font-awesome-icon :icon="['fas', 'star']" :spin="isBeating" :transform="'shrink-'+starShrink" />
         </div>
-      </div>
-      <div class="font-mono text-2xl text-slate-700 text-right">
-        {{ currentDestination.country }}
       </div>
     </div>
   </transition>
@@ -346,6 +349,7 @@ export default {
     starredDestinationData: [],
     bannedDestinationData: [],
     currentDestination: [],
+    totalDestinations: 0,
     currencyData: {
       code: '',
       name: '',
@@ -477,7 +481,7 @@ export default {
       if ( this.currentDestination && this.currentDestination.id ) {
         // Split the string by hyphen and take the first part
         const parts = this.currentDestination.id.split('-');
-        const countryCode = parts[0];
+        const countryCode = parts.slice(0, -1).join('-'); // Join all parts except the last one with a hyphen
         return 'fi fi-' + countryCode + ' text-xl mx-3';
       }
       return 'fi text-xl mx-3';
@@ -646,7 +650,7 @@ export default {
             this.starredDestinationsStorage.push(this.currentDestination.id);
             this.moveItem(this.currentDestination, this.destinationData, this.starredDestinationData);
             this.goThere = this.showStarred = true;            
-          }          
+          }
           // Update the local storage with the updated starred destinations
           localStorage.setItem('starredDestinations', JSON.stringify(this.starredDestinationsStorage));
           // Decrease starSize from 30 back to 1
@@ -922,6 +926,7 @@ export default {
     },
   },
   created() {
+    this.totalDestinations = this.destinationData.length;
     // Load starred destinations from local storage
     const storedStarredDestinations = localStorage.getItem('starredDestinations');
     if (storedStarredDestinations) {

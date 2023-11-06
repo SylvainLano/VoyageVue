@@ -14,16 +14,21 @@ Maps made using [Vue Leaflet](https://vue2-leaflet.netlify.app/)
 
 ## Development
 
+### DONES
+- Showing number of destinations availables in each category on World Map
+- Showing number of starred and banned destination over the total on mobiles
+- Reduced the size of the bottom name and country of the destination
+
 ### Todos
 - Add more destinations of course !
 
 ### Futures developments and ideas
 - Possibility to download a file with all the user data to recover it later or elsewhere
-- Create a link on the country name to show destinations in the same country
+- Create a link on the country name to show destinations in the same country or area
 - Tag a destination as "Visited"
 - Earn badges or achievements by visiting countries, or all destinations in a country
 
-## Destinations presented (15 total)
+## Destinations presented (24 total)
 - Kyoto, Japan (jp-001)  
 - Paris, France (fr-001)  
 - Dublin, Ireland (ir-001)  
@@ -39,3 +44,12 @@ Maps made using [Vue Leaflet](https://vue2-leaflet.netlify.app/)
 - Amsterdam, Netherland (nl-001)  
 - Dubai, United Arab Emirates (ae-001)  
 - Prague, Czech Republic (cz-001)  
+- Vienna, Austria (at-001)  
+- Copenhagen, Denmark (dk-001)  
+- Marrakech, Morocco (ma-001)  
+- Auckland, New Zealand (nz-001)  
+- Edinburgh, Scotland (gb-sct-001)  
+- Dubrovnik, Croatia (hr-001)  
+- Amman, Jordan (jo-001)  
+- Stockholm, Sweden (se-001)  
+- Kraków, Poland (pl-001)  

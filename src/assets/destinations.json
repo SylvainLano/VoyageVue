@@ -331,7 +331,7 @@
         "transportation": "Easy",
         "reach": "Santorini Airport (JTR)",
         "local": "Bus, Taxis, Car, ATVs",
-        "bestTime": "Mai",
+        "bestTime": "May",
         "bestTimeReason": "with good weather and few people",
         "temperatureMin": "9°C in January",
         "temperatureMax": "29°C in August",
@@ -649,7 +649,7 @@
         "transportation": "Easy",
         "reach": "Amsterdam Airport (AMS)",
         "local": "Tram, Bus, Bicycle",
-        "bestTime": "Mai",
+        "bestTime": "May",
         "bestTimeReason": "for the blooming tulips",
         "temperatureMin": "0°C in February",
         "temperatureMax": "22°C in August",
@@ -791,6 +791,483 @@
               "image": "destinations/czech-republic/prague/photo-1519677100203-a0e668c92439.avif",
               "author": "Anthony DELANOIX",
               "link": "https://unsplash.com/fr/@anthonydelanoix"
+          }
+        ]
+    },
+    {
+        "id": "at-001",
+        "location": "Vienna",
+        "country": "Austria",
+        "description": "A city steeped in culture, history, and classical music. Known for its stunning palaces, museums, and grand architecture. Vienna offers a glimpse into the elegance and opulence of the Habsburg dynasty.",
+        "currency": "EUR",
+        "budget": "High",
+        "eat": "20",
+        "bed": "120",
+        "language": "German",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Vienna Airport (VIE)",
+        "local": "Tram, Bus, U-Bahn (subway)",
+        "bestTime": "October",
+        "bestTimeReason": "for pleasant outdoor activities",
+        "temperatureMin": "0°C in December",
+        "temperatureMax": "27°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Very Safe",
+        "healthcare": "Very Good",
+        "foodToTry": "Wiener Schnitzel (breaded and fried veal or pork), Sachertorte (chocolate cake), Apfelstrudel (apple strudel), and a variety of Austrian wines.",
+        "advice": "Enjoy a leisurely coffee in a traditional Viennese coffeehouse and savor a piece of cake. Visit Schönbrunn Palace, Belvedere Palace, and St. Stephen's Cathedral in the historic city center.",
+        "expediaLink": "https://expedia.com/affiliate/Xtb6ZWX",
+        "zoom": 3,
+        "center": [48.210033, 16.363449],
+        "images": [
+          {
+              "title": "Stephansplatz",
+              "image": "destinations/austria/vienna/photo-1558555574-2a1a6e347cf2.avif",
+              "author": "Dan V",
+              "link": "https://unsplash.com/fr/@dsvi"
+          },
+          {
+              "title": "Heldenplatz",
+              "image": "destinations/austria/vienna/photo-1609856878074-cf31e21ccb6b.avif",
+              "author": "Sandro Gonzalez",
+              "link": "https://unsplash.com/fr/@sandro"
+          },
+          {
+              "title": "Vienna by Night",
+              "image": "destinations/austria/vienna/photo-1516550893923-42d28e5677af.avif",
+              "author": "Jacek Dylag",
+              "link": "https://unsplash.com/fr/@dylu"
+          },
+          {
+              "title": "The Dessert",
+              "image": "destinations/austria/vienna/photo-1569896254409-ac66c17041d2.avif",
+              "author": "Tim Photoguy",
+              "link": "https://unsplash.com/fr/@tim0at0unsplash"
+          }
+        ]
+    },
+    {
+        "id": "dk-001",
+        "location": "Copenhagen",
+        "country": "Denmark",
+        "description": "A vibrant and progressive city known for its colorful historic waterfront, innovative cuisine, and a focus on sustainability. It's a city where you can explore a mix of old-world charm and modern Scandinavian design.",
+        "currency": "DKK",
+        "budget": "High",
+        "eat": "15",
+        "bed": "130",
+        "language": "Danish",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Copenhagen Airport (CPH)",
+        "local": "Bus, Metro, Cycling",
+        "bestTime": "July",
+        "bestTimeReason": "for festivals and events",
+        "temperatureMin": "-1°C in February",
+        "temperatureMax": "22°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Safe",
+        "healthcare": "Good",
+        "foodToTry": "Smørrebrød (open-faced sandwiches), Frikadeller (Danish meatballs), and traditional pastries like Wienerbrød (Danish pastries).",
+        "advice": "Explore the Tivoli Gardens, one of the world's oldest amusement parks. Visit the colorful Nyhavn waterfront and the iconic Little Mermaid statue by Hans Christian Andersen.",
+        "expediaLink": "https://expedia.com/affiliate/KJTKGg8",
+        "zoom": 3,
+        "center": [55.676098, 12.568337],
+        "images": [
+          {
+              "title": "Nihavn Canal",
+              "image": "destinations/denmark/copenhagen/photo-1557846978-e801fff1c245.avif",
+              "author": "Peter Lloyd",
+              "link": "https://unsplash.com/fr/@plloyd"
+          },
+          {
+              "title": "Rosenborg Castle",
+              "image": "destinations/denmark/copenhagen/photo-1594907912929-884e283e28a7.avif",
+              "author": "Javier Rincón",
+              "link": "https://unsplash.com/fr/@mj_rincon"
+          },
+          {
+              "title": "Axel Towers",
+              "image": "destinations/denmark/copenhagen/photo-1568567492302-a4e69fa3848c.avif",
+              "author": "Diego Gennaro",
+              "link": "https://unsplash.com/fr/@_nnaro_"
+          },
+          {
+              "title": "Little Mermaid",
+              "image": "destinations/denmark/copenhagen/photo-1583528163953-60e9b567185d.avif",
+              "author": "Ange Loron",
+              "link": "https://unsplash.com/fr/@angeloron"
+          }
+        ]
+    },
+    {
+        "id": "ma-001",
+        "location": "Marrakech",
+        "country": "Morocco",
+        "description": "A vibrant city known for its bustling medina, colorful souks, and a blend of Arab, Berber, and European influences. It's a place where you can experience the enchanting beauty of Moroccan culture and architecture.",
+        "currency": "MAD",
+        "budget": "Cheap",
+        "eat": "5",
+        "bed": "40",
+        "language": "Arabic, Berber and French",
+        "englishFriendly": "a little",
+        "transportation": "Average",
+        "reach": "Menara Airport (RAK)",
+        "local": "Taxis, Caleches",
+        "bestTime": "March",
+        "bestTimeReason": "for pleasant weather",
+        "temperatureMin": "6°C in January",
+        "temperatureMax": "37°C in July",
+        "visa": "Mostly free entry",
+        "safety": "Average",
+        "healthcare": "Low",
+        "foodToTry": "Tagine (slow-cooked stew), Couscous, Moroccan mint tea, Harira (a traditional soup), and pastries like Baklava.",
+        "advice": "Bargain when shopping in the souks; haggling is a common practice. Dress modestly and ask for permission before taking photos of people. Visit the Bahia Palace.",
+        "expediaLink": "https://expedia.com/affiliate/yy4zDNc",
+        "zoom": 3,
+        "center": [31.6341600, -7.9999400],
+        "images": [
+          {
+              "title": "Souk",
+              "image": "destinations/morocco/marrakech/photo-1587974928442-77dc3e0dba72.avif",
+              "author": "CALIN STAN",
+              "link": "https://unsplash.com/fr/@calinstan"
+          },
+          {
+              "title": "Camel Train",
+              "image": "destinations/morocco/marrakech/photo-1510952267577-fc96d5ca660a.avif",
+              "author": "Sergey Pesterev",
+              "link": "https://unsplash.com/fr/@sickle"
+          },
+          {
+              "title": "Snake Charming",
+              "image": "destinations/morocco/marrakech/photo-1528499640293-fe8fba1f28c4.avif",
+              "author": "Raúl Cacho Oses",
+              "link": "https://unsplash.com/fr/@raulcachophoto"
+          },
+          {
+              "title": "The Mosquee",
+              "image": "destinations/morocco/marrakech/photo-1597212618440-806262de4f6b.avif",
+              "author": "Paul Macallan",
+              "link": "https://unsplash.com/fr/@pemacallan"
+          }
+        ]
+    },
+    {
+        "id": "nz-001",
+        "location": "Auckland",
+        "country": "New Zealand",
+        "description": "New Zealand's largest city, known for its stunning natural beauty, diverse landscapes, and a thriving cultural scene. It's a place where you can explore beaches, volcanoes, and lush forests while enjoying a vibrant urban lifestyle.",
+        "currency": "NZD",
+        "budget": "Average",
+        "eat": "12",
+        "bed": "90",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Easy",
+        "reach": "Auckland Airport (AKL)",
+        "local": "Buses, Trains",
+        "bestTime": "January",
+        "bestTimeReason": "for summer warmth",
+        "temperatureMin": "7°C in July",
+        "temperatureMax": "24°C in January",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Lamb, seafood (Green-lipped mussels and Bluff oysters), Pavlova (meringue dessert), and Maori hangi (traditional method of cooking).",
+        "advice": "Enjoy a day trip to the Waitakere Ranges for rainforest walks and waterfalls. Experience the indigenous Maori culture and attend a cultural performance. Take a ferry to Waiheke Island for wine tasting and beautiful beaches.",
+        "expediaLink": "https://expedia.com/affiliate/xWhMxpL",
+        "zoom": 3,
+        "center": [-36.848461, 174.763336],
+        "images": [
+          {
+              "title": "Sea Front",
+              "image": "destinations/new-zealand/auckland/photo-1507699622108-4be3abd695ad.avif",
+              "author": "Dan Freeman",
+              "link": "https://unsplash.com/fr/@danfreemanphoto"
+          },
+          {
+              "title": "Piha Beach",
+              "image": "destinations/new-zealand/auckland/photo-1577940855479-63ea3d0cfa6a.avif",
+              "author": "Lean Xview",
+              "link": "https://unsplash.com/fr/@leanxview"
+          },
+          {
+              "title": "Mount Eden",
+              "image": "destinations/new-zealand/auckland/photo-1574791326400-feb1a7a4527b.avif",
+              "author": "AR",
+              "link": "https://unsplash.com/fr/@ar__"
+          },
+          {
+              "title": "Waiheke Island",
+              "image": "destinations/new-zealand/auckland/photo-1562621363-ae6252f121d7.avif",
+              "author": "Jil Beckmann",
+              "link": "https://unsplash.com/fr/@jilian"
+          }
+        ]
+    },
+    {
+        "id": "gb-sct-001",
+        "location": "Edinburgh",
+        "country": "Scotland",
+        "description": "The capital city of Scotland, known for its historic and cultural significance. It offers a unique blend of medieval and modern, from its historic Old Town to the striking architecture of the New Town.",
+        "currency": "GBP",
+        "budget": "Average",
+        "eat": "13",
+        "bed": "100",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Easy",
+        "reach": "Edinburgh Airport (EDI)",
+        "local": "Buses, Trams, Walk",
+        "bestTime": "August",
+        "bestTimeReason": "for the Festival",
+        "temperatureMin": "1°C in January",
+        "temperatureMax": "19°C in July",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Haggis, Neeps and Tatties (haggis, turnips, and potatoes), Scottish Salmon, Shortbread, and Whisky.",
+        "advice": "Wander through Holyrood Palace and the adjacent Holyrood Park, which includes Arthur's Seat, an ancient volcano and visit the historic Edinburgh Castle, perched on an extinct volcano, and take in the panoramic views.",
+        "expediaLink": "https://expedia.com/affiliate/XPFcbPR",
+        "zoom": 3,
+        "center": [55.953252, -3.188267],
+        "images": [
+          {
+              "title": "Arthur's Seat",
+              "image": "destinations/scotland/edinburgh/photo-1597350843494-3a2dceb1f3d4.avif",
+              "author": "Evy Prentice",
+              "link": "https://unsplash.com/fr/@evy_prentice"
+          },
+          {
+              "title": "Calton Hill",
+              "image": "destinations/scotland/edinburgh/photo-1595599014147-a419c147bdc0.avif",
+              "author": "Connor Mollison",
+              "link": "https://unsplash.com/fr/@connormollison"
+          },
+          {
+              "title": "Clock Tower",
+              "image": "destinations/scotland/edinburgh/photo-1557425769-de134747b1f6.avif",
+              "author": "Jure Tufekcic",
+              "link": "https://unsplash.com/fr/@tufo"
+          },
+          {
+              "title": "Dean Village",
+              "image": "destinations/scotland/edinburgh/photo-1610991136128-838ca3c5497b.avif",
+              "author": "Cameron Gibson",
+              "link": "https://unsplash.com/fr/@cgcreates"
+          }
+        ]
+    },
+    {
+        "id": "hr-001",
+        "location": "Dubrovnik",
+        "country": "Croatia",
+        "description": "A picturesque coastal city located on the Adriatic Sea. It's renowned for its well-preserved medieval walls, historic Old Town, and stunning views of the sea. Dubrovnik is often called the \"Pearl of the Adriatic\".",
+        "currency": "HRK",
+        "budget": "Average",
+        "eat": "14",
+        "bed": "71",
+        "language": "Croatian",
+        "englishFriendly": "commonly",
+        "transportation": "Easy",
+        "reach": "Dubrovnik Airport (DBV)",
+        "local": "Buses, Boats, Walk",
+        "bestTime": "June",
+        "bestTimeReason": "for less crowd",
+        "temperatureMin": "7°C in January",
+        "temperatureMax": "30°C in July",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Peka (roasted meat and vegetables), seafood dishes, Crni Rižot (black risotto), and traditional sweets like Rozata (caramel flan).",
+        "advice": "Visit the ancient Fort Lovrijenac, which offers great views and is known for its role in the TV series \"Game of Thrones\". Take a boat trip to the nearby Elafiti Islands and enjoy pristine beaches and clear waters.",
+        "expediaLink": "https://expedia.com/affiliate/W8G2AbN",
+        "zoom": 3,
+        "center": [42.640278, 18.108334],
+        "images": [
+          {
+              "title": "Marina",
+              "image": "destinations/croatia/dubrovnik/photo-1555990793-da11153b2473.avif",
+              "author": "Spencer Davis",
+              "link": "https://unsplash.com/fr/@spencerdavis"
+          },
+          {
+              "title": "City Walls",
+              "image": "destinations/croatia/dubrovnik/photo-1575540291670-8d3b26f7d327.avif",
+              "author": "Matthias Mullie",
+              "link": "https://unsplash.com/fr/@matthiasmullie"
+          },
+          {
+              "title": "Night Life",
+              "image": "destinations/croatia/dubrovnik/photo-1566931476788-47984a25beea.avif",
+              "author": "Patricia Jekki",
+              "link": "https://unsplash.com/fr/@jekkilicious"
+          },
+          {
+              "title": "The Cliffs",
+              "image": "destinations/croatia/dubrovnik/photo-1610106109549-5813ab87ae88.avif",
+              "author": "Datingjungle",
+              "link": "https://unsplash.com/fr/@datingjungle"
+          }
+        ]
+    },
+    {
+        "id": "jo-001",
+        "location": "Amman",
+        "country": "Jordan",
+        "description": "The capital and largest city of Jordan, known for its rich history, ancient ruins, and a vibrant blend of modern and traditional culture. It's a city where you can explore archaeological wonders, sample Middle Eastern cuisine, and experience Jordanian hospitality.",
+        "currency": "JOD",
+        "budget": "Average",
+        "eat": "14",
+        "bed": "70",
+        "language": "Arabic",
+        "englishFriendly": "in tourist areas",
+        "transportation": "Easy",
+        "reach": "Queen Alia Airport (AMM)",
+        "local": "Taxis, Buses",
+        "bestTime": "May",
+        "bestTimeReason": "for pleasant weather",
+        "temperatureMin": "3°C in January",
+        "temperatureMax": "32°C in July",
+        "visa": "Visa on arrival",
+        "safety": "Mostly Safe",
+        "healthcare": "Average",
+        "foodToTry": "Mansaf (traditional Jordanian dish), Falafel, Shawarma, Knafeh (sweet dessert), and Jordanian tea with herbs.",
+        "advice": "Take a day trip to Petra, the Rose City, to see its famous archaeological site. Be mindful of local customs, dress modestly, and ask for permission before taking photos of people.",
+        "expediaLink": "https://expedia.com/affiliate/puHAZAa",
+        "zoom": 3,
+        "center": [31.963158, 35.930359],
+        "images": [
+          {
+              "title": "Petra",
+              "image": "destinations/jordan/amman/photo-1615811500147-22262d0efdf1.avif",
+              "author": "Brian Kairuz",
+              "link": "https://unsplash.com/fr/@briankairuz"
+          },
+          {
+              "title": "The City",
+              "image": "destinations/jordan/amman/photo-1604157886233-08985afc49e9.avif",
+              "author": "Hisham Zayadneh",
+              "link": "https://unsplash.com/fr/@hisham_zayadneh"
+          },
+          {
+              "title": "The Citadel",
+              "image": "destinations/jordan/amman/photo-1604157885732-7e01d860de1e.avif",
+              "author": "Hisham Zayadneh",
+              "link": "https://unsplash.com/fr/@hisham_zayadneh"
+          },
+          {
+              "title": "The Countryside",
+              "image": "destinations/jordan/amman/photo-1630159385480-2f3ddbc307cd.avif",
+              "author": "Daniel Qura",
+              "link": "https://unsplash.com/fr/@danielqura"
+          }
+        ]
+    },
+    {
+        "id": "se-001",
+        "location": "Stockholm",
+        "country": "Sweden",
+        "description": "The capital and largest city of Sweden, known for its scenic archipelago, historic Old Town, and modern Scandinavian design. It's a city that offers a harmonious blend of natural beauty, history, and contemporary culture.",
+        "currency": "SEK",
+        "budget": "High",
+        "eat": "14",
+        "bed": "110",
+        "language": "Swedish",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Arlanda Airport (ARN)",
+        "local": "Buses, Trams, Subway, Bike",
+        "bestTime": "July",
+        "bestTimeReason": "for festivals and weather",
+        "temperatureMin": "-3°C in January",
+        "temperatureMax": "24°C in July",
+        "visa": "Mostly free entry",
+        "safety": "Very Safe",
+        "healthcare": "Very High",
+        "foodToTry": "Meatballs (Köttbullar), Gravad lax (cured salmon), Herring, Swedish cinnamon buns, and try traditional dishes like Raggmunk (potato pancakes).",
+        "advice": "Explore the historic Gamla Stan (Old Town) with its narrow cobblestone streets and colorful buildings. Take a boat tour of the Stockholm archipelago and explore its islands.",
+        "expediaLink": "https://expedia.com/affiliate/BIJJ4h0",
+        "zoom": 3,
+        "center": [59.334591, 18.063240],
+        "images": [
+          {
+              "title": "Clock Tower",
+              "image": "destinations/sweden/stockholm/photo-1584475242790-6838d981ebdb.avif",
+              "author": "Patrik Carlberg",
+              "link": "https://unsplash.com/fr/@patcarl"
+          },
+          {
+              "title": "Mariaberget",
+              "image": "destinations/sweden/stockholm/photo-1509356843151-3e7d96241e11.avif",
+              "author": "Raphael Andres",
+              "link": "https://unsplash.com/fr/@raphaeldas"
+          },
+          {
+              "title": "The Streets",
+              "image": "destinations/sweden/stockholm/photo-1611600382820-b7d6214847c5.avif",
+              "author": "Mike Kienle",
+              "link": "https://unsplash.com/fr/@like_that_mike"
+          },
+          {
+              "title": "Kanelbullar",
+              "image": "destinations/sweden/stockholm/photo-1552632196-9442133181d3.avif",
+              "author": "Jessica Guzik",
+              "link": "https://unsplash.com/fr/@jessicaguzik"
+          }
+        ]
+    },
+    {
+        "id": "pl-001",
+        "location": "Kraków",
+        "country": "Poland",
+        "description": "One of Poland's oldest and most charming cities, known for its well-preserved medieval Old Town, historic architecture, and cultural richness. It's a city where you can explore centuries of history, art, and tradition.",
+        "currency": "PLN",
+        "budget": "Average",
+        "eat": "10",
+        "bed": "50",
+        "language": "Polish",
+        "englishFriendly": "a little",
+        "transportation": "Easy",
+        "reach": "John Paul II Airport (KRK)",
+        "local": "Buses, Trams",
+        "bestTime": "June",
+        "bestTimeReason": "for the weather",
+        "temperatureMin": "-6°C in January",
+        "temperatureMax": "24°C in July",
+        "visa": "Mostly free entry",
+        "safety": "Not Very Safe",
+        "healthcare": "Average",
+        "foodToTry": "Pierogi (dumplings), Bigos (hunter's stew), Kielbasa (sausage), and enjoy Polish desserts like Makowiec (poppy seed cake).",
+        "advice": "Take a day trip to the stunning Wieliczka Salt Mine, an underground marvel. Explore the historic Old Town and visit Main Market Square and Wawel Castle.",
+        "expediaLink": "https://expedia.com/affiliate/n9yMFIe",
+        "zoom": 3,
+        "center": [50.049683, 19.944544],
+        "images": [
+          {
+              "title": "City Center",
+              "image": "destinations/poland/krakow/photo-1559392682-9cdd066a8d02.avif",
+              "author": "Lucas Albuquerque",
+              "link": "https://unsplash.com/fr/@luucasfotos"
+          },
+          {
+              "title": "Rynek Główny",
+              "image": "destinations/poland/krakow/photo-1522689764216-4e6966e5e444.avif",
+              "author": "Lucas Albuquerque",
+              "link": "https://unsplash.com/fr/@luucasfotos"
+          },
+          {
+              "title": "Horse Carriage",
+              "image": "destinations/poland/krakow/photo-1563627042004-362887667513.avif",
+              "author": "Stephen Doyne",
+              "link": "https://unsplash.com/fr/@steodoyne"
+          },
+          {
+              "title": "Przegorzały",
+              "image": "destinations/poland/krakow/photo-1473587184616-a3095989df0a.avif",
+              "author": "Sylwia Bartyzel",
+              "link": "https://unsplash.com/fr/@sylwiabartyzel"
           }
         ]
     }
