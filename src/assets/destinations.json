@@ -1064,7 +1064,7 @@
         "location": "Dubrovnik",
         "country": "Croatia",
         "description": "A picturesque coastal city located on the Adriatic Sea. It's renowned for its well-preserved medieval walls, historic Old Town, and stunning views of the sea. Dubrovnik is often called the \"Pearl of the Adriatic\".",
-        "currency": "HRK",
+        "currency": "EUR",
         "budget": "Average",
         "eat": "14",
         "bed": "71",
@@ -1268,6 +1268,324 @@
               "image": "destinations/poland/krakow/photo-1473587184616-a3095989df0a.avif",
               "author": "Sylwia Bartyzel",
               "link": "https://unsplash.com/fr/@sylwiabartyzel"
+          }
+        ]
+    },
+    {
+        "id": "ca-001",
+        "location": "Vancouver",
+        "country": "Canada",
+        "description": "A vibrant coastal city located on the west coast of Canada. It's celebrated for its stunning natural scenery, diverse neighborhoods, and a thriving arts and culture scene. Vancouver is often called one of the most beautiful cities in the world.",
+        "currency": "CAD",
+        "budget": "High",
+        "eat": "15",
+        "bed": "110",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Easy",
+        "reach": "Vancouver Airport (YVR)",
+        "local": "SkyTrain, Buses, Seabus",
+        "bestTime": "All year round",
+        "bestTimeReason": " for different experiences",
+        "temperatureMin": "3°C in January",
+        "temperatureMax": "22°C in July",
+        "visa": "UE and US free entry",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Poutine, Nanaimo Bars, Wild Salmon, and a variety of international cuisines in the city's diverse restaurants.",
+        "advice": "Visit Granville Island Public Market for artisan foods and unique crafts. Explore Stanley Park, a massive urban park with seawall biking and walking trails.",
+        "expediaLink": "https://expedia.com/affiliate/63fM9sF",
+        "zoom": 3,
+        "center": [49.2496600, -123.1193400],
+        "images": [
+          {
+              "title": "Lions Gate Bridge",
+              "image": "destinations/canada/vancouver/photo-1578961509811-1f55a380e31f.avif",
+              "author": "Jeffrey Eisen",
+              "link": "https://unsplash.com/fr/@jeisen"
+          },
+          {
+              "title": "The Sea",
+              "image": "destinations/canada/vancouver/photo-1559510859-42b76a39988f.avif",
+              "author": "Mike Benna",
+              "link": "https://unsplash.com/fr/@mbenna"
+          },
+          {
+              "title": "The Mountain",
+              "image": "destinations/canada/vancouver/photo-1553164995-1fe011843ba8.avif",
+              "author": "Nate Foong",
+              "link": "https://unsplash.com/fr/@hoehoeyay"
+          },
+          {
+              "title": "Night Lights",
+              "image": "destinations/canada/vancouver/photo-1544161497-6095fb868d58.avif",
+              "author": "Aditya Chinchure",
+              "link": "https://unsplash.com/fr/@adityachinchure"
+          }
+        ]
+    },
+    {
+        "id": "pt-001",
+        "location": "Lisbon",
+        "country": "Portugal",
+        "description": "The capital of Portugal is a city of historic charm, stunning vistas, and a rich maritime heritage. It's known for its colorful neighborhoods, beautiful tiled facades, and a warm, welcoming atmosphere.",
+        "currency": "EUR",
+        "budget": "High",
+        "eat": "16",
+        "bed": "85",
+        "language": "Portuguese",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Lisbon Portela Airport (LIS)",
+        "local": "Tram, Bus, Funicular",
+        "bestTime": "June",
+        "bestTimeReason": " for pleasant weather",
+        "temperatureMin": "8°C in January",
+        "temperatureMax": "28°C in July",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Pastéis de Nata (custard tarts), Bacalhau à Brás (salted cod), Sardines, and the famous Portuguese wines.",
+        "advice": "Visit Belém to see iconic landmarks like the Jerónimos Monastery and Belém Tower. Take a tram ride through the hilly streets of Lisbon for picturesque views.",
+        "expediaLink": "https://expedia.com/affiliate/iPcDze5",
+        "zoom": 3,
+        "center": [38.736946, -9.142685],
+        "images": [
+          {
+              "title": "Orange Rooftops",
+              "image": "destinations/portugal/lisbon/photo-1578859651203-c7126a106b59.avif",
+              "author": "Louis Droege",
+              "link": "https://unsplash.com/fr/@lois184"
+          },
+          {
+              "title": "25 de Abril Bridge",
+              "image": "destinations/portugal/lisbon/photo-1558102400-72da9fdbecae.avif",
+              "author": "Svetlana Gumerova",
+              "link": "https://unsplash.com/fr/@bananablackcat"
+          },
+          {
+              "title": "Funicular",
+              "image": "destinations/portugal/lisbon/photo-1599069158346-684fee0e414a.avif",
+              "author": "André Lergier",
+              "link": "https://unsplash.com/fr/@andrelergier"
+          },
+          {
+              "title": "Strada Rosa",
+              "image": "destinations/portugal/lisbon/photo-1559163806-3ca824710bf8.avif",
+              "author": "Sara Darcaj",
+              "link": "https://unsplash.com/fr/@saradarcaj"
+          }
+        ]
+    },
+    {
+        "id": "hu-001",
+        "location": "Budapest",
+        "country": "Hungary",
+        "description": "The capital of Hungary, renowned for its stunning architecture, rich history, and thermal baths. It's a city where you can explore a fascinating mix of grandiose landmarks and a vibrant cultural scene.",
+        "currency": "HUF",
+        "budget": "Average",
+        "eat": "9",
+        "bed": "57",
+        "language": "Hungarian",
+        "englishFriendly": "a little",
+        "transportation": "Easy",
+        "reach": "Ferenc Liszt Airport (BUD)",
+        "local": "Tram, Bus, Metro",
+        "bestTime": "September",
+        "bestTimeReason": " for pleasant weather",
+        "temperatureMin": "-2°C in January",
+        "temperatureMax": "28°C in July",
+        "visa": "Mostly free entry",
+        "safety": "Mostly Safe",
+        "healthcare": "Average",
+        "foodToTry": "Goulash, Lángos (deep-fried flatbread), Chimney Cake (Kürtőskalács), Hungarian wines and palinka (fruit brandy).",
+        "advice": "Visit the Széchenyi Thermal Bath or Gellért Thermal Bath for a relaxing spa experience. Stroll along the Danube Promenade to see historic landmarks and beautiful views.",
+        "expediaLink": "https://expedia.com/affiliate/9O7chv3",
+        "zoom": 3,
+        "center": [47.497913, 19.040236],
+        "images": [
+          {
+              "title": "Cathedral",
+              "image": "destinations/hungary/budapest/photo-1616432902940-b7a1acbc60b3.avif",
+              "author": "Ervin Lukacs",
+              "link": "https://unsplash.com/fr/@lukerv4"
+          },
+          {
+              "title": "Romantic Sunset",
+              "image": "destinations/hungary/budapest/photo-1577366773073-a57cdf7132cb.avif",
+              "author": "Tobias Reich",
+              "link": "https://unsplash.com/fr/@electerious"
+          },
+          {
+              "title": "Szechenyi Baths",
+              "image": "destinations/hungary/budapest/photo-1629182585837-96b0f31301b9.avif",
+              "author": "Linda Gerbec",
+              "link": "https://unsplash.com/fr/@lsgerbec"
+          },
+          {
+              "title": "Margaret Bridge",
+              "image": "destinations/hungary/budapest/photo-1576660016828-1d73950e9d2b.avif",
+              "author": "Anna Hunko",
+              "link": "https://unsplash.com/fr/@annahunko"
+          }
+        ]
+    },
+    {
+        "id": "pe-001",
+        "location": "Machu Picchu",
+        "country": "Peru",
+        "description": "Machu Picchu is an ancient Inca citadel located high in the Andes Mountains of Peru. It is one of the most iconic archaeological sites in the world, known for its breathtaking location, well-preserved ruins, and historical significance.",
+        "currency": "PEN",
+        "budget": "Average",
+        "eat": "7",
+        "bed": "54",
+        "language": "Spanish, Quechua",
+        "englishFriendly": "in tourist areas",
+        "transportation": "Hard",
+        "reach": "Alejandro-Velasco-Astete Airport (CUZ)",
+        "local": "Train, Bus",
+        "bestTime": "July",
+        "bestTimeReason": " for dry season",
+        "temperatureMin": "0°C in July",
+        "temperatureMax": "21°C in October",
+        "visa": "Mostly free entry",
+        "safety": "Mostly Safe",
+        "healthcare": "Low",
+        "foodToTry": "Ceviche, Lomo Saltado, and Aji de Gallina, Quinoa and the refreshing Pisco Sour cocktail.",
+        "advice": "Hike the famous Inca Trail for a challenging and rewarding journey to Machu Picchu. Visit the Sun Gate (Inti Punku) for stunning views of the citadel.",
+        "expediaLink": "https://expedia.com/affiliate/rmTB6lD",
+        "zoom": 3,
+        "center": [-13.163068, -72.545128],
+        "images": [
+          {
+              "title": "Pueblo",
+              "image": "destinations/peru/machu-picchu/photo-1580619305218-8423a7ef79b4.avif",
+              "author": "Victor He",
+              "link": "https://unsplash.com/fr/@victorhwn725"
+          },
+          {
+              "title": "Llama",
+              "image": "destinations/peru/machu-picchu/photo-1584031752283-59849645c0e9.avif",
+              "author": "Irina Savcenko",
+              "link": "https://unsplash.com/fr/@irinaliene"
+          },
+          {
+              "title": "Aguas Calientes (nearby village)",
+              "image": "destinations/peru/machu-picchu/photo-1465513670158-c3ac6c8d1a87.avif",
+              "author": "Ashim D’Silva",
+              "link": "https://unsplash.com/fr/@randomlies"
+          },
+          {
+              "title": "Rusted Railroad",
+              "image": "destinations/peru/machu-picchu/photo-1522849917652-bd197c101ecc.avif",
+              "author": "Christopher Burns",
+              "link": "https://unsplash.com/fr/@christopher__burns"
+          }
+        ]
+    },
+    {
+        "id": "id-001",
+        "location": "Bali",
+        "country": "Indonesia",
+        "description": "An island paradise known for its lush landscapes, beautiful beaches, and vibrant culture. It offers a perfect blend of natural beauty, spirituality, and Indonesian traditions.",
+        "currency": "IDR",
+        "budget": "Low",
+        "eat": "4",
+        "bed": "32",
+        "language": "Bahasa",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Ngurah Rai Airport (DPS)",
+        "local": "Taxi, Shuttle",
+        "bestTime": "August",
+        "bestTimeReason": " for dry season",
+        "temperatureMin": "22°C in August",
+        "temperatureMax": "34°C in April",
+        "visa": "Visa on arrival",
+        "safety": "Mostly Safe",
+        "healthcare": "Average",
+        "foodToTry": "Nasi Goreng (fried rice), Mie Goreng (fried noodles), Satay (grilled skewers), and savory rendang.",
+        "advice": "Explore the picturesque rice terraces of Ubud. Visit the stunning Uluwatu Temple perched on a cliff overlooking the Indian Ocean.",
+        "expediaLink": "https://expedia.com/affiliate/6wZz236",
+        "zoom": 3,
+        "center": [-8.409518, 115.188919],
+        "images": [
+          {
+              "title": "Nusa Penida",
+              "image": "destinations/indonesia/bali/photo-1582880421648-a7154a8c99c1.avif",
+              "author": "Darren Lawrence",
+              "link": "https://unsplash.com/fr/@wild_away"
+          },
+          {
+              "title": "Tanah Lot Temple",
+              "image": "destinations/indonesia/bali/photo-1518548419970-58e3b4079ab2.avif",
+              "author": "Harry Kessell",
+              "link": "https://unsplash.com/fr/@harrykessell"
+          },
+          {
+              "title": "Tegallagang",
+              "image": "destinations/indonesia/bali/photo-1555400038-63f5ba517a47.avif",
+              "author": "Niklas Weiss",
+              "link": "https://unsplash.com/fr/@treesoftheplanet"
+          },
+          {
+              "title": "Ganesh Chaturthi",
+              "image": "destinations/indonesia/bali/photo-1539014861783-7ac37e9d290c.avif",
+              "author": "Artem Beliaikin",
+              "link": "https://unsplash.com/fr/@belart84"
+          }
+        ]
+    },
+    {
+        "id": "tz-001",
+        "location": "Zanzibar",
+        "country": "Tanzania",
+        "description": "An enchanting tropical archipelago off the coast of Tanzania, known for its pristine beaches, historic Stone Town, and a rich blend of African, Arab, and Indian cultures.",
+        "currency": "TZS",
+        "budget": "Very Low",
+        "eat": "4",
+        "bed": "16",
+        "language": "Swahili",
+        "englishFriendly": "widely",
+        "transportation": "Average",
+        "reach": "Abeid Amani Karume Airport (ZNZ)",
+        "local": "Taxi",
+        "bestTime": "August",
+        "bestTimeReason": " for dry season",
+        "temperatureMin": "21°C in August",
+        "temperatureMax": "33°C in February",
+        "visa": "Visa on arrival",
+        "safety": "Mostly Safe",
+        "healthcare": "Low",
+        "foodToTry": "Biryani, Zanzibar Mix (a spicy seafood and noodle dish), and exotic fruits like jackfruit and passionfruit.",
+        "advice": "Explore the historic Stone Town, the Sultan's Palace, the House of Wonders, and the Old Fort. Snorkel or dive in the clear waters to discover vibrant coral reefs and marine life.",
+        "expediaLink": "https://expedia.com/affiliate/H5bN4Q9",
+        "zoom": 3,
+        "center": [-6.16394, 39.19793],
+        "images": [
+          {
+              "title": "Seafront",
+              "image": "destinations/tanzania/zanzibar/photo-1575999502951-4ab25b5ca889.avif",
+              "author": "Humphrey Muleba",
+              "link": "https://unsplash.com/fr/@good_citizen"
+          },
+          {
+              "title": "Palm Trees",
+              "image": "destinations/tanzania/zanzibar/photo-1592229506490-dda533630362.avif",
+              "author": "reisetopia",
+              "link": "https://unsplash.com/fr/@reisetopia"
+          },
+          {
+              "title": "Ghost Crab",
+              "image": "destinations/tanzania/zanzibar/photo-1610208738282-3a84bf421d45.avif",
+              "author": "Rafal Jedrzejek",
+              "link": "https://unsplash.com/fr/@snik3rs"
+          },
+          {
+              "title": "Milky Way",
+              "image": "destinations/tanzania/zanzibar/photo-1532011450101-0d3bbf647054.avif",
+              "author": "Hendrik Cornelissen",
+              "link": "https://unsplash.com/fr/@the_bracketeer"
           }
         ]
     }

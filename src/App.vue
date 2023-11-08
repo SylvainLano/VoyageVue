@@ -27,26 +27,22 @@
   </div>
   
   <transition name="lateral-fade">
-    <div class="bg-slate-50 flex-col bg-opacity-50 absolute text-slate-900 h-full w-full top-0 left-0 z-40 p-20 overflow-hidden"
+    <div class="bg-slate-50 flex-col bg-opacity-50 absolute text-slate-900 h-full w-full top-0 left-0 z-40 p-[5%] overflow-hidden"
     v-if="showFullMap && !mobileDisplay">
       <div class="absolute h-screen w-screen top-0 left-0" @click="hideFullMap">
       </div>
-      <div class="relative text-lg m-auto bg-slate-50 text-center flex flex-row mb-1">
-          <div class="basis-1/5">
-          </div>
-          <div class="basis-1/5 text-green-700">
+      <div :class="worldMapClass">
+          <div class="basis-1/3 text-green-700 text-right pr-2">
             <input class="mx-1" type="checkbox" id="starredBox" v-model="hideStarred" :disabled="starredDestinationData.length === 0" />
             <label for="starredBox" :style="{ color: starredDestinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ starredDestinationData.length }} Starred</label>
           </div>
-          <div class="basis-1/5 text-red-700">
+          <div class="basis-1/3 text-red-700 text-center">
             <input class="mx-1" type="checkbox" id="bannedBox" v-model="hideBanned" :disabled="bannedDestinationData.length === 0" />
             <label for="bannedBox" :style="{ color: bannedDestinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ bannedDestinationData.length }} Banned</label>
           </div>
-          <div class="basis-1/5 text-cyan-700">
+          <div class="basis-1/3 text-cyan-700 text-left pl-2">
             <input class="mx-1" type="checkbox" id="unmarkedBox" v-model="hideUnmarked" :disabled="destinationData.length === 0" />
             <label for="unmarkedBox"  :style="{ color: destinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ destinationData.length }} Unmarked</label>
-          </div>
-          <div class="basis-1/5">
           </div>
       </div>
       <div class="h-full w-full m-auto">
@@ -63,13 +59,13 @@
             v-for="(destination, index) in bannedDestinationData"
             :key="'banned_' + index"
             :lat-lng="destination.center"
-            :title="destination.location + ' - ' + destination.country"
             @click="nextDestination(destination.id)"
           >
             <l-icon
               :icon-url="require('@/assets/images/markers/marker-icon-red.png')"
               :icon-anchor="[25/2,41]"
             />
+            <l-tooltip>{{ destination.location + ' - ' + destination.country }}</l-tooltip>
           </l-marker>
           </l-layer-group>
 
@@ -78,13 +74,13 @@
               v-for="(destination, index) in starredDestinationData"
               :key="'starred_' + index"
               :lat-lng="destination.center"
-              :title="destination.location + ' - ' + destination.country"
               @click="nextDestination(destination.id)"
             >
               <l-icon
                 :icon-url="require('@/assets/images/markers/marker-icon-green.png')"
                 :icon-anchor="[25/2,41]"
               />
+              <l-tooltip>{{ destination.location + ' - ' + destination.country }}</l-tooltip>
             </l-marker>
           </l-layer-group>
 
@@ -93,9 +89,9 @@
               v-for="(destination, index) in destinationData"
               :key="'unmarked_' + index"
               :lat-lng="destination.center"
-              :title="destination.location + ' - ' + destination.country"
               @click="nextDestination(destination.id)"
             >
+            <l-tooltip>{{ destination.location + ' - ' + destination.country }}</l-tooltip>
             </l-marker>
           </l-layer-group>
         </l-map>
@@ -125,100 +121,101 @@
       </div>
     </transition>
   </div>
+
   <div class="absolute origin-top-left z-20 top-0" :style="{ width: `${widthMenuSize}px`, transform: `scale(${scaleFactor})` }">
     <transition name="slide-fade">
-    <div class="relative bg-slate-50 p-4" :style="{ height: `${heightMenuSize}px`}" v-if="showMenu">
-      <div class="font-mono text-4xl text-slate-900 text-left flex justify-between">
-        <div class="mx-3 cursor-pointer" @click="toggleReservationMenu">
-          {{ currentDestination.location }}
+      <div class="relative bg-slate-50 p-4" :style="{ height: `${heightMenuSize}px`}" v-if="showMenu">
+        <div class="font-mono text-4xl text-slate-900 text-left flex justify-between">
+          <div class="mx-3 cursor-pointer" @click="toggleReservationMenu">
+            {{ currentDestination.location }}
+          </div>
+          <div class="text-slate-900 cursor-pointer" v-if="!isStarred(currentDestination.id) && !isBanned(currentDestination.id)" @click="toggleStarFromMenu" title="Add this destination to your favorites!">
+            <font-awesome-icon :icon="['far', 'star']" :bounce="isBeating" :transform="'shrink-'+starShrink" />
+          </div>
+          <div class="text-emerald-400 cursor-pointer" v-else-if="!isBanned(currentDestination.id)" @click="toggleStarFromMenu" title="Remove this destination from your favorites.">
+            <font-awesome-icon :icon="['fas', 'star']" :spin="isBeating" :transform="'shrink-'+starShrink" />
+          </div>
         </div>
-        <div class="text-slate-900 cursor-pointer" v-if="!isStarred(currentDestination.id) && !isBanned(currentDestination.id)" @click="toggleStarFromMenu" title="Add this destination to your favorites!">
-          <font-awesome-icon :icon="['far', 'star']" :bounce="isBeating" :transform="'shrink-'+starShrink" />
+        <div class="font-mono text-2xl text-slate-700 text-right align-center">
+          <span :class="flagClass"></span>{{ currentDestination.country }}
         </div>
-        <div class="text-emerald-400 cursor-pointer" v-else-if="!isBanned(currentDestination.id)" @click="toggleStarFromMenu" title="Remove this destination from your favorites.">
-          <font-awesome-icon :icon="['fas', 'star']" :spin="isBeating" :transform="'shrink-'+starShrink" />
+        <div class="font-mono text-xs text-slate-700 text-justify my-5">
+          {{ currentDestination.description }}
         </div>
-      </div>
-      <div class="font-mono text-2xl text-slate-700 text-right align-center">
-        <span :class="flagClass"></span>{{ currentDestination.country }}
-      </div>
-      <div class="font-mono text-xs text-slate-700 text-justify my-5">
-        {{ currentDestination.description }}
-      </div>
-      <div class="h-32 bg-slate-600">
-        <l-map 
-          ref="map"
-          :zoom="currentDestination.zoom"
-          :center="currentDestination.center"
-          :options="{ zoomControl: false, attributionControl: false }"
-        >
-          <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
-          <l-marker :lat-lng="currentDestination.center"></l-marker>
-        </l-map>
-      </div> 
-      <div :class="budgetColorClass">
-        <font-awesome-icon :icon="['fas', 'money-check-dollar']" size="lg" />
-        {{ currentDestination.budget }} Cost - {{ currencyData.code }}
-      </div>
-      <div class="font-mono text-xs text-slate-700 text-center italic">
-        $10 is worth {{ currencyData.equivalentInCurrency }} {{ currencyData.name }}<br />
-      </div>
-      <div class="font-mono text-xs text-slate-700 text-center mb-5 italic">
-        <span class="text-amber-700">Eat for ${{ currentDestination.eat }}</span>
-        -
-        <span class="text-amber-700">Sleep for ${{ currentDestination.bed }}</span>
-      </div>
-      <div class="font-mono text-sm text-slate-700 text-center">
-        <span  :class="languageColorClass">
-          <font-awesome-icon :icon="['fas', 'language']" size="lg" />
-          {{ currentDestination.language }}
-        </span>
-      </div>
-      <div class="font-mono text-xs text-amber-700 text-center mb-5 italic" v-if="currentDestination.language.toLowerCase() !== 'english'">
-        English is spoken {{ currentDestination.englishFriendly }}
-      </div>
-      <div :class="transportationColorClass">
-          <font-awesome-icon :icon="['fas', 'plane']" size="lg" />
-          {{ currentDestination.reach }}
-      </div>
-      <div class="font-mono text-xs text-slate-700 text-center mb-5 italic">
-        <span class="text-amber-700">{{ currentDestination.local }}</span>
-      </div>
-      <div class="font-mono text-sm text-green-700 text-center mt-5">
-        Visit in {{ currentDestination.bestTime }} {{ currentDestination.bestTimeReason }}
-      </div>
-      <div class="font-mono text-xs text-amber-700 text-center mb-5 italic">
-        {{ currentDestination.temperatureMin }} to {{ currentDestination.temperatureMax }}
-      </div>
-      <div class="absolute bottom-0 left-0 right-0 p-4 text-right">   
-        <div class="text-slate-500 cursor-pointer text-xl" v-if="!isStarred(currentDestination.id) && !isBanned(currentDestination.id)" @click="banToggle" title="Never show this destination anymore.">
-          <font-awesome-icon :icon="['far', 'circle-xmark']" :transform="'shrink-'+banShrink" />
-        </div>
-        <div class="text-red-600 cursor-pointer text-xl" v-else-if="!isStarred(currentDestination.id)" @click="banToggle" title="Bring this destination back on tracks!">
-          <font-awesome-icon :icon="['fas', 'circle-xmark']" :bounce="isBeating" :transform="'shrink-'+banShrink" />
-        </div>
-        <div class="font-mono text-center mt-5">
-          <button class="py-2 px-3 bg-indigo-300 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
-          @click="previousDestination"
-          title="Go back to the previous destination!"
-          v-if="breadCrumbs.length !== 0">
-            Previous
-          </button>
-          <button class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
-          @click="nextDestination"
-          title="Discover a new destination!"
-          v-if="!noMoreUnseenDestination">
-            New Destination
-          </button>
-          <button class="py-2 px-3 bg-slate-600 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
-          @click="nextDestination"
-          title="You've seen all destination, display a random one!"
-          v-if="noMoreUnseenDestination">
-            Random Destination
-          </button>
+        <div class="h-32 bg-slate-600">
+          <l-map 
+            ref="map"
+            :zoom="currentDestination.zoom"
+            :center="currentDestination.center"
+            :options="{ zoomControl: false, attributionControl: false }"
+          >
+            <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
+            <l-marker :lat-lng="currentDestination.center"></l-marker>
+          </l-map>
         </div> 
+        <div :class="budgetColorClass">
+          <font-awesome-icon :icon="['fas', 'money-check-dollar']" size="lg" />
+          {{ currentDestination.budget }} Cost - {{ currencyData.code }}
+        </div>
+        <div class="font-mono text-xs text-slate-700 text-center italic">
+          $10 is worth {{ currencyData.equivalentInCurrency }} {{ currencyData.name }}<br />
+        </div>
+        <div class="font-mono text-xs text-slate-700 text-center mb-5 italic">
+          <span class="text-amber-700">Eat for ${{ currentDestination.eat }}</span>
+          -
+          <span class="text-amber-700">Sleep for ${{ currentDestination.bed }}</span>
+        </div>
+        <div class="font-mono text-sm text-slate-700 text-center">
+          <span  :class="languageColorClass">
+            <font-awesome-icon :icon="['fas', 'language']" size="lg" />
+            {{ currentDestination.language }}
+          </span>
+        </div>
+        <div class="font-mono text-xs text-amber-700 text-center mb-5 italic" v-if="currentDestination.language.toLowerCase() !== 'english'">
+          English is spoken {{ currentDestination.englishFriendly }}
+        </div>
+        <div :class="transportationColorClass">
+            <font-awesome-icon :icon="['fas', 'plane']" size="lg" />
+            {{ currentDestination.reach }}
+        </div>
+        <div class="font-mono text-xs text-slate-700 text-center mb-5 italic">
+          <span class="text-amber-700">{{ currentDestination.local }}</span>
+        </div>
+        <div class="font-mono text-sm text-green-700 text-center mt-5">
+          Visit in {{ currentDestination.bestTime }} {{ currentDestination.bestTimeReason }}
+        </div>
+        <div class="font-mono text-xs text-amber-700 text-center mb-5 italic">
+          {{ currentDestination.temperatureMin }} to {{ currentDestination.temperatureMax }}
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-4 text-right">   
+          <div class="text-slate-500 cursor-pointer text-xl" v-if="!isStarred(currentDestination.id) && !isBanned(currentDestination.id)" @click="banToggle" title="Never show this destination anymore.">
+            <font-awesome-icon :icon="['far', 'circle-xmark']" :transform="'shrink-'+banShrink" />
+          </div>
+          <div class="text-red-600 cursor-pointer text-xl" v-else-if="!isStarred(currentDestination.id)" @click="banToggle" title="Bring this destination back on tracks!">
+            <font-awesome-icon :icon="['fas', 'circle-xmark']" :bounce="isBeating" :transform="'shrink-'+banShrink" />
+          </div>
+          <div class="font-mono text-center mt-5">
+            <button class="py-2 px-3 bg-indigo-300 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+            @click="previousDestination"
+            title="Go back to the previous destination!"
+            v-if="breadCrumbs.length !== 0">
+              Previous
+            </button>
+            <button class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+            @click="nextDestination"
+            title="Discover a new destination!"
+            v-if="!noMoreUnseenDestination">
+              New Destination
+            </button>
+            <button class="py-2 px-3 bg-slate-600 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+            @click="nextDestination"
+            title="You've seen all destination, display a random one!"
+            v-if="noMoreUnseenDestination">
+              Random Destination
+            </button>
+          </div> 
+        </div>
       </div>
-    </div>
     </transition>
   </div>
   <div class="absolute origin-top-left z-30" :style="{ width: `${widthMenuSize}px`, top: `${topValue}px`, transform: `scale(${scaleFactor})` }">
@@ -327,7 +324,7 @@ import '@/assets/css/tailwind.css';
 import destinationData from '@/assets/destinations.json';
 import axios from 'axios';
 import "leaflet/dist/leaflet.css";
-import { LMap, LTileLayer, LMarker, LIcon, LLayerGroup } from "@vue-leaflet/vue-leaflet";
+import { LMap, LTileLayer, LMarker, LIcon, LLayerGroup, LTooltip } from "@vue-leaflet/vue-leaflet";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default {
@@ -339,7 +336,8 @@ export default {
     LTileLayer,
     LMarker,
     LIcon,
-    LLayerGroup
+    LLayerGroup,
+    LTooltip
   },
   data: () => ({
     pauseOnHover: true,
@@ -497,6 +495,20 @@ export default {
       }
       return style;
     },
+    worldMapClass() {
+      // Define a class object with class names as keys and conditions as values
+      const classes = {
+        'relative text-lg': this.scaleFactor >= 0.7,
+        'relative text-sm': this.scaleFactor < 0.7 && this.scaleFactor >= 0.4,
+        'relative text-xs': this.scaleFactor < 0.4,
+        'm-auto bg-slate-50 text-center flex flex-row mb-1': true, // Other classes
+      };
+
+      // Convert the class object to a space-separated string
+      return Object.keys(classes)
+        .filter((className) => classes[className])
+        .join(' ');
+    },
   },
   methods: {
     nextDestination(index = null) {
@@ -649,7 +661,8 @@ export default {
             // Star the destination
             this.starredDestinationsStorage.push(this.currentDestination.id);
             this.moveItem(this.currentDestination, this.destinationData, this.starredDestinationData);
-            this.goThere = this.showStarred = true;            
+            this.showStarred = true;
+            this.upSwipe();
           }
           // Update the local storage with the updated starred destinations
           localStorage.setItem('starredDestinations', JSON.stringify(this.starredDestinationsStorage));
@@ -845,12 +858,9 @@ export default {
         this.showMenu = true;
         this.showCard = false;
         this.showStarred = false;
+        this.showBanned = false;
       } else {
         this.goThere = true;
-      }
-      if (this.mobileDisplay) {
-        this.showStarred = false;
-        this.showBanned = false;
       }
       this.triggerSwipeCooldown();
     },
