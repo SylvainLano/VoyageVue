@@ -23,7 +23,7 @@ Maps made using [Vue Leaflet](https://vue2-leaflet.netlify.app/)
 - Tag a destination as "Visited"
 - Earn badges or achievements by visiting countries, or all destinations in a country
 
-## Destinations presented (30 total)
+## Destinations presented (35 total)
 - Kyoto, Japan (jp-001)  
 - Paris, France (fr-001)  
 - Dublin, Ireland (ir-001)  
@@ -54,3 +54,9 @@ Maps made using [Vue Leaflet](https://vue2-leaflet.netlify.app/)
 - Machu Picchu, Peru (pe-001)  
 - Bali, Indonesia (id-001)  
 - Zanzibar, Tanzania (tz-001)  
+- Torres del Paine, Chile (cl-001)  
+- Lake Baikal, Russia (ru-001)  
+- Banjul, Gambia (gm-001)  
+- Antigua, Guatemala (gt-001)  
+- Samarkand, Uzbekistan (uz-001)  
+- Udaipur, India (in-001)  

@@ -1588,6 +1588,324 @@
               "link": "https://unsplash.com/fr/@the_bracketeer"
           }
         ]
+    },
+    {
+        "id": "cl-001",
+        "location": "Torres del Paine",
+        "country": "Chile",
+        "description": "A breathtaking national park in the southern region of Chilean Patagonia. Known for its rugged mountains, glaciers, and pristine lakes, the park is a haven for nature lovers and adventure enthusiasts.",
+        "currency": "CLP",
+        "budget": "Average",
+        "eat": "12",
+        "bed": "80",
+        "language": "Spanish",
+        "englishFriendly": "very little",
+        "transportation": "Hard",
+        "reach": "Teniente Julio Gallardo Airport (PNT)",
+        "local": "Buses",
+        "bestTime": "January",
+        "bestTimeReason": " for \"summer\"",
+        "temperatureMin": "0°C in July",
+        "temperatureMax": "16°C in January",
+        "visa": "Mostly free entry",
+        "safety": "Dangerous",
+        "healthcare": "Low",
+        "foodToTry": "Empanadas, Asado (barbecue), and traditional Patagonian lamb dishes.",
+        "advice": "Hike the famous W Circuit or the longer O Circuit to witness the park's iconic granite peaks, glaciers, and turquoise lakes. Marvel at the three granite towers (Torres del Paine) that give the park its name.",
+        "expediaLink": "https://expedia.com/affiliate/oWfWIV5",
+        "zoom": 3,
+        "center": [-51.72363, -72.48745],
+        "images": [
+          {
+              "title": "Torri Del Dolore",
+              "image": "destinations/chile/torres-del-paine/photo-1544142521-ee53646bf7d6.avif",
+              "author": "Snowscat",
+              "link": "https://unsplash.com/fr/@snowscat"
+          },
+          {
+              "title": "Landscape",
+              "image": "destinations/chile/torres-del-paine/photo-1603382585507-45205571d760.avif",
+              "author": "Peter Crorkan",
+              "link": "https://unsplash.com/fr/@pcrorkan"
+          },
+          {
+              "title": "Weather",
+              "image": "destinations/chile/torres-del-paine/photo-1494783329112-4a6795291178.avif",
+              "author": "Diego Jimenez",
+              "link": "https://unsplash.com/fr/@diegojimenez"
+          },
+          {
+              "title": "EcoCamp Patagonia",
+              "image": "destinations/chile/torres-del-paine/photo-1593053272490-e0ed6d6a42c5.avif",
+              "author": "Jonas Dücker",
+              "link": "https://unsplash.com/fr/@jonasduecker"
+          }
+        ]
+    },
+    {
+        "id": "ru-001",
+        "location": "Lake Baikal",
+        "country": "Russia",
+        "description": "The world's deepest and oldest freshwater lake, located in the Siberian region of Russia. Known for its crystal-clear waters, unique wildlife, and surrounding landscapes, it's a natural wonder and UNESCO World Heritage Site.",
+        "currency": "RUB",
+        "budget": "Low",
+        "eat": "7",
+        "bed": "50",
+        "language": "Russian",
+        "englishFriendly": "very little",
+        "transportation": "Hard",
+        "reach": "Irkutsk International Airport (IKT)",
+        "local": "Buses",
+        "bestTime": "July",
+        "bestTimeReason": " to avoid freezing",
+        "temperatureMin": "-22°C in January",
+        "temperatureMax": "25°C in July",
+        "visa": "Visa mandatory",
+        "safety": "Mostly Safe",
+        "healthcare": "Low",
+        "foodToTry": "Pelmeni (dumplings), Smoked omul fish, and Siberian soups.",
+        "advice": "Explore Olkhon Island, the largest island on Lake Baikal, known for its dramatic landscapes and Shaman Rock. Hike along the Great Baikal Trail for stunning views of the lake and surrounding mountains.",
+        "expediaLink": "https://expedia.com/affiliate/MuPQvIb",
+        "zoom": 3,
+        "center": [52.29778, 104.29639],
+        "images": [
+          {
+              "title": "Promontory",
+              "image": "destinations/russia/lake-baikal/photo-1605640749481-0f70a7ecc3c3.avif",
+              "author": "Raimond Klavins",
+              "link": "https://unsplash.com/fr/@raimondklavins"
+          },
+          {
+              "title": "Seagulls",
+              "image": "destinations/russia/lake-baikal/photo-1562315115-af334af65706.avif",
+              "author": "Artemis Faul",
+              "link": "https://unsplash.com/fr/@artemisfaul"
+          },
+          {
+              "title": "Glacier",
+              "image": "destinations/russia/lake-baikal/photo-1602256976419-c82585fe73a7.avif",
+              "author": "Sergey Pesterev",
+              "link": "https://unsplash.com/fr/@sickle"
+          },
+          {
+              "title": "Olkhon Island",
+              "image": "destinations/russia/lake-baikal/photo-1490879112094-281fea0883dc.avif",
+              "author": "Sergey Pesterev",
+              "link": "https://unsplash.com/fr/@sickle"
+          }
+        ]
+    },
+    {
+        "id": "gm-001",
+        "location": "Banjul",
+        "country": "Gambia",
+        "description": "The capital city of Gambia is a charming and vibrant destination located on St. Mary's Island where the Gambia River meets the Atlantic Ocean. Known for its lively markets, colonial architecture, and friendly locals, Banjul offers a unique blend of history and culture.",
+        "currency": "GMD",
+        "budget": "Very Cheap",
+        "eat": "5",
+        "bed": "15",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Hard",
+        "reach": "Banjul Airport (BJL)",
+        "local": "Taxis",
+        "bestTime": "January",
+        "bestTimeReason": " for the dry season",
+        "temperatureMin": "17°C in January",
+        "temperatureMax": "34°C in March",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "Low",
+        "foodToTry": "Benachin (one-pot rice dish), Domoda (peanut stew), and local specialties like yassa (marinated grilled meat or fish) and tapalapa bread.",
+        "advice": "Explore Albert Market, one of the busiest markets in Banjul, offering a variety of goods and local crafts. Visit Arch 22, a notable landmark with panoramic views of the city.",
+        "expediaLink": "https://expedia.com/affiliate/FLyqQLm",
+        "zoom": 3,
+        "center": [13.454876, -16.579032],
+        "images": [
+          {
+              "title": "Gambia River",
+              "image": "destinations/gambia/banjul/photo-1448099940878-e0c48ea3a165.avif",
+              "author": "Dan Roizer",
+              "link": "https://unsplash.com/fr/@danroizer"
+          },
+          {
+              "title": "Sea Front",
+              "image": "destinations/gambia/banjul/photo-1621862681356-eda413727d27.avif",
+              "author": "Kurt Cotoaga",
+              "link": "https://unsplash.com/fr/@kydroon"
+          },
+          {
+              "title": "Kombo South",
+              "image": "destinations/gambia/banjul/photo-1425206074182-e1e4e4f8dda1.avif",
+              "author": "Robert Bye",
+              "link": "https://unsplash.com/fr/@robertbye"
+          },
+          {
+              "title": "Red Colobus Monkey",
+              "image": "destinations/gambia/banjul/photo-1558297873-f1db3a25fb7c.avif",
+              "author": "Bryan Osborne",
+              "link": "https://unsplash.com/fr/@kepi_blanc"
+          }
+        ]
+    },
+    {
+        "id": "gt-001",
+        "location": "Antigua",
+        "country": "Guatemala",
+        "description": "A UNESCO World Heritage Site and a picturesque colonial city nestled in the highlands of Guatemala. Known for its well-preserved Spanish Baroque-influenced architecture, vibrant markets, and surrounded by volcanoes, Antigua is a charming destination that offers a blend of history, culture, and natural beauty.",
+        "currency": "GTQ",
+        "budget": "Cheap",
+        "eat": "7",
+        "bed": "39",
+        "language": "Spanish",
+        "englishFriendly": "pretty well",
+        "transportation": "Average",
+        "reach": "La Aurora Airport (GUA)",
+        "local": "Shuttle, Bus",
+        "bestTime": "February",
+        "bestTimeReason": " for the dry season",
+        "temperatureMin": "12°C in January",
+        "temperatureMax": "27°C in April",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "Low",
+        "foodToTry": "Pepián (a meat and vegetable stew), Rellenitos (sweet plantain and black bean dessert), and local coffee, which is known for its rich flavor.",
+        "advice": "Visit the iconic landmarks such as the Santa Catalina Arch, La Merced Church, and San Francisco Church. Climb to the top of Cerro de la Cruz for panoramic views of the city and surrounding volcanoes.",
+        "expediaLink": "https://expedia.com/affiliate/P82686j",
+        "zoom": 3,
+        "center": [14.56111, -90.73444],
+        "images": [
+          {
+              "title": "Bulevar Villa Deportiva",
+              "image": "destinations/guatemala/antigua/photo-1563442744-3e17a3bf4932.avif",
+              "author": "Clovis Castaneda",
+              "link": "https://unsplash.com/fr/@clover98"
+          },
+          {
+              "title": "Calle del Arco",
+              "image": "destinations/guatemala/antigua/photo-1602120012884-6aa678fa79c7.avif",
+              "author": "Manuel Asturias, SJ",
+              "link": "https://unsplash.com/fr/@manuel_asturias"
+          },
+          {
+              "title": "Calle de los Pasos",
+              "image": "destinations/guatemala/antigua/photo-1584908917822-6799d69a72cc.avif",
+              "author": "Emil Diallo",
+              "link": "https://unsplash.com/fr/@emildiallo"
+          },
+          {
+              "title": "Market",
+              "image": "destinations/guatemala/antigua/photo-1517243985121-d6ae97460078.avif",
+              "author": "Arturo Rivera",
+              "link": "https://unsplash.com/fr/@arivera2015"
+          }
+        ]
+    },
+    {
+        "id": "uz-001",
+        "location": "Samarkand",
+        "country": "Uzbekistan",
+        "description": "A city with a rich history and architectural splendor, located on the Silk Road in Uzbekistan. Known for its majestic Registan Square, intricate Islamic architecture, and vibrant bazaars, Samarkand is a UNESCO World Heritage Site that captures the essence of the region's cultural and historical significance.",
+        "currency": "UZS",
+        "budget": "Ultra Cheap",
+        "eat": "3",
+        "bed": "9",
+        "language": "Uzbek, Russian",
+        "englishFriendly": "very little",
+        "transportation": "Hard",
+        "reach": "Samarkand International Airport (SKD)",
+        "local": "Train, Car",
+        "bestTime": "May",
+        "bestTimeReason": " for mild weather",
+        "temperatureMin": "-3°C in January",
+        "temperatureMax": "34°C in July",
+        "visa": "Required above 10 days",
+        "safety": "Safe",
+        "healthcare": "Low",
+        "foodToTry": "Plov (pilaf with rice, meat, and vegetables), Manti (dumplings), and Samsa (savory pastries). Also, the local green tea and traditional sweets.",
+        "advice": "Marvel at the grandeur of Registan Square, surrounded by three madrasahs adorned with intricate tilework. Visit the Bibi-Khanym Mosque, a historic mosque and one of the largest in the Islamic world.",
+        "expediaLink": "https://expedia.com/affiliate/VfKR2xI",
+        "zoom": 3,
+        "center": [39.652451, 66.970139],
+        "images": [
+          {
+              "title": "Shah-i-Zinda Necropolis",
+              "image": "destinations/uzbekistan/samarkand/photo-1666803324218-2c06dffb1834.avif",
+              "author": "AXP Photography",
+              "link": "https://unsplash.com/fr/@axpphotography"
+          },
+          {
+              "title": "Mosquee",
+              "image": "destinations/uzbekistan/samarkand/photo-1673005583473-0be72ad34a1f.avif",
+              "author": "AXP Photography",
+              "link": "https://unsplash.com/fr/@axpphotography"
+          },
+          {
+              "title": "Palace",
+              "image": "destinations/uzbekistan/samarkand/photo-1662468872162-633462e31e36.avif",
+              "author": "Dmitriy Efimov",
+              "link": "https://unsplash.com/fr/@deeurbn"
+          },
+          {
+              "title": "Bukhara",
+              "image": "destinations/uzbekistan/samarkand/photo-1684700432555-a24c9b55b8d2.avif",
+              "author": "AXP Photography",
+              "link": "https://unsplash.com/fr/@axpphotography"
+          }
+        ]
+    },
+    {
+        "id": "in-001",
+        "location": "Udaipur",
+        "country": "India",
+        "description": "Often referred to as the \"City of Lakes\" or the \"Venice of the East\", Udaipur is a captivating city in the state of Rajasthan. It is renowned for its enchanting lakes, majestic palaces, and vibrant cultural heritage, offering a royal and romantic experience for visitors.",
+        "currency": "INR",
+        "budget": "Very Cheap",
+        "eat": "4",
+        "bed": "18",
+        "language": "Hindi, Rajasthani",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Maharana Pratap Airport (UDR)",
+        "local": "Train, Car",
+        "bestTime": "March",
+        "bestTimeReason": " for the dry season",
+        "temperatureMin": "10°C in January",
+        "temperatureMax": "37°C in May",
+        "visa": "eVisitor Visa",
+        "safety": "Mostly Safe",
+        "healthcare": "Low",
+        "foodToTry": "Dal Baati Churma, Gatte ki Sabzi, and Laal Maas. Also, traditional sweets like Ghewar and Malpua.",
+        "advice": "Visit the iconic City Palace, a sprawling complex of palaces, courtyards, and gardens. Take a boat ride on Lake Pichola to admire the scenic views of the city and the Lake Palace.",
+        "expediaLink": "https://expedia.com/affiliate/ILwMbyB",
+        "zoom": 3,
+        "center": [24.571270, 73.691544],
+        "images": [
+          {
+              "title": "City Palace",
+              "image": "destinations/india/udaipur/photo-1589901164570-f9de6556e1c1.avif",
+              "author": "pranav panchal",
+              "link": "https://unsplash.com/fr/@pranavpanchal"
+          },
+          {
+              "title": "Bahubali Hills",
+              "image": "destinations/india/udaipur/photo-1607672482103-e410ba82274c.avif",
+              "author": "Sumit Sharma",
+              "link": "https://unsplash.com/fr/@sumit_sharrma"
+          },
+          {
+              "title": "Flock of Pigeons",
+              "image": "destinations/india/udaipur/photo-1519998994457-43c1f2c8460b.avif",
+              "author": "Mitchell Ng Liang an",
+              "link": "https://unsplash.com/fr/@mitchellngyummy"
+          },
+          {
+              "title": "Indigenous",
+              "image": "destinations/india/udaipur/photo-1570839753356-6bc05ceea49a.avif",
+              "author": "Lewis J Goetz",
+              "link": "https://unsplash.com/fr/@lgoetz"
+          }
+        ]
     }
 ]
   

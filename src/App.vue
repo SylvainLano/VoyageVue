@@ -18,9 +18,9 @@
       </div>
     </transition>
   </div>
-  <div class="absolute flex top-5 right-5 z-40 origin-top-right" :style="{ transform: `scale(${scaleFactor})` }" v-if="(showBanned || showStarred) && !mobileDisplay">
+  <div class="absolute flex top-5 right-5 z-40 origin-top-right" :style="{ transform: `scale(${scaleFactor})` }" v-if="!mobileDisplay && !fullScreen">
     <transition name="lateral-fade">
-      <div class="text-4xl bg-lime-500 cursor-pointer rounded-full" @click="toggleStarredMenu">
+      <div class="text-4xl bg-lime-500 cursor-pointer rounded-full" @click="toggleWorldMap">
         <span class="text-cyan-700"><font-awesome-icon :icon="['fas', 'earth-africa']" :shake="isBeating" size="xl" /></span>
       </div>
     </transition>
@@ -49,7 +49,7 @@
         <l-map 
           ref="starBanMap"
           :zoom=2
-          :center="[51.505, -0.09]"
+          :center="[21.116772, -11.405182]"
           :options="{ zoomControl: false, attributionControl: false }"
         >
           <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
@@ -124,7 +124,7 @@
 
   <div class="absolute origin-top-left z-20 top-0" :style="{ width: `${widthMenuSize}px`, transform: `scale(${scaleFactor})` }">
     <transition name="slide-fade">
-      <div class="relative bg-slate-50 p-4" :style="{ height: `${heightMenuSize}px`}" v-if="showMenu">
+      <div class="relative bg-slate-50 p-4" :style="{ height: `${heightMenuSize}px`}" v-if="(showMenu && !fullScreen)">
         <div class="font-mono text-4xl text-slate-900 text-left flex justify-between">
           <div class="mx-3 cursor-pointer" @click="toggleReservationMenu">
             {{ currentDestination.location }}
@@ -220,7 +220,7 @@
   </div>
   <div class="absolute origin-top-left z-30" :style="{ width: `${widthMenuSize}px`, top: `${topValue}px`, transform: `scale(${scaleFactor})` }">
   <transition name="slide-fade">
-    <div class="absolute left-0 h-[666px] bg-slate-50 p-4 z-30" v-if="goThere">
+    <div class="absolute left-0 h-[666px] bg-slate-50 p-4 z-30" v-if="(goThere && !fullScreen)">
       <div :class="visaColorClass">
           <font-awesome-icon :icon="['fas', 'passport']" size="lg" />
           {{ currentDestination.visa }}
@@ -253,7 +253,7 @@
     </div>
   </transition>
   </div>
-  <div class="absolute left-0 h-screen bg-slate-50 z-10" :style="{ width:`${leftValue}px` }" v-if="!mobileDisplay"></div>
+  <div class="absolute left-0 h-screen bg-slate-50 z-10" :style="{ width:`${leftValue}px` }" v-if="(!mobileDisplay && !fullScreen)"></div>
   <transition name="slide-fade">
     <div class="absolute left-0 bg-slate-50 z-20 bottom-0 p-2 origin-bottom-left" :style="{ width:`${widthMenuSize}px`, transform: `scale(${scaleFactor})` }" v-if="showCard">
       <div class="font-mono text-2xl text-slate-900 text-left flex justify-between">
@@ -278,16 +278,17 @@
       v-if="showSlides"
       @mousedown="startDrag"
       @mousemove="dragging"
-      @mouseup="endDrag">
+      @mouseup="endDrag"
+      @mouseleave="endDrag">
       <vueper-slides
         ref="myVueperSlides"
         :autoplay="true"
-        duration = 7500
+        :duration = "10000"
         :arrows="false"
         :bullets="false"
         :slideRatio="0.6"
         :touchable="false"
-        :pause-on-hover="pauseOnHover"
+        :pause-on-hover="false"
         @autoplay-pause="internalAutoPlaying = false"
         @autoplay-resume="internalAutoPlaying = true">
         <vueper-slide
@@ -296,8 +297,9 @@
             :image="require(`@/assets/images/${slide.image}`)"
         >
           <template #content>
-            <div class="absolute z-10 text-left origin-top-left block"
-              :style="slideTitleStyle">
+            <div class="absolute z-10 text-left block"
+              :style="slideTitleStyle"
+              v-if="fullScreenTitle">
               <div class="font-mono text-4xl backdrop-brightness-50 text-slate-50 p-2">
                 {{ slide.title }}
               </div>
@@ -392,6 +394,9 @@ export default {
     hideStarred: false,
     hideBanned: false,
     hideUnmarked: false,
+    fullScreen: false,
+    fullScreenNextCounter: 0,
+    fullScreenTitle: true,
   }),
   mounted() {
     setInterval(() => {
@@ -399,6 +404,13 @@ export default {
       setTimeout(() => {
         this.isBeating = false; // Stop animation after 2 seconds
       }, 2000);
+      if ( this.fullScreen ) {
+        this.fullScreenNextCounter += 1 ;
+        if ( this.fullScreenNextCounter > this.currentDestination.images.length ) {
+          this.nextDestination("fullScreen");
+          this.fullScreenNextCounter = 0;
+        }
+      }
     }, 10000); // Repeat every 10 seconds
     this.updateScaleFactor(); // Initial calculation
     window.addEventListener('resize', this.updateScaleFactor);
@@ -486,10 +498,16 @@ export default {
     },    
     slideTitleStyle() {
       const style = {
-        top: `${this.topValueTitle}px`,
         left: `${this.leftValueTitle}px`,
         transform: `scale(${this.scaleFactor})`,
       };
+      if ( this.fullScreen ) {
+        style['bottom'] = `${this.topValueTitle}px`;
+        style['transform-origin'] = `bottom left`;
+      } else {
+        style['top'] = `${this.topValueTitle}px`;
+        style['transform-origin'] = `top left`;
+      }
       if (this.mobileDisplay) {
         style['max-width'] = `${this.widthMenuSize}px`;
       }
@@ -522,7 +540,7 @@ export default {
       this.showMenu = this.showSlides = this.showCard = this.showStarred = this.showStarredMenu =
       this.showBanned = this.showBannedMenu = this.showFullMap = false;
       this.goThere = false;
-      // Wait for 0.5 seconds (500 milliseconds) before continuing
+      // Wait for 0.3 seconds (300 milliseconds) before continuing
       setTimeout(() => {
         // Toggle elements again
         this.showSlides = true;
@@ -537,7 +555,27 @@ export default {
         if ( this.bannedDestinationData.length > 0 ) {
           this.showBanned = true;
         }
+
+        if ( index === "fullScreen" ) {
+
+          const notBannedDestinations = [...this.starredDestinationData, ...this.destinationData];
+    
+          // Check if there are any destinations
+          if ( notBannedDestinations.length === 0 ) {
+            index = null; // No destinations available
+          } else {
+            // Generate a random index with higher probability for starred destinations
+            const randomIndex = Math.random() < 0.8 // Adjust the probability as needed
+              ? Math.floor(Math.random() * this.starredDestinationData.length)
+              : Math.floor(Math.random() * notBannedDestinations.length);
+
+            index = notBannedDestinations[randomIndex].id;
+          }
+
+        }
+
         if ( index !== null ) {
+
           // Check if it's starred
           const isStarred = this.starredDestinationsStorage.includes(index);
 
@@ -559,7 +597,9 @@ export default {
           } else {
             index = null;
           }
+
         }
+        
         if ( index == null ) {
           // Filter destinationData to remove visited destinations
           const newDestinations = this.destinationData.filter(destination => {
@@ -734,6 +774,7 @@ export default {
       const parentContainer = this.$refs.parentContainer;
       const heightSize = parentContainer.getBoundingClientRect().height;
       const widthSize = parentContainer.getBoundingClientRect().width;
+
       this.screenRatio = heightSize / widthSize;
       if ( this.screenRatio > 1.2 ) {
         this.mobileDisplay = true;
@@ -754,6 +795,18 @@ export default {
         this.heightMenuSize = 756;
         this.leftValue = this.widthMenuSize * this.scaleFactor;
       }
+
+      let fullHeight = window.screen.height;
+      let fullWidth = window.screen.width;
+      if ( heightSize == fullHeight && widthSize == fullWidth ) {
+        this.fullScreen = true;
+        this.leftValue = 0;
+      } else {
+        this.fullScreen = false;
+        this.fullScreenTitle = true;
+        this.fullScreenNextCounter = 0;
+      }
+
       // Calculate the new top value based on scaleFactor
       this.topValue = 90 * this.scaleFactor;
       if ( heightSize / (widthSize - this.leftValue) > this.ratioSlides ) {
@@ -767,22 +820,33 @@ export default {
         this.topValueSlides = ( heightSize - this.heightSlidesSize ) / 2;
         this.leftValueSlides = this.leftValue;
       }
+
       if ( this.mobileDisplay ) {
         this.leftValueTitle = 0 - this.leftValueSlides;
       } else {
         this.leftValueTitle = this.widthMenuSize * this.scaleFactor - this.leftValueSlides;
       }
       this.topValueTitle = this.topValue - this.topValueSlides;
+
+      if ( this.fullScreen ) {
+        this.leftValueTitle = 0;
+        this.topValueTitle = 0 - this.topValueSlides;
+      }
+
     },
     onTouchStart(event) {
       this.startX = event.touches[0].clientX;
       this.startY = event.touches[0].clientY;
     },
     startDrag(event) {
-      if (!this.showFullMap) {
-        this.isDragging = true;
-        this.startX = event.clientX;
-        this.startY = event.clientY;
+      if ( !this.fullScreen ) {
+        if (!this.showFullMap) {
+          this.isDragging = true;
+          this.startX = event.clientX;
+          this.startY = event.clientY;
+        }
+      } else {
+        this.fullScreenTitle = !this.fullScreenTitle;
       }
     },
     onTouchMove(event) {
@@ -882,17 +946,22 @@ export default {
     },
     toggleStarredMenu () {
       if ( this.starredDestinationData.length > 0 ) {
-        this.showFullMap = true;
+        this.showFullMap = !this.showFullMap;
         this.showStarredMenu = !this.showStarredMenu;
         this.showBannedMenu = false;
       }
     },
     toggleBannedMenu () {
       if ( this.bannedDestinationData.length > 0 ) {
-        this.showFullMap = true;
+        this.showFullMap = !this.showFullMap;
         this.showBannedMenu = !this.showBannedMenu;
         this.showStarredMenu = false;
       }
+    },
+    toggleWorldMap () {
+      this.showFullMap = true;
+      this.showStarredMenu = false;
+      this.showBannedMenu = false;
     },
     hideFullMap () {
         this.showStarredMenu = false;
