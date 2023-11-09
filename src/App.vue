@@ -796,16 +796,20 @@ export default {
         this.leftValue = this.widthMenuSize * this.scaleFactor;
       }
 
-      let fullHeight = window.screen.height;
-      let fullWidth = window.screen.width;
-      if ( heightSize == fullHeight && widthSize == fullWidth ) {
+      let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+      let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      if (heightSize === viewportHeight && widthSize === viewportWidth) {
+        // Full screen logic
         this.fullScreen = true;
         this.leftValue = 0;
       } else {
+        // Other logic
         this.fullScreen = false;
         this.fullScreenTitle = true;
         this.fullScreenNextCounter = 0;
       }
+
 
       // Calculate the new top value based on scaleFactor
       this.topValue = 90 * this.scaleFactor;
