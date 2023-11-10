@@ -11,6 +11,13 @@ Conversion rates by [Float Rates](https://www.floatrates.com)
 Photo from users on [Unsplash](https://unsplash.com/)   
 Flag Icons from https://flagicons.lipis.dev/  
 Maps made using [Vue Leaflet](https://vue2-leaflet.netlify.app/)  
+Maps providers are :
+- Default Map : (https://openstreetmap.org/)
+- Networks Map : (https://memomaps.de/)
+- Night Map : (https://www.nasa.gov/)
+- Day Map : (https://www.google.com/)
+- Map Style Map : (https://www.arcgis.com/)
+- Watercolor Map : (https://stadiamaps.com/)
 
 ## Development
 
@@ -23,7 +30,7 @@ Maps made using [Vue Leaflet](https://vue2-leaflet.netlify.app/)
 - Tag a destination as "Visited"
 - Earn badges or achievements by visiting countries, or all destinations in a country
 
-## Destinations presented (35 total)
+## Destinations presented (36 total)
 - Kyoto, Japan (jp-001)  
 - Paris, France (fr-001)  
 - Dublin, Ireland (ir-001)  

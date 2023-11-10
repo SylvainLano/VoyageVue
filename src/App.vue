@@ -32,17 +32,30 @@
       <div class="absolute h-screen w-screen top-0 left-0" @click="hideFullMap">
       </div>
       <div :class="worldMapClass">
-          <div class="basis-1/3 text-green-700 text-right pr-2">
+          <div class="basis-1/6 text-cyan-700 py-1 text-left flex space-x-2" @mouseover="showMapModeMenu" @mouseleave="hideMapModeMenu">
+            <font-awesome-icon class="cursor-pointer" :icon="getMapModeIcon()" size="lg" />
+            <div v-if="isMapModeMenuVisible" class="menu flex space-x-2 text-slate-700">
+              <font-awesome-icon class="cursor-pointer" :icon="['fas', 'street-view']" size="lg" @click="setMapMode('streets')" v-if="mapMode !== 'streets'" />
+              <font-awesome-icon class="cursor-pointer" :icon="['fas', 'bus']" size="lg" @click="setMapMode('bus')" v-if="mapMode !== 'bus'" />
+              <font-awesome-icon class="cursor-pointer" :icon="['fas', 'moon']" size="lg" @click="setMapMode('night')" v-if="mapMode !== 'night'" />
+              <font-awesome-icon class="cursor-pointer" :icon="['fas', 'sun']" size="lg" @click="setMapMode('day')" v-if="mapMode !== 'day'" />
+              <font-awesome-icon class="cursor-pointer" :icon="['fas', 'map']" size="lg" @click="setMapMode('map')" v-if="mapMode !== 'map'" />
+              <font-awesome-icon class="cursor-pointer" :icon="['fas', 'pencil']" size="lg" @click="setMapMode('watercolor')" v-if="mapMode !== 'watercolor'" />
+            </div>
+          </div>
+          <div class="basis-1/4 text-green-700 text-right pr-2">
             <input class="mx-1" type="checkbox" id="starredBox" v-model="hideStarred" :disabled="starredDestinationData.length === 0" />
             <label for="starredBox" :style="{ color: starredDestinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ starredDestinationData.length }} Starred</label>
           </div>
-          <div class="basis-1/3 text-red-700 text-center">
+          <div class="basis-1/4 text-red-700 text-center">
             <input class="mx-1" type="checkbox" id="bannedBox" v-model="hideBanned" :disabled="bannedDestinationData.length === 0" />
             <label for="bannedBox" :style="{ color: bannedDestinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ bannedDestinationData.length }} Banned</label>
           </div>
-          <div class="basis-1/3 text-cyan-700 text-left pl-2">
+          <div class="basis-1/4 text-cyan-700 text-left pl-2">
             <input class="mx-1" type="checkbox" id="unmarkedBox" v-model="hideUnmarked" :disabled="destinationData.length === 0" />
             <label for="unmarkedBox"  :style="{ color: destinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ destinationData.length }} Unmarked</label>
+          </div>
+          <div class="basis-1/6">
           </div>
       </div>
       <div class="h-full w-full m-auto">
@@ -52,7 +65,7 @@
           :center="[21.116772, -11.405182]"
           :options="{ zoomControl: false, attributionControl: false }"
         >
-          <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
+          <l-tile-layer :url="getTileLayerUrl()"></l-tile-layer>
           
           <l-layer-group :visible="!hideBanned">
           <l-marker
@@ -300,11 +313,17 @@
             <div class="absolute z-10 text-left block"
               :style="slideTitleStyle"
               v-if="fullScreenTitle">
-              <div class="font-mono text-4xl backdrop-brightness-50 text-slate-50 p-2">
+              <div class="font-mono text-4xl backdrop-brightness-50 text-slate-50 p-2" v-if="!fullScreen">
                 {{ slide.title }}
               </div>
-              <div class="font-mono text-xl backdrop-brightness-50 text-slate-50 p-2">
+              <div class="font-mono text-xl backdrop-brightness-50 text-slate-50 p-2" v-if="!fullScreen">
                 by <a target="_blank" class="text-pink-400" :href="slide.link">{{ slide.author }}</a>
+              </div>
+              <div class="font-mono text-lg backdrop-brightness-50 text-slate-50 p-1" v-if="fullScreen">
+                <span class="text-pink-400">{{ slide.title }}</span> by {{ slide.author }}
+              </div>
+              <div class="font-mono text-3xl backdrop-brightness-50 text-slate-50 p-1" v-if="fullScreen">
+                {{ currentDestination.location + ", " + currentDestination.country }}
               </div>
             </div>
           </template>
@@ -397,6 +416,8 @@ export default {
     fullScreen: false,
     fullScreenNextCounter: 0,
     fullScreenTitle: true,
+    mapMode: "streets",
+    isMapModeMenuVisible: false,
   }),
   mounted() {
     setInterval(() => {
@@ -538,8 +559,8 @@ export default {
       }
 
       this.showMenu = this.showSlides = this.showCard = this.showStarred = this.showStarredMenu =
-      this.showBanned = this.showBannedMenu = this.showFullMap = false;
-      this.goThere = false;
+      this.showBanned = this.showBannedMenu = this.showFullMap = this.goThere = false;
+      this.fullScreenNextCounter = 0;
       // Wait for 0.3 seconds (300 milliseconds) before continuing
       setTimeout(() => {
         // Toggle elements again
@@ -799,17 +820,19 @@ export default {
       let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
       let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-      if (heightSize === viewportHeight && widthSize === viewportWidth) {
-        // Full screen logic
-        this.fullScreen = true;
-        this.leftValue = 0;
-      } else {
-        // Other logic
-        this.fullScreen = false;
-        this.fullScreenTitle = true;
-        this.fullScreenNextCounter = 0;
-      }
+      var maxHeight = window.screen.height,
+          maxWidth = window.screen.width;
 
+      if (maxWidth === viewportWidth && maxHeight === viewportHeight) {
+          // Full screen logic
+          this.fullScreen = true;
+          this.leftValue = 0;
+      } else {
+          // Other logic
+          this.fullScreen = false;
+          this.fullScreenTitle = true;
+          this.fullScreenNextCounter = 0;
+      }
 
       // Calculate the new top value based on scaleFactor
       this.topValue = 90 * this.scaleFactor;
@@ -1005,6 +1028,48 @@ export default {
         case 'b':
           this.toggleStarredMenu();
           break;
+      }
+    },
+    getTileLayerUrl() {
+      // Your conditions to determine the tile-layer URL
+      if ( this.mapMode === "night" ) {
+        return 'https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpg';
+      } else if ( this.mapMode === "map" ) {
+        return 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}';
+      } else if ( this.mapMode === "watercolor" ) {
+        return 'https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg';
+      } else if ( this.mapMode === "day" ) {
+        return 'http://mt3.google.com/vt/lyrs=s&x={x}&y={y}&z={z}';
+      } else if ( this.mapMode === "bus" ) {
+        return 'https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png';
+      } else {
+        return 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      }
+    },
+    setMapMode( mode ) {
+      this.mapMode = mode;
+    },
+    showMapModeMenu() {
+      this.isMapModeMenuVisible = true;
+    },
+    hideMapModeMenu() {
+      this.isMapModeMenuVisible = false;
+    },
+    getMapModeIcon() {
+      // Return the appropriate icon based on the selected mode
+      switch (this.mapMode) {
+        case 'night':
+          return ['fas', 'moon'];
+        case 'day':
+          return ['fas', 'sun'];
+        case 'watercolor':
+          return ['fas', 'pencil'];
+        case 'bus':
+          return ['fas', 'bus'];
+        case 'satellite':
+          return ['fas', 'satellite'];
+        default:
+          return ['fas', 'street-view'];
       }
     },
   },
