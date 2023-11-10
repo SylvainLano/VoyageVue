@@ -817,13 +817,7 @@ export default {
         this.leftValue = this.widthMenuSize * this.scaleFactor;
       }
 
-      let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-      let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-
-      var maxHeight = window.screen.height || heightSize,
-          maxWidth = window.screen.width || widthSize;
-
-      if ( maxWidth === viewportWidth && maxHeight === viewportHeight ) {
+      if ( window.matchMedia('(display-mode: fullscreen)').matches ) {
           // Full screen logic
           this.fullScreen = true;
           this.leftValue = 0;
