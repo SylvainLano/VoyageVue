@@ -820,10 +820,10 @@ export default {
       let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
       let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-      var maxHeight = window.screen.height,
-          maxWidth = window.screen.width;
+      var maxHeight = window.screen.height || heightSize,
+          maxWidth = window.screen.width || widthSize;
 
-      if (maxWidth === viewportWidth && maxHeight === viewportHeight) {
+      if ( maxWidth === viewportWidth && maxHeight === viewportHeight ) {
           // Full screen logic
           this.fullScreen = true;
           this.leftValue = 0;
