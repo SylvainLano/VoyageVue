@@ -170,7 +170,7 @@
           <font-awesome-icon :icon="['fas', 'money-check-dollar']" size="lg" />
           {{ currentDestination.budget }} Cost - {{ currencyData.code }}
         </div>
-        <div class="font-mono text-xs text-slate-700 text-center italic">
+        <div class="font-mono text-xs text-slate-700 text-center italic" v-if="currencyData.code != currencyData.name">
           $10 is worth {{ currencyData.equivalentInCurrency }} {{ currencyData.name }}<br />
         </div>
         <div class="font-mono text-xs text-slate-700 text-center mb-5 italic">
@@ -579,18 +579,26 @@ export default {
 
         if ( index === "fullScreen" ) {
 
-          const notBannedDestinations = [...this.starredDestinationData, ...this.destinationData];
-    
-          // Check if there are any destinations
-          if ( notBannedDestinations.length === 0 ) {
-            index = null; // No destinations available
-          } else {
-            // Generate a random index with higher probability for starred destinations
-            const randomIndex = Math.random() < 0.8 // Adjust the probability as needed
-              ? Math.floor(Math.random() * this.starredDestinationData.length)
-              : Math.floor(Math.random() * notBannedDestinations.length);
+          const lastBreadCrumbId = this.breadCrumbs.length > 0 ? this.breadCrumbs[this.breadCrumbs.length - 1].id : null;
+          const destinationsIdsToRemove = [this.currentDestination.id, lastBreadCrumbId];
+          const starredWeight = 4;
 
-            index = notBannedDestinations[randomIndex].id;
+          // Generate an array with multiples occurences of starred destinations
+          const notBannedDestinations = [
+            ...Array(starredWeight).fill(this.starredDestinationData).flat(),
+            ...this.destinationData,
+          ];
+
+          const filteredDestinations = notBannedDestinations.filter(
+            destination => !destinationsIdsToRemove.includes(destination.id)
+          );
+
+          // Check if there are any destinations
+          if ( filteredDestinations.length === 0 ) {
+            index = null; // No other destinations available
+          } else {
+            const randomIndex = Math.floor(Math.random() * filteredDestinations.length);
+            index = filteredDestinations[randomIndex].id;
           }
 
         }
@@ -697,7 +705,9 @@ export default {
               const equivalentInCurrency = amountInUSD * currencyData.rate;
               this.currencyData.equivalentInCurrency = equivalentInCurrency.toFixed(2);
             } else {
-              console.error('Currency data not found for', currencyCode);
+              this.currencyData.code = currencyCode;
+              this.currencyData.name = currencyCode;
+              this.currencyData.equivalentInCurrency = 1;
             }
           })
           .catch((error) => {
@@ -933,7 +943,8 @@ export default {
             this.showBanned = true;
           }
         } else {
-          this.nextDestination();
+          const destinationArgument = this.fullScreen ? 'fullScreen' : undefined;
+          this.nextDestination(destinationArgument);
         } 
         this.triggerSwipeCooldown(); 
       }
@@ -1069,6 +1080,7 @@ export default {
   },
   created() {
     this.totalDestinations = this.destinationData.length;
+    console.log(this.destinationData.length);
     // Load starred destinations from local storage
     const storedStarredDestinations = localStorage.getItem('starredDestinations');
     if (storedStarredDestinations) {

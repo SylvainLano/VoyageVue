@@ -1906,6 +1906,324 @@
               "link": "https://unsplash.com/fr/@lgoetz"
           }
         ]
+    },
+    {
+        "id": "cn-001",
+        "location": "Hangzhou",
+        "country": "China",
+        "description": "A picturesque city known for its beautiful West Lake, classical gardens, and historic temples. As the capital of Zhejiang Province, Hangzhou seamlessly blends ancient charm with modern development, offering visitors a tranquil retreat and cultural experiences.",
+        "currency": "CNY",
+        "budget": "Cheap",
+        "eat": "7",
+        "bed": "42",
+        "language": "Mandarin",
+        "englishFriendly": "a little",
+        "transportation": "Easy",
+        "reach": "Hangzhou Xiaoshan Airport (HGH)",
+        "local": "Taxis, Buses",
+        "bestTime": "April",
+        "bestTimeReason": " for less crowd",
+        "temperatureMin": "2°C in January",
+        "temperatureMax": "34°C in July",
+        "visa": "Visa Required",
+        "safety": "Mostly Safe",
+        "healthcare": "Average",
+        "foodToTry": "West Lake Fish in Sweet and Sour Sauce, Beggar's Chicken, and Longjing tea-infused dishes. Also, the city's famous Longjing tea itself.",
+        "advice": "Explore the Lingyin Temple, one of the oldest and most significant Buddhist temples in China. Wander through the historic Hefang Street for traditional architecture, street food, and local crafts.",
+        "expediaLink": "https://expedia.com/affiliate/syg6Zhd",
+        "zoom": 3,
+        "center": [30.250000, 120.166664],
+        "images": [
+          {
+              "title": "Tea House",
+              "image": "destinations/china/hangzhou/photo-1567975789927-dfaf473ca06e.avif",
+              "author": "David Veksler",
+              "link": "https://unsplash.com/fr/@davidveksler"
+          },
+          {
+              "title": "Pedestrian Street",
+              "image": "destinations/china/hangzhou/photo-1542728641-4d599ec9be86.avif",
+              "author": "Clay Banks",
+              "link": "https://unsplash.com/fr/@claybanks"
+          },
+          {
+              "title": "Leifeng Pagoda",
+              "image": "destinations/china/hangzhou/photo-1590379636920-577ee7bf62d5.avif",
+              "author": "Lin Lone",
+              "link": "https://unsplash.com/fr/@linlone"
+          },
+          {
+              "title": "Sea Front",
+              "image": "destinations/china/hangzhou/photo-1597618585562-7cc2ceec795e.avif",
+              "author": "戸山 神奈",
+              "link": "https://unsplash.com/fr/@toyamakanna"
+          }
+        ]
+    },
+    {
+        "id": "us-002",
+        "location": "San Francisco",
+        "country": "USA",
+        "description": "A vibrant and diverse city known for its iconic landmarks, cultural attractions, and stunning bay views. Famous for the Golden Gate Bridge, historic cable cars, and a mix of modern and Victorian architecture, San Francisco offers a unique blend of natural beauty and urban sophistication.",
+        "currency": "USD",
+        "budget": "Very High",
+        "eat": "20",
+        "bed": "200",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Easy",
+        "reach": "San Francisco Airport (SFO)",
+        "local": "BART, Taxis, Rideshare",
+        "bestTime": "September",
+        "bestTimeReason": " for less crowd",
+        "temperatureMin": "8°C in January",
+        "temperatureMax": "20°C in August",
+        "visa": "Tourist (B-2) visa required",
+        "safety": "Not Very Safe",
+        "healthcare": "Average",
+        "foodToTry": "Clam Chowder in a sourdough bread bowl, Mission-style burritos, and fresh seafood from the local markets.",
+        "advice": "Walk or bike across the iconic Golden Gate Bridge and enjoy panoramic views of the city and bay. Ride the historic cable cars and explore neighborhoods like Chinatown and North Beach.",
+        "expediaLink": "https://expedia.com/affiliate/MLgPg3S",
+        "zoom": 3,
+        "center": [37.787994, -122.407437],
+        "images": [
+          {
+              "title": "Golden Gate Bridge",
+              "image": "destinations/usa/san-francisco/photo-1541464522988-31b420f688b9.avif",
+              "author": "Natalie Chaney",
+              "link": "https://unsplash.com/fr/@naaatsnaps"
+          },
+          {
+              "title": "Lombard Street",
+              "image": "destinations/usa/san-francisco/photo-1602730307445-03a827d3f975.avif",
+              "author": "NISCHAL MALLA",
+              "link": "https://unsplash.com/fr/@nischalm"
+          },
+          {
+              "title": "Powell Street",
+              "image": "destinations/usa/san-francisco/photo-1562697445-84178bc6ea06.avif",
+              "author": "Daniel Abadia",
+              "link": "https://unsplash.com/fr/@pixeldan"
+          },
+          {
+              "title": "By Night",
+              "image": "destinations/usa/san-francisco/photo-1517210067403-d86a5703516f.avif",
+              "author": "Daiwei Lu",
+              "link": "https://unsplash.com/fr/@daiwei"
+          }
+        ]
+    },
+    {
+        "id": "nz-002",
+        "location": "Queenstown",
+        "country": "New Zealand",
+        "description": "A picturesque town located on the shores of Lake Wakatipu in the Southern Alps of New Zealand. Surrounded by stunning mountains, pristine lakes, and lush landscapes, Queenstown is known for its outdoor adventures, charming atmosphere, and breathtaking scenery.",
+        "currency": "NZD",
+        "budget": "High",
+        "eat": "12",
+        "bed": "89",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Easy",
+        "reach": "Queenstown Airport (ZQN)",
+        "local": "Bus, Car",
+        "bestTime": "February",
+        "bestTimeReason": " for nice weather",
+        "temperatureMin": "-1°C in July",
+        "temperatureMax": "22°C in February",
+        "visa": "Mostly free entry",
+        "safety": "Mostly Safe",
+        "healthcare": "Average",
+        "foodToTry": "Lamb, green-lipped mussels, and iconic desserts like pavlova. Also, the local wines from the Central Otago region.",
+        "advice": "Take a scenic cruise on Lake Wakatipu and enjoy the stunning mountainous backdrop. Explore the nearby Fiordland National Park for its fjords, waterfalls, and diverse wildlife.",
+        "expediaLink": "https://expedia.com/affiliate/7mNLEih",
+        "zoom": 3,
+        "center": [-45.031162, 168.662643],
+        "images": [
+          {
+              "title": "Queenstown Hill",
+              "image": "destinations/new-zealand/queenstown/photo-1547314283-befb6cc5cf29.avif",
+              "author": "Ömer Faruk Bekdemir",
+              "link": "https://unsplash.com/fr/@ofbekdemir"
+          },
+          {
+              "title": "Cable Car",
+              "image": "destinations/new-zealand/queenstown/photo-1600476018895-b66342d8592d.avif",
+              "author": "David Maunsell",
+              "link": "https://unsplash.com/fr/@dmaunsell"
+          },
+          {
+              "title": "Paragliding",
+              "image": "destinations/new-zealand/queenstown/photo-1471247511763-88a722fc9919.avif",
+              "author": "Tomas Sobek",
+              "link": "https://unsplash.com/fr/@tomas_nz"
+          },
+          {
+              "title": "Coastal Road",
+              "image": "destinations/new-zealand/queenstown/photo-1587420967696-a51916c9e40e.avif",
+              "author": "sterlinglanier Lanier",
+              "link": "https://unsplash.com/fr/@sterlinglanier"
+          }
+        ]
+    },
+    {
+        "id": "th-002",
+        "location": "Krabi",
+        "country": "Thailand",
+        "description": "A city and a province on the Andaman Sea in southern Thailand, known for its stunning limestone cliffs, clear waters, and beautiful beaches. The region offers a mix of natural wonders, outdoor adventures, and a laid-back atmosphere.",
+        "currency": "THB",
+        "budget": "Cheap",
+        "eat": "5",
+        "bed": "42",
+        "language": "Thai",
+        "englishFriendly": "in tourist area",
+        "transportation": "Easy",
+        "reach": "Krabi Airport (KBV)",
+        "local": "Tuk-Tuks, Songthaews, Taxis",
+        "bestTime": "February",
+        "bestTimeReason": " for the dry season",
+        "temperatureMin": "21°C in February",
+        "temperatureMax": "35°C in March",
+        "visa": "Free entry",
+        "safety": "Mostly Safe",
+        "healthcare": "Average",
+        "foodToTry": "Pad Thai, Tom Yum Goong (spicy shrimp soup), Green Curry, and fresh seafood from local markets.",
+        "advice": "Visit Railay Beach and its stunning limestone cliffs. Explore the Thung Teao Forest Natural Park and swim in the famous Emerald Pool.",
+        "expediaLink": "https://expedia.com/affiliate/O2zK4zz",
+        "zoom": 3,
+        "center": [8.086300, 98.906283],
+        "images": [
+          {
+              "title": "Ao Nang",
+              "image": "destinations/thailand/krabi/photo-1538475711279-0373b6bc754e.avif",
+              "author": "shawnanggg",
+              "link": "https://unsplash.com/fr/@shawnanggg"
+          },
+          {
+              "title": "Sunset",
+              "image": "destinations/thailand/krabi/photo-1450868765792-5766474e5dce.avif",
+              "author": "Andreas Brücker",
+              "link": "https://unsplash.com/fr/@andreasbruecker"
+          },
+          {
+              "title": "The Cliffs",
+              "image": "destinations/thailand/krabi/photo-1584226958444-6a259ba5e202.avif",
+              "author": "Valeriy Ryasnyanskiy",
+              "link": "https://unsplash.com/fr/@ryasnyansky"
+          },
+          {
+              "title": "Council of Monkeys",
+              "image": "destinations/thailand/krabi/photo-1603649637473-1aaeff93d311.avif",
+              "author": "Ioana Mohanu",
+              "link": "https://unsplash.com/fr/@iua713"
+          }
+        ]
+    },
+    {
+        "id": "co-001",
+        "location": "Cartagena",
+        "country": "Colombia",
+        "description": "Located on the northern coast of Colombia, Cartagena is a city with a rich history, colonial architecture, and vibrant Caribbean culture. Known for its well-preserved Old Town, colorful buildings, and lively atmosphere, Cartagena is a UNESCO World Heritage Site and a popular destination for travelers.",
+        "currency": "COP",
+        "budget": "Cheap",
+        "eat": "8",
+        "bed": "38",
+        "language": "Spanish",
+        "englishFriendly": "very little",
+        "transportation": "Easy",
+        "reach": "Rafael Núñez Airport (CTG)",
+        "local": "Taxis, Bus, Walk",
+        "bestTime": "February",
+        "bestTimeReason": " for the dry season",
+        "temperatureMin": "24°C in January",
+        "temperatureMax": "33°C in July",
+        "visa": "Free entry",
+        "safety": "Be Cautious",
+        "healthcare": "Low",
+        "foodToTry": "Arepas, Empanadas, Bandeja Paisa, and try the local specialty, ceviche.",
+        "advice": "Wander through the historic Old Town with its well-preserved colonial architecture and charming squares like Plaza de Bolívar. Visit the San Felipe de Barajas Castle for panoramic views of the city.",
+        "expediaLink": "https://expedia.com/affiliate/teSl9JT",
+        "zoom": 3,
+        "center": [10.39972, -75.51444],
+        "images": [
+          {
+              "title": "Suburb Street",
+              "image": "destinations/colombia/cartagena/photo-1583531352515-8884af319dc1.avif",
+              "author": "Leandro Loureiro",
+              "link": "https://unsplash.com/fr/@lealoureiro"
+          },
+          {
+              "title": "Oceanfront",
+              "image": "destinations/colombia/cartagena/photo-1666977461267-c0e924696510.avif",
+              "author": "Jenny",
+              "link": "https://unsplash.com/fr/@jennxfer"
+          },
+          {
+              "title": "Stone wall",
+              "image": "destinations/colombia/cartagena/photo-1632253838523-b2a2126d073e.avif",
+              "author": "Andrés Gómez",
+              "link": "https://unsplash.com/fr/@andresloquesea"
+          },
+          {
+              "title": "Umbrella Street",
+              "image": "destinations/colombia/cartagena/photo-1651421977198-0bd5af204560.avif",
+              "author": "Luis Desiro",
+              "link": "https://unsplash.com/fr/@luisdesiro"
+          }
+        ]
+    },
+    {
+        "id": "vn-001",
+        "location": "Halong",
+        "country": "Vietnam",
+        "description": "Located in the northeastern part of Vietnam, Halong Bay is a UNESCO World Heritage Site known for its emerald waters and thousands of limestone karsts topped with lush vegetation. The bay offers a breathtaking seascape with numerous caves, grottoes, and floating fishing villages, creating a serene and magical atmosphere.",
+        "currency": "VND",
+        "budget": "Cheap",
+        "eat": "5",
+        "bed": "29",
+        "language": "Vietnamese",
+        "englishFriendly": "commonly",
+        "transportation": "Average",
+        "reach": "Nội Bài Airport (HAN)",
+        "local": "Taxis, Bus, Car, Boat",
+        "bestTime": "Novembre",
+        "bestTimeReason": " for the clear skies",
+        "temperatureMin": "14°C in January",
+        "temperatureMax": "32°C in August",
+        "visa": "eVisa",
+        "safety": "Mostly Safe",
+        "healthcare": "Low",
+        "foodToTry": "Pho, Banh Mi, fresh seafood, and traditional Vietnamese spring rolls.",
+        "advice": "Take a cruise to explore the stunning limestone karsts and islets of Halong Bay. Visit the Thien Cung Cave (Heavenly Palace Cave) and Sung Sot Cave to witness impressive rock formations.",
+        "expediaLink": "https://expedia.com/affiliate/odVxm0b",
+        "zoom": 3,
+        "center": [20.959902, 107.042542],
+        "images": [
+          {
+              "title": "Halong Bay",
+              "image": "destinations/vietnam/halong/photo-1581552456143-0cd325c6a20d.avif",
+              "author": "VENUS MAJOR",
+              "link": "https://unsplash.com/fr/@venusmajor"
+          },
+          {
+              "title": "Small Boats",
+              "image": "destinations/vietnam/halong/photo-1586100866229-5749c821a61d.avif",
+              "author": "Gary Cacciatore",
+              "link": "https://unsplash.com/fr/@garycacciatore"
+          },
+          {
+              "title": "Sea Front",
+              "image": "destinations/vietnam/halong/photo-1588892355870-23d3dee5eac7.avif",
+              "author": "Vivian Szeto",
+              "link": "https://unsplash.com/fr/@vivianszeto"
+          },
+          {
+              "title": "Caves",
+              "image": "destinations/vietnam/halong/photo-1632753561897-964f1408b48e.avif",
+              "author": "Ray Harrington",
+              "link": "https://unsplash.com/fr/@raymondo600"
+          }
+        ]
     }
 ]
   

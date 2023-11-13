@@ -30,7 +30,7 @@ Maps providers are :
 - Tag a destination as "Visited"
 - Earn badges or achievements by visiting countries, or all destinations in a country
 
-## Destinations presented (36 total)
+## Destinations presented (42 total)
 - Kyoto, Japan (jp-001)  
 - Paris, France (fr-001)  
 - Dublin, Ireland (ir-001)  
@@ -67,3 +67,9 @@ Maps providers are :
 - Antigua, Guatemala (gt-001)  
 - Samarkand, Uzbekistan (uz-001)  
 - Udaipur, India (in-001)  
+- Hangzhou, China (cn-001)  
+- San Francisco, USA (us-002)  
+- Queenstown, New Zealand (nz-002)  
+- Krabi, Thailand (th-002)  
+- Cartagena, Colombia (co-001)  
+- Halong, Vietnam (vn-001)  
