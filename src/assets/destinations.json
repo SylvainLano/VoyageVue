@@ -2224,6 +2224,483 @@
               "link": "https://unsplash.com/fr/@raymondo600"
           }
         ]
+    },
+    {
+        "id": "hr-002",
+        "location": "Plitvice Lakes",
+        "country": "Croatia",
+        "description": "Plitvice Lakes National Park, a UNESCO World Heritage Site, is a stunning natural wonder located in central Croatia. It is renowned for its series of cascading lakes, waterfalls, and lush forests. The park is a haven for nature lovers, offering picturesque walking trails and the opportunity to witness the mesmerizing turquoise lakes.",
+        "currency": "EUR",
+        "budget": "Average",
+        "eat": "12",
+        "bed": "58",
+        "language": "Croatian",
+        "englishFriendly": "in tourist areas",
+        "transportation": "Average",
+        "reach": "Zagreb Airport (ZAG)",
+        "local": "Bus, Car, Boat, Trails",
+        "bestTime": "June",
+        "bestTimeReason": " for less crowd",
+        "temperatureMin": "-5°C in January",
+        "temperatureMax": "27°C in July",
+        "visa": "Mostly free entry",
+        "safety": "Mostly Safe",
+        "healthcare": "Average",
+        "foodToTry": "Peka (slow-cooked meat and vegetables), pasticada (beef stew), and sataruša (cheese and spinach pastry).",
+        "advice": "Explore the network of lakes and waterfalls, including the Veliki Slap, the highest waterfall in the park. Walk along the wooden pathways that crisscross the park, offering breathtaking views of the crystal-clear lakes.",
+        "expediaLink": "https://expedia.com/affiliate/VRxflPE",
+        "zoom": 3,
+        "center": [44.8817, 15.6196],
+        "images": [
+          {
+              "title": "Plitvička Jezera",
+              "image": "destinations/croatia/plitvice-lakes/photo-1602532147905-b6704e3422d5.avif",
+              "author": "Vlada",
+              "link": "https://unsplash.com/fr/@flashback_travel_guide"
+          },
+          {
+              "title": "Wooden Trail",
+              "image": "destinations/croatia/plitvice-lakes/photo-1567875158217-b81921028e05.avif",
+              "author": "Kenneth Sonntag",
+              "link": "https://unsplash.com/fr/@kennethsonntag"
+          },
+          {
+              "title": "Waterfalls",
+              "image": "destinations/croatia/plitvice-lakes/photo-1493713838217-28e23b41b798.avif",
+              "author": "Jonatan Pie",
+              "link": "https://unsplash.com/fr/@r3dmax"
+          },
+          {
+              "title": "The Hills",
+              "image": "destinations/croatia/plitvice-lakes/photo-1568589843948-1744b6c0c6e8.avif",
+              "author": "Kieran Manion",
+              "link": "https://unsplash.com/fr/@kieran_manion"
+          }
+        ]
+    },
+    {
+        "id": "at-002",
+        "location": "Salzburg",
+        "country": "Austria",
+        "description": "Nestled along the banks of the Salzach River and surrounded by the Austrian Alps, Salzburg is a charming city with a rich history and cultural heritage. Birthplace of Wolfgang Amadeus Mozart, the city boasts baroque architecture, historic landmarks, and a musical tradition that comes alive during the annual Salzburg Festival.",
+        "currency": "EUR",
+        "budget": "High",
+        "eat": "16",
+        "bed": "130",
+        "language": "German",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "W.A. Mozart Airport (SZG)",
+        "local": "Bus, Tram, Taxi, Cycling",
+        "bestTime": "June",
+        "bestTimeReason": " for less crowd",
+        "temperatureMin": "-4°C in January",
+        "temperatureMax": "25°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Wiener Schnitzel, Sachertorte (chocolate cake), and traditional Alpine dishes.",
+        "advice": "Explore the historic Old Town (Altstadt) with its narrow streets and medieval architecture. Visit the Hohensalzburg Fortress for panoramic views of the city and surrounding Alps.",
+        "expediaLink": "https://expedia.com/affiliate/6dfDaK8",
+        "zoom": 3,
+        "center": [47.811195, 13.033229],
+        "images": [
+          {
+              "title": "Hohensalzburg Fortress",
+              "image": "destinations/austria/salzburg/photo-1603530066651-32c3a4cb09f3.avif",
+              "author": "Marina Ahammer",
+              "link": "https://unsplash.com/fr/@maha4597"
+          },
+          {
+              "title": "The Mountain",
+              "image": "destinations/austria/salzburg/photo-1436454421951-a8c518cba39b.avif",
+              "author": "Niklas Siemens",
+              "link": "https://unsplash.com/fr/@sieklas"
+          },
+          {
+              "title": "Sunrise",
+              "image": "destinations/austria/salzburg/photo-1598821801260-626a95d57f5c.avif",
+              "author": "Anthony Hill",
+              "link": "https://unsplash.com/fr/@hillypix"
+          },
+          {
+              "title": "Horse Carriage",
+              "image": "destinations/austria/salzburg/photo-1544792325-841c21d48bc7.avif",
+              "author": "Yasen Iliev",
+              "link": "https://unsplash.com/fr/@destlii"
+          }
+        ]
+    },
+    {
+        "id": "tr-001",
+        "location": "Cappadocia",
+        "country": "Turkey",
+        "description": "Nestled along the banks of the Salzach River and surrounded by the Austrian Alps, Salzburg is a charming city with a rich history and cultural heritage. Birthplace of Wolfgang Amadeus Mozart, the city boasts baroque architecture, historic landmarks, and a musical tradition that comes alive during the annual Salzburg Festival.",
+        "currency": "TRY",
+        "budget": "Very Cheap",
+        "eat": "2",
+        "bed": "7",
+        "language": "Turkish",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Nevşehir Kapadokya Airport (NAV)",
+        "local": "Shuttle, Taxi, Scooter, Bicycle",
+        "bestTime": "June",
+        "bestTimeReason": " for nice weather",
+        "temperatureMin": "-5°C in January",
+        "temperatureMax": "31°C in August",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "Average",
+        "foodToTry": "Gözleme (stuffed flatbread), Kebabs, Meze (appetizers), and Turkish delight.",
+        "advice": "Take a hot air balloon ride over the surreal landscapes of Cappadocia during sunrise. Explore the Göreme Open-Air Museum, showcasing cave churches and dwellings.",
+        "expediaLink": "https://expedia.com/affiliate/lCJwIxf",
+        "zoom": 3,
+        "center": [38.6486, 34.8639],
+        "images": [
+          {
+              "title": "Hot Air Balloons",
+              "image": "destinations/turkey/cappadocia/photo-1604156789095-3348604c0f43.avif",
+              "author": "Timur Garifov",
+              "link": "https://unsplash.com/fr/@timgarifov"
+          },
+          {
+              "title": "Rocky Landscape",
+              "image": "destinations/turkey/cappadocia/photo-1559783873-66b042dfc6e4.avif",
+              "author": "Tony Lee",
+              "link": "https://unsplash.com/fr/@tli427"
+          },
+          {
+              "title": "Göreme",
+              "image": "destinations/turkey/cappadocia/photo-1669111958409-cdfe01dd7df7.avif",
+              "author": "Igor Sporynin",
+              "link": "https://unsplash.com/fr/@igorharrier"
+          },
+          {
+              "title": "Cave Houses",
+              "image": "destinations/turkey/cappadocia/photo-1583315563698-fee1133df5ce.avif",
+              "author": "Mantas August",
+              "link": "https://unsplash.com/fr/@tausaeio"
+          }
+        ]
+    },
+    {
+        "id": "is-001",
+        "location": "Reykjavik",
+        "country": "Iceland",
+        "description": "The capital and largest city of Iceland is a vibrant and cosmopolitan hub surrounded by stunning natural landscapes. Known for its artistic culture, unique architecture, and proximity to geothermal wonders, Reykjavik offers a mix of modern city life and Icelandic charm.",
+        "currency": "ISK",
+        "budget": "Very High",
+        "eat": "21",
+        "bed": "175",
+        "language": "Icelandic",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Keflavik Airport (KEF)",
+        "local": "Bus, Taxi, Shuttle, Walk",
+        "bestTime": "Septembre",
+        "bestTimeReason": " for night and days to happen",
+        "temperatureMin": "-3°C in January",
+        "temperatureMax": "14°C in August",
+        "visa": "Schengen visa required",
+        "safety": "Safest in the world",
+        "healthcare": "Very High",
+        "foodToTry": "Lamb soup, Fermented Shark, Skyr (Icelandic yogurt), and the famous hot dogs from Bæjarins Beztu Pylsur.",
+        "advice": "Visit in June for a Midnight Sun, or in December for an almost Polar Night. Witness Northern Lights during night time. Take a day trip to witness natural wonders like the Golden Circle or the nearby geysers and waterfalls.",
+        "expediaLink": "https://expedia.com/affiliate/KluG7b0",
+        "zoom": 3,
+        "center": [64.128288, -21.827774],
+        "images": [
+          {
+              "title": "Northern Lights",
+              "image": "destinations/iceland/reykjavik/photo-1529963183134-61a90db47eaf.avif",
+              "author": "Nicolas J Leclercq",
+              "link": "https://unsplash.com/fr/@nicolasjleclercq"
+          },
+          {
+              "title": "Hallgrimskirkja",
+              "image": "destinations/iceland/reykjavik/photo-1474690870753-1b92efa1f2d8.avif",
+              "author": "Ferdinand Stöhr",
+              "link": "https://unsplash.com/fr/@fellowferdi"
+          },
+          {
+              "title": "Aerial View",
+              "image": "destinations/iceland/reykjavik/photo-1596102225269-174b5133907c.avif",
+              "author": "Einar H. Reynis",
+              "link": "https://unsplash.com/fr/@einarr05"
+          },
+          {
+              "title": "Sunset",
+              "image": "destinations/iceland/reykjavik/photo-1587837145029-79051133ef79.avif",
+              "author": "Rafael Garcin",
+              "link": "https://unsplash.com/fr/@nimbus_vulpis"
+          }
+        ]
+    },
+    {
+        "id": "is-002",
+        "location": "Vík í Mýrdal",
+        "country": "Iceland",
+        "description": "Commonly known as Vík, Vík í Mýrdal is a small and picturesque village located on the southern coast of Iceland. Famous for its stunning black sand beaches, dramatic cliffs, and proximity to iconic natural landmarks, Vík offers a serene and captivating experience in the midst of Iceland's rugged beauty.",
+        "currency": "ISK",
+        "budget": "Very High",
+        "eat": "29",
+        "bed": "211",
+        "language": "Icelandic",
+        "englishFriendly": "widely",
+        "transportation": "Average",
+        "reach": "Keflavik Airport (KEF)",
+        "local": "Car",
+        "bestTime": "Septembre",
+        "bestTimeReason": " for night and days to happen",
+        "temperatureMin": "-2°C in February",
+        "temperatureMax": "13°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Very Safe",
+        "healthcare": "Low",
+        "foodToTry": "Enjoy local fish dishes, lamb, and traditional desserts.",
+        "advice": "Visit in June for a Midnight Sun, or in December for an almost Polar Night. Witness Northern Lights during night time. Explore the iconic Reynisfjara Black Sand Beach with its basalt columns and Reynisdrangar sea stacks.",
+        "expediaLink": "https://expedia.com/affiliate/GNMWeen",
+        "zoom": 3,
+        "center": [63.4194, -19.0097],
+        "images": [
+          {
+              "title": "Reynisfjara",
+              "image": "destinations/iceland/vik-i-myrdal/photo-1586890313896-0f77117a8674.avif",
+              "author": "Chris Henry",
+              "link": "https://unsplash.com/fr/@chrishenryphoto"
+          },
+          {
+              "title": "Dyrhólaey",
+              "image": "destinations/iceland/vik-i-myrdal/photo-1619165822815-3a024438cbf6.avif",
+              "author": "Pavol Svantner",
+              "link": "https://unsplash.com/fr/@palsoft"
+          },
+          {
+              "title": "Seljalandsfoss",
+              "image": "destinations/iceland/vik-i-myrdal/photo-1506261423908-ea2559c1f24c.avif",
+              "author": "Andrey Andreyev",
+              "link": "https://unsplash.com/fr/@ludenus"
+          },
+          {
+              "title": "Mýrdalsjökull",
+              "image": "destinations/iceland/vik-i-myrdal/photo-1577464849471-8dc8be232176.avif",
+              "author": "Jonatan Pie",
+              "link": "https://unsplash.com/fr/@r3dmax"
+          }
+        ]
+    },
+    {
+        "id": "is-003",
+        "location": "Höfn",
+        "country": "Iceland",
+        "description": "Located on the southeastern coast of Iceland, Höfn is a charming fishing town known for its scenic beauty, seafood delicacies, and proximity to stunning glacial landscapes. Surrounded by snow-capped mountains and overlooking the Vatnajökull Glacier, Höfn offers a peaceful retreat with a focus on Icelandic hospitality.",
+        "currency": "ISK",
+        "budget": "Very High",
+        "eat": "29",
+        "bed": "211",
+        "language": "Icelandic",
+        "englishFriendly": "widely",
+        "transportation": "Hard",
+        "reach": "Keflavik Airport (KEF)",
+        "local": "Car",
+        "bestTime": "Septembre",
+        "bestTimeReason": " for night and days to happen",
+        "temperatureMin": "-2°C in February",
+        "temperatureMax": "13°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Very Safe",
+        "healthcare": "Average",
+        "foodToTry": "Höfn's renowned lobster dishes, including lobster soup, grilled lobster, and lobster pasta.",
+        "advice": "Visit in June for a Midnight Sun, or in December for an almost Polar Night. Witness Northern Lights during night time. Experience the breathtaking views of Vatnajökull Glacier, Europe's largest glacier, and explore nearby glacial lagoons.",
+        "expediaLink": "https://expedia.com/affiliate/qrbeXpY",
+        "zoom": 3,
+        "center": [64.2497026, -15.2020076],
+        "images": [
+          {
+              "title": "Vestrahorn",
+              "image": "destinations/iceland/hofn/photo-1669820755454-2dc4e1a00f1b.avif",
+              "author": "Ivan Catchem",
+              "link": "https://unsplash.com/fr/@ivan_catchem"
+          },
+          {
+              "title": "Jökulsárlón",
+              "image": "destinations/iceland/hofn/photo-1621738245678-a5c0cff6a1ef.avif",
+              "author": "Alex He",
+              "link": "https://unsplash.com/fr/@alex_he"
+          },
+          {
+              "title": "Vatnajökull",
+              "image": "destinations/iceland/hofn/photo-1610497982133-59ea8687ecd8.avif",
+              "author": "Izabela Kraus",
+              "link": "https://unsplash.com/fr/@izabelakraus"
+          },
+          {
+              "title": "Svartifoss",
+              "image": "destinations/iceland/hofn/photo-1696709699529-683fe6172436.avif",
+              "author": "Bernd 📷 Dittrich",
+              "link": "https://unsplash.com/fr/@hdbernd"
+          }
+        ]
+    },
+    {
+        "id": "us-003",
+        "location": "Los Angeles",
+        "country": "USA",
+        "description": "Often referred to as the \"City of Angels\", Los Angeles is a sprawling metropolis on the west coast of the United States. Renowned for its entertainment industry, diverse neighborhoods, and iconic landmarks, Los Angeles offers a blend of glamour, cultural richness, and a laid-back California lifestyle.",
+        "currency": "USD",
+        "budget": "Very High",
+        "eat": "20",
+        "bed": "150",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Easy",
+        "reach": "Los Angeles Airport (LAX)",
+        "local": "Metro, Bus, Train, Taxi, Rideshare, Car",
+        "bestTime": "October",
+        "bestTimeReason": " for less crowd",
+        "temperatureMin": "9°C in December",
+        "temperatureMax": "29°C in August",
+        "visa": "Tourist (B-2) visa required",
+        "safety": "Mostly Safe",
+        "healthcare": "High",
+        "foodToTry": " Try In-N-Out Burger, street tacos, sushi in Little Tokyo, and trendy brunch spots.",
+        "advice": "Explore Hollywood and visit the Hollywood Walk of Fame. Relax on the beautiful beaches, such as Santa Monica and Venice Beach. Hike to the iconic Hollywood Sign for panoramic views of the city.",
+        "expediaLink": "https://expedia.com/affiliate/Md3FMsi",
+        "zoom": 3,
+        "center": [34.003342, -118.485832],
+        "images": [
+          {
+              "title": "Hollywood Sign",
+              "image": "destinations/usa/los-angeles/photo-1572975165675-ab322e4b55ba.avif",
+              "author": "Venti Views",
+              "link": "https://unsplash.com/fr/@ventiviews"
+          },
+          {
+              "title": "City by night",
+              "image": "destinations/usa/los-angeles/photo-1444723121867-7a241cacace9.avif",
+              "author": "Henning Witzel",
+              "link": "https://unsplash.com/fr/@henning"
+          },
+          {
+              "title": "Palm Trees",
+              "image": "destinations/usa/los-angeles/photo-1597982087634-9884f03198ce.avif",
+              "author": "Venti Views",
+              "link": "https://unsplash.com/fr/@ventiviews"
+          },
+          {
+              "title": "Judge Harry Pregerson Interchange",
+              "image": "destinations/usa/los-angeles/photo-1543996991-8e851c2dc841.avif",
+              "author": "Denys Nevozhai",
+              "link": "https://unsplash.com/fr/@dnevozhai"
+          }
+        ]
+    },
+    {
+        "id": "no-001",
+        "location": "Stavanger",
+        "country": "Norway",
+        "description": "Situated on the southwestern coast of Norway, Stavanger is a charming city known for its rich maritime history, scenic landscapes, and vibrant cultural scene. With a mix of historic architecture, modern amenities, and proximity to stunning fjords, Stavanger provides a delightful blend of Norwegian tradition and contemporary living.",
+        "currency": "NOK",
+        "budget": "High",
+        "eat": "19",
+        "bed": "91",
+        "language": "Norwegian",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Stavanger Airport, Sola (SVG)",
+        "local": "Bus, Ferry, Taxi, Car",
+        "bestTime": "June",
+        "bestTimeReason": " for longer days",
+        "temperatureMin": "0°C in January",
+        "temperatureMax": "19°C in August",
+        "visa": "Schengen visa required",
+        "safety": "Safe",
+        "healthcare": "Very High",
+        "foodToTry": "Lutefisk (dried fish), Raspeballer (potato dumplings), and fresh seafood, including salmon and cod.",
+        "advice": "Visit the Stavanger Cathedral, one of the oldest cathedrals in Norway. Hike to the iconic Preikestolen (Pulpit Rock) for panoramic views of the Lysefjord.",
+        "expediaLink": "https://expedia.com/affiliate/WQhg1G0",
+        "zoom": 3,
+        "center": [58.969975, 5.733107],
+        "images": [
+          {
+              "title": "Preikestolen",
+              "image": "destinations/norway/stavenger/photo-1536683402757-75f8d0dfa419.avif",
+              "author": "Valdemaras D.",
+              "link": "https://unsplash.com/fr/@deko_photo4"
+          },
+          {
+              "title": "Landscape",
+              "image": "destinations/norway/stavenger/photo-1571171307515-ea967318c581.avif",
+              "author": "Andrzej Kryszpiniuk",
+              "link": "https://unsplash.com/fr/@kryszpin"
+          },
+          {
+              "title": "From the sky",
+              "image": "destinations/norway/stavenger/photo-1456018660448-98385e9fd51f.avif",
+              "author": "Oleksii T",
+              "link": "https://unsplash.com/fr/@megapixel_world"
+          },
+          {
+              "title": "Street",
+              "image": "destinations/norway/stavenger/photo-1432057000846-e2204c1b22e4.avif",
+              "author": "Caitlin Wynne",
+              "link": "https://unsplash.com/fr/@caitlinwynne"
+          }
+        ]
+    },
+    {
+        "id": "pf-001",
+        "location": "Bora Bora",
+        "country": "French Polynesia",
+        "description": "A tropical paradise nestled in the South Pacific, renowned for its overwater bungalows, crystal-clear turquoise waters, and lush greenery. This idyllic island is surrounded by a vibrant coral reef, offering a perfect blend of luxury, natural beauty, and Polynesian charm.",
+        "currency": "XPF",
+        "budget": "High",
+        "eat": "21",
+        "bed": "160",
+        "language": "French, Tahitian",
+        "englishFriendly": "a little",
+        "transportation": "Hard",
+        "reach": "Faa'a Airport (PPT)",
+        "local": "Plane, Boat, Water Taxi, Bicycle, Scooter",
+        "bestTime": "August",
+        "bestTimeReason": " for lower humidity",
+        "temperatureMin": "20°C in August",
+        "temperatureMax": "28°C in February",
+        "visa": "Schengen visa required",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Tahitian and French-inspired cuisine with dishes like poisson cru (raw fish marinated in coconut milk), mahi-mahi, and tropical fruits.",
+        "advice": "Snorkel or dive in the vibrant coral gardens of the lagoon. Take a boat tour to explore Mount Otemanu, the island's extinct volcano. Relax on Matira Beach, known for its powdery white sand.",
+        "expediaLink": "https://expedia.com/affiliate/R2VsSQl",
+        "zoom": 3,
+        "center": [-16.499701, -151.770538],
+        "images": [
+          {
+              "title": "Houses on Stilts",
+              "image": "destinations/french-polynesia/bora-bora/photo-1580725869538-9b164c27c44f.avif",
+              "author": "Damien Chaudet",
+              "link": "https://unsplash.com/fr/@dfromrennes"
+          },
+          {
+              "title": "Canoe",
+              "image": "destinations/french-polynesia/bora-bora/photo-1518232197542-9325c59ecac9.avif",
+              "author": "Artak Petrosyan",
+              "link": "https://unsplash.com/fr/@artakpetrosyan"
+          },
+          {
+              "title": "Stingray",
+              "image": "destinations/french-polynesia/bora-bora/photo-1509151143140-7295d8a673ad.avif",
+              "author": "Daniel Bettech",
+              "link": "https://unsplash.com/fr/@dannyelo"
+          },
+          {
+              "title": "Sharks",
+              "image": "destinations/french-polynesia/bora-bora/photo-1597254512641-c0141c25f32c.avif",
+              "author": "Tomas Gonzalez de Rosenzweig",
+              "link": "https://unsplash.com/fr/@holatgr"
+          }
+        ]
     }
 ]
   

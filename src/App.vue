@@ -43,17 +43,21 @@
               <font-awesome-icon class="cursor-pointer" :icon="['fas', 'pencil']" size="lg" @click="setMapMode('watercolor')" v-if="mapMode !== 'watercolor'" />
             </div>
           </div>
-          <div class="basis-1/4 text-green-700 text-right pr-2">
+          <div class="basis-1/6 text-green-700 text-right pr-2">
             <input class="mx-1" type="checkbox" id="starredBox" v-model="hideStarred" :disabled="starredDestinationData.length === 0" />
             <label for="starredBox" :style="{ color: starredDestinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ starredDestinationData.length }} Starred</label>
           </div>
-          <div class="basis-1/4 text-red-700 text-center">
+          <div class="basis-1/6 text-red-700 text-center">
             <input class="mx-1" type="checkbox" id="bannedBox" v-model="hideBanned" :disabled="bannedDestinationData.length === 0" />
             <label for="bannedBox" :style="{ color: bannedDestinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ bannedDestinationData.length }} Banned</label>
           </div>
-          <div class="basis-1/4 text-cyan-700 text-left pl-2">
+          <div class="basis-1/6 text-cyan-700 text-left pl-2">
             <input class="mx-1" type="checkbox" id="unmarkedBox" v-model="hideUnmarked" :disabled="destinationData.length === 0" />
             <label for="unmarkedBox"  :style="{ color: destinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ destinationData.length }} Unmarked</label>
+          </div>
+          <div class="basis-1/6 text-emerald-700 text-left pl-2">
+            <input class="mx-1" type="checkbox" id="visitedBox" v-model="hideVisited" :disabled="visitedDestinationsStorage.length === 0" />
+            <label for="visitedBox"  :style="{ color: visitedDestinationsStorage.length === 0 ? 'grey' : 'inherit' }">Hide {{ visitedDestinationsStorage.length }} Visited</label>
           </div>
           <div class="basis-1/6">
           </div>
@@ -62,14 +66,19 @@
         <l-map 
           ref="starBanMap"
           :zoom=2
+          :max-bounds="maxBounds"
+          :minZoom=2
+          :worldCopyJump=true
           :center="[21.116772, -11.405182]"
           :options="{ zoomControl: false, attributionControl: false }"
         >
           <l-tile-layer :url="getTileLayerUrl()"></l-tile-layer>
+
+          <l-geo-json :geojson="getVisitedGeoJsonData()" :options-style="visitedGeoJsonCountries" :visible="!hideVisited"></l-geo-json>
           
           <l-layer-group :visible="!hideBanned">
           <l-marker
-            v-for="(destination, index) in bannedDestinationData"
+            v-for="(destination, index) in filteredBannedDestinations"
             :key="'banned_' + index"
             :lat-lng="destination.center"
             @click="nextDestination(destination.id)"
@@ -84,7 +93,7 @@
 
           <l-layer-group :visible="!hideStarred">
             <l-marker
-              v-for="(destination, index) in starredDestinationData"
+              v-for="(destination, index) in filteredStarredDestinations"
               :key="'starred_' + index"
               :lat-lng="destination.center"
               @click="nextDestination(destination.id)"
@@ -99,7 +108,7 @@
 
           <l-layer-group :visible="!hideUnmarked">
             <l-marker
-              v-for="(destination, index) in destinationData"
+              v-for="(destination, index) in filterUnmarkedDestinations"
               :key="'unmarked_' + index"
               :lat-lng="destination.center"
               @click="nextDestination(destination.id)"
@@ -149,8 +158,24 @@
             <font-awesome-icon :icon="['fas', 'star']" :spin="isBeating" :transform="'shrink-'+starShrink" />
           </div>
         </div>
-        <div class="font-mono text-2xl text-slate-700 text-right align-center">
-          <span :class="flagClass"></span>{{ currentDestination.country }}
+        <div class="font-mono text-2xl text-slate-700 text-right align-center flex justify-between pl-2">
+          <div class="flex">
+            <div class="text-slate-500 cursor-pointer text-xl align-bottom" v-if="!isStarred(currentDestination.id) && !isBanned(currentDestination.id)" @click="banToggle" title="Never show this destination anymore.">
+              <font-awesome-icon :icon="['far', 'circle-xmark']" :transform="'shrink-'+banShrink" />
+            </div>
+            <div class="text-red-600 cursor-pointer text-xl align-bottom" v-else-if="!isStarred(currentDestination.id)" @click="banToggle" title="Bring this destination back on tracks!">
+              <font-awesome-icon :icon="['fas', 'circle-xmark']" :transform="'shrink-'+banShrink" />
+            </div>
+            <div class="text-slate-500 cursor-pointer text-xl align-bottom" v-if="!isVisited(currentDestination.id)" @click="visitedToggle" title="You have visited this destination.">
+              <font-awesome-icon :icon="['far', 'circle-check']" :transform="'shrink-'+visitedShrink" />
+            </div>
+            <div class="text-emerald-600 cursor-pointer text-xl align-bottom" v-else-if="isVisited(currentDestination.id)" @click="visitedToggle" title="You never visited this destination.">
+              <font-awesome-icon :icon="['fas', 'circle-check']" :transform="'shrink-'+visitedShrink" />
+            </div>
+          </div>
+          <div>
+            <span :class="flagClass"></span>{{ currentDestination.country }}
+          </div>
         </div>
         <div class="font-mono text-xs text-slate-700 text-justify my-5">
           {{ currentDestination.description }}
@@ -201,12 +226,6 @@
           {{ currentDestination.temperatureMin }} to {{ currentDestination.temperatureMax }}
         </div>
         <div class="absolute bottom-0 left-0 right-0 p-4 text-right">   
-          <div class="text-slate-500 cursor-pointer text-xl" v-if="!isStarred(currentDestination.id) && !isBanned(currentDestination.id)" @click="banToggle" title="Never show this destination anymore.">
-            <font-awesome-icon :icon="['far', 'circle-xmark']" :transform="'shrink-'+banShrink" />
-          </div>
-          <div class="text-red-600 cursor-pointer text-xl" v-else-if="!isStarred(currentDestination.id)" @click="banToggle" title="Bring this destination back on tracks!">
-            <font-awesome-icon :icon="['fas', 'circle-xmark']" :bounce="isBeating" :transform="'shrink-'+banShrink" />
-          </div>
           <div class="font-mono text-center mt-5">
             <button class="py-2 px-3 bg-indigo-300 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
             @click="previousDestination"
@@ -343,9 +362,12 @@ import { VueperSlides, VueperSlide } from 'vueperslides';
 import 'vueperslides/dist/vueperslides.css';
 import '@/assets/css/tailwind.css';
 import destinationData from '@/assets/destinations.json';
+import countriesGeoJsonData from '@/assets/countries.json';
+import isoMapping from '@/assets/isoMapping.json';
 import axios from 'axios';
 import "leaflet/dist/leaflet.css";
-import { LMap, LTileLayer, LMarker, LIcon, LLayerGroup, LTooltip } from "@vue-leaflet/vue-leaflet";
+import { latLngBounds } from "leaflet";
+import { LMap, LTileLayer, LMarker, LIcon, LLayerGroup, LTooltip, LGeoJson } from "@vue-leaflet/vue-leaflet";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default {
@@ -358,7 +380,8 @@ export default {
     LMarker,
     LIcon,
     LLayerGroup,
-    LTooltip
+    LTooltip,
+    LGeoJson
   },
   data: () => ({
     pauseOnHover: true,
@@ -377,6 +400,7 @@ export default {
     isBeating: false,
     starShrink: 1,
     banShrink: 1,
+    visitedShrink: 1,
     showMenu: true,
     showCard: false,
     showSlides: true,
@@ -384,9 +408,12 @@ export default {
     showStarredMenu: false,
     showBanned: false,
     showBannedMenu: false,
+    showVisited: false,
+    showVisitedMenu: false,
     goThere: false,
     starredDestinationsStorage: [],
     bannedDestinationsStorage: [],
+    visitedDestinationsStorage: [],
     breadCrumbs: [],
     noMoreUnseenDestination: false,
     scaleFactor: 1,
@@ -411,13 +438,21 @@ export default {
     swipeCooldown: 500,
     showFullMap: false,
     hideStarred: false,
-    hideBanned: false,
+    hideBanned: true,
     hideUnmarked: false,
+    hideVisited: false,
     fullScreen: false,
     fullScreenNextCounter: 0,
     fullScreenTitle: true,
     mapMode: "streets",
     isMapModeMenuVisible: false,
+    currencyDataCache: null,
+    countriesGeoJsonData: countriesGeoJsonData,
+    isoMapping: isoMapping,
+    maxBounds: latLngBounds([
+      [-90, -360], // Southwest corner of the world
+      [90, 360],   // Northeast corner of the world
+    ]),
   }),
   mounted() {
     setInterval(() => {
@@ -547,6 +582,21 @@ export default {
       return Object.keys(classes)
         .filter((className) => classes[className])
         .join(' ');
+    },
+    filteredStarredDestinations() {
+      return this.starredDestinationData.filter((destination) => {
+        return !this.isVisited(destination.id) || !this.hideVisited;
+      });
+    },
+    filteredBannedDestinations() {
+      return this.bannedDestinationData.filter((destination) => {
+        return !this.isVisited(destination.id) || !this.hideVisited;
+      });
+    },
+    filterUnmarkedDestinations() {
+      return this.destinationData.filter((destination) => {
+        return !this.isVisited(destination.id) || !this.hideVisited;
+      });
     },
   },
   methods: {
@@ -687,32 +737,28 @@ export default {
       // Redirect to the external website when the button is clicked
       window.open(this.currentDestination.expediaLink, "_blank");
     },  
-    updateCurrencyData(currencyCode) {
+    async updateCurrencyData(currencyCode) {
       if ( currencyCode === "USD" ) {
         this.currencyData.code = "USD";
         this.currencyData.name = "US Dollar";
         this.currencyData.equivalentInCurrency = 1;
       } else {
-        // Fetch and update currency data using the selected currency code
-        axios
-          .get('https://www.floatrates.com/daily/usd.json')
-          .then((response) => {
-            const currencyData = response.data[currencyCode.toLowerCase()];
-            if (currencyData) {
-              this.currencyData.code = currencyData.code;
-              this.currencyData.name = currencyData.name; // Update the currency name
-              const amountInUSD = 10; // The base amount in USD
-              const equivalentInCurrency = amountInUSD * currencyData.rate;
-              this.currencyData.equivalentInCurrency = equivalentInCurrency.toFixed(2);
-            } else {
-              this.currencyData.code = currencyCode;
-              this.currencyData.name = currencyCode;
-              this.currencyData.equivalentInCurrency = 1;
-            }
-          })
-          .catch((error) => {
-            console.error('Error fetching currency data: ', error);
-          });
+        // Wait for currencyDataCache to be populated
+        await this.fetchCurrencyData();
+
+        // Fetch and update currency data using the selected currency code        
+        const currencyData = this.currencyDataCache[currencyCode.toLowerCase()];
+        if (currencyData) {
+          this.currencyData.code = currencyData.code;
+          this.currencyData.name = currencyData.name; // Update the currency name
+          const amountInUSD = 10; // The base amount in USD
+          const equivalentInCurrency = amountInUSD * currencyData.rate;
+          this.currencyData.equivalentInCurrency = equivalentInCurrency.toFixed(2);
+        } else {
+          this.currencyData.code = currencyCode;
+          this.currencyData.name = currencyCode;
+          this.currencyData.equivalentInCurrency = 1;
+        }
       }
     },    
     starToggle() {
@@ -750,6 +796,38 @@ export default {
     },    
     isStarred(destinationId) {
       return this.starredDestinationsStorage.includes(destinationId);
+    },        
+    visitedToggle() {
+      // Increase visitedShrink from 1 to 16
+      let sizeIncreaseInterval = setInterval(() => {
+        this.visitedShrink += 4;
+        if (this.visitedShrink >= 16) {
+          if (this.isVisited(this.currentDestination.id)) {
+            // Unvisited the destination
+            this.visitedDestinationsStorage = this.visitedDestinationsStorage.filter(id => id !== this.currentDestination.id);
+            if ( this.visitedDestinationsStorage.length === 0 ) {
+              this.showVisited = false;
+            }
+          } else {
+            // Visited the destination
+            this.visitedDestinationsStorage.push(this.currentDestination.id);
+            this.showVisited = true;
+          }
+          // Update the local storage with the updated starred destinations
+          localStorage.setItem('visitedDestinations', JSON.stringify(this.visitedDestinationsStorage));
+          // Decrease starSize from 30 back to 1
+          let sizeDecreaseInterval = setInterval(() => {
+            this.visitedShrink -= 4;
+            if (this.visitedShrink <= 1) {
+              clearInterval(sizeDecreaseInterval);
+            }
+          }, 50);
+          clearInterval(sizeIncreaseInterval);
+        }
+      }, 50);
+    },    
+    isVisited(destinationId) {
+      return this.visitedDestinationsStorage.includes(destinationId);
     },      
     banToggle() {
       // Increase banShrink from 1 to 16
@@ -1077,10 +1155,63 @@ export default {
           return ['fas', 'street-view'];
       }
     },
+    async fetchCurrencyData() {
+      if (!this.currencyDataCache) {
+        // Fetch and update currency data using the selected currency code
+        try {
+          const response = await axios.get('https://www.floatrates.com/daily/usd.json');
+          this.currencyDataCache = { ...response.data };
+        } catch (error) {
+          console.error('Error fetching currency data: ', error);
+        }
+      }
+    },
+    getVisitedGeoJsonData() {
+      // Extract the names of visited countries from visitedDestinationsStorage
+      const visitedIsoCodes = this.visitedDestinationsStorage.map((destinationId) => {
+        // Convert destination id (e.g., "fr-001") to country code (e.g., "fr")
+        const countryCode = destinationId.split('-')[0].toUpperCase();
+        
+        // Find the ISO code in isoMapping
+        return this.isoMapping[countryCode];
+      });
+
+
+      // Filter GeoJSON data to keep only features with ISO codes present in favoredIsoCodes
+      const filteredData = this.countriesGeoJsonData.features.filter(
+        (feature) => visitedIsoCodes.includes(feature.properties.ADM0_A3)
+      );
+
+      // Create a new GeoJSON object with the filtered features
+      const filteredGeoJson = {
+        type: 'FeatureCollection',
+        features: filteredData,
+      };
+
+      return filteredGeoJson;
+    },
+    visitedGeoJsonCountries() {
+      return {
+        weight: 2,
+        color: "#34d399",
+        opacity: 1,
+        fillColor: "#34d399",
+        fillOpacity: 0.1
+      };
+    },
   },
   created() {
+
+    this.fetchCurrencyData();
+
     this.totalDestinations = this.destinationData.length;
-    console.log(this.destinationData.length);
+
+    // Load visited destinations from local storage
+    const storedVisitedDestinations = localStorage.getItem('visitedDestinations');
+    if (storedVisitedDestinations) {
+      this.visitedDestinationsStorage = JSON.parse(storedVisitedDestinations);
+    }
+
     // Load starred destinations from local storage
     const storedStarredDestinations = localStorage.getItem('starredDestinations');
     if (storedStarredDestinations) {
@@ -1109,7 +1240,8 @@ export default {
         this.showBanned = true;
       }
     });
-    this.nextDestination();
+    this.nextDestination();    
+
   }, 
 }
 </script>

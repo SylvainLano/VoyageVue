@@ -18,8 +18,16 @@ Maps providers are :
 - Day Map : (https://www.google.com/)
 - Map Style Map : (https://www.arcgis.com/)
 - Watercolor Map : (https://stadiamaps.com/)
+Country Borders from : (https://www.naturalearthdata.com/)
 
 ## Development
+
+### DONES
+- Loading currency datas asynchronously
+- Highlighting on map countries with a favorite in it
+- Tag a destination as "Visited" (can still be banned or favorited)
+- Enable highlighting visited countries in the world map
+- Improved map to limit Zoom Out and enable worldCopyJump
 
 ### Todos
 - Add more destinations of course !
@@ -27,10 +35,8 @@ Maps providers are :
 ### Futures developments and ideas
 - Possibility to download a file with all the user data to recover it later or elsewhere
 - Create a link on the country name to show destinations in the same country or area
-- Tag a destination as "Visited"
-- Earn badges or achievements by visiting countries, or all destinations in a country
 
-## Destinations presented (42 total)
+## Destinations presented (51 total)
 - Kyoto, Japan (jp-001)  
 - Paris, France (fr-001)  
 - Dublin, Ireland (ir-001)  
@@ -72,4 +78,13 @@ Maps providers are :
 - Queenstown, New Zealand (nz-002)  
 - Krabi, Thailand (th-002)  
 - Cartagena, Colombia (co-001)  
-- Halong, Vietnam (vn-001)  
+- Halong, Vietnam (vn-001)   
+- Plitvice Lakes, Croatia (hr-002)  
+- Salzburg, Austria (at-002)  
+- Cappadocia, Turkey (tr-001)  
+- Reykjavik, Iceland (is-001)  
+- Vík í Mýrdal, Iceland (is-002)  
+- Höfn, Iceland (is-003)  
+- Los Angeles, USA (us-003)  
+- Stavanger, Norway (no-001)  
+- Bora Bora, French Polynesia (pf-001)  
