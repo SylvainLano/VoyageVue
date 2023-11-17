@@ -25,16 +25,15 @@ library.add( solidStar, emptyStar, faLanguage, faPlane, faMoneyCheckDollar, faPa
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
-  history: createWebHistory(),
-  base: process.env.BASE_URL,
+  history: createWebHistory(process.env.BASE_URL),
   routes: [
     {
-      path: `${process.env.BASE_URL}:landingCountry/:landingLocation(.*)`,
+      path: `/:landingCountry/:landingLocation(.*)`,
       component: VoyageVue,
       props: true,
     },
     {
-      path: `${process.env.BASE_URL}`,
+      path: `/`,
       component: VoyageVue,
       props: false,
     },
