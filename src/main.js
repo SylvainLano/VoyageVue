@@ -33,7 +33,7 @@ const router = createRouter({
       props: true,
     },
     {
-      path: `/`,
+      path: `/:pathMatch(.*)*`,
       component: VoyageVue,
       props: false,
     },
