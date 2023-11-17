@@ -1,0 +1,49 @@
+[
+    {
+        "name": "Twitter/X",
+        "url": "https://twitter.com/intent/tweet?text=@t&url=@u&hashtags=@h",
+        "faStyle": "fab",
+        "faIcon": "square-x-twitter"
+    },
+    {
+        "name": "Reddit",
+        "url": "https://www.reddit.com/submit?url=@u&title=@t",
+        "faStyle": "fab",
+        "faIcon": "square-reddit",
+        "color": "#ff4500"
+    },
+    {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/sharer/sharer.php?u=@u&title=@t&description=@d&hashtag=@h",
+        "faStyle": "fab",
+        "faIcon": "square-facebook",
+        "color": "#1877f2"
+    },
+    {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/sharing/share-offsite/?url=@u",
+        "faStyle": "fab",
+        "faIcon": "linkedin",
+        "color": "#007bb5"
+    },
+    {
+        "name": "Quora",
+        "url": "https://www.quora.com/share?url=@u&title=@t",
+        "faStyle": "fab",
+        "faIcon": "quora",
+        "color": "#a82400"
+    },
+    {
+        "name": "Wordpress",
+        "url": "https://wordpress.com/press-this.php?u=@u&t=@t&s=@d",
+        "faStyle": "fab",
+        "faIcon": "wordpress",
+        "color": "#21759b"
+    },
+    {
+        "name": "Email",
+        "url": "mailto:?subject=@t&body=@u%0D%0A@d",
+        "faStyle": "far",
+        "faIcon": "envelope"
+    }
+]

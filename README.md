@@ -22,17 +22,11 @@ Country Borders from : (https://www.naturalearthdata.com/)
 
 ## Development
 
-### DONES
-- Loading currency datas asynchronously
-- Highlighting on map countries with a favorite in it
-- Tag a destination as "Visited" (can still be banned or favorited)
-- Enable highlighting visited countries in the world map
-- Improved map to limit Zoom Out and enable worldCopyJump
-
 ### Todos
 - Add more destinations of course !
 
 ### Futures developments and ideas
+- Create an xml map of the site for referencement purpose
 - Possibility to download a file with all the user data to recover it later or elsewhere
 - Create a link on the country name to show destinations in the same country or area
 
