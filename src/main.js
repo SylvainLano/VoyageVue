@@ -26,14 +26,15 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
   history: createWebHistory(),
+  base: process.env.BASE_URL,
   routes: [
     {
-      path: '/:landingCountry/:landingLocation',
+      path: `/:landingCountry/:landingLocation`,
       component: VoyageVue,
       props: true,
     },
     {
-      path: '/',
+      path: `/`,
       component: VoyageVue,
       props: false,
     },

@@ -1,3 +1,5 @@
+<!-- VoyageVue.vue -->
+
 <template>
   <div class="h-screen w-screen"
     ref="parentContainer"

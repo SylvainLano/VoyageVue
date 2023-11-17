@@ -8,8 +8,6 @@
 
 <script>
 export default {
-  // Other component options
-
   created() {
   },
 };
