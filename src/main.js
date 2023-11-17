@@ -29,12 +29,12 @@ const router = createRouter({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: `/:landingCountry/:landingLocation`,
+      path: `${process.env.BASE_URL}:landingCountry/:landingLocation(.*)`,
       component: VoyageVue,
       props: true,
     },
     {
-      path: `/`,
+      path: `${process.env.BASE_URL}`,
       component: VoyageVue,
       props: false,
     },
