@@ -5,7 +5,7 @@
       "country": "Japan",
       "description": "Often referred to as the cultural heart of Japan, Kyoto is famous for its ancient temples, traditional tea houses, and beautiful gardens. The city's charm lies in its well-preserved historic architecture and the serene ambiance that transports visitors to a different era.",
       "currency": "JPY",
-      "budget": "High",
+      "budget": "Average",
       "eat": "10",
       "bed": "50",
       "language": "Japanese",
@@ -2701,6 +2701,165 @@
               "link": "https://unsplash.com/fr/@holatgr"
           }
         ]
-    }
+    },
+    {
+        "id": "kr-001",
+        "location": "Seoul",
+        "country": "Korea",
+        "description": "The bustling capital of South Korea seamlessly blends ancient traditions with modern innovation. From vibrant street markets and historic palaces to cutting-edge technology and K-pop culture, Seoul offers a diverse and dynamic experience for visitors.",
+        "currency": "KRW",
+        "budget": "Average",
+        "eat": "8",
+        "bed": "80",
+        "language": "Korean",
+        "englishFriendly": "a little",
+        "transportation": "Easy",
+        "reach": "Incheon Airport (ICN)",
+        "local": "Bus, Subway, Train, Taxi, Ride-Sharing",
+        "bestTime": "April",
+        "bestTimeReason": " for cherry blossoms",
+        "temperatureMin": "-8°C in January",
+        "temperatureMax": "29°C in August",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Korean barbecue, bibimbap (mixed rice dish), kimchi, bulgogi (marinated beef), and street food delicacies like tteokbokki (spicy rice cakes) and hotteok (sweet pancakes).",
+        "advice": "Explore the historic Gyeongbokgung Palace and Changdeokgung Palace. Wander through the vibrant districts of Myeongdong and Insadong. Visit the iconic N Seoul Tower for panoramic city views.",
+        "expediaLink": "https://expedia.com/affiliate/pxS4e1i",
+        "zoom": 3,
+        "center": [37.5660000, 126.9784000],
+        "images": [
+          {
+              "title": "Cherry Blossoms",
+              "image": "destinations/korea/seoul/photo-1617541086271-4d43983704bd.avif",
+              "author": "Daniel Bernard",
+              "link": "https://unsplash.com/fr/@nardly"
+          },
+          {
+              "title": "Jongno-Gu",
+              "image": "destinations/korea/seoul/photo-1448523183439-d2ac62aca997.avif",
+              "author": "Brady Bellini",
+              "link": "https://unsplash.com/fr/@brady_bellini"
+          },
+          {
+              "title": "Night Lights",
+              "image": "destinations/korea/seoul/photo-1506816561089-5cc37b3aa9b0.avif",
+              "author": "Mathew Schwartz",
+              "link": "https://unsplash.com/fr/@cadop"
+          },
+          {
+              "title": "Morning",
+              "image": "destinations/korea/seoul/photo-1601621915196-2621bfb0cd6e.avif",
+              "author": "Zequn Gui",
+              "link": "https://unsplash.com/fr/@hideandseek96"
+          }
+        ]
+    },
+    {
+        "id": "es-002",
+        "location": "Seville",
+        "country": "Spain",
+        "description": "Located in the sunny region of Andalusia, Sevilla is a city known for its rich history, stunning architecture, and vibrant culture. The city is home to the largest Gothic cathedral in the world, the Alcázar palace complex, and the iconic Plaza de España, making it a captivating destination for history enthusiasts and lovers of Spanish flair.",
+        "currency": "EUR",
+        "budget": "High",
+        "eat": "15",
+        "bed": "100",
+        "language": "Spanish",
+        "englishFriendly": "in tourist areas",
+        "transportation": "Easy",
+        "reach": "Seville Airport (SVQ)",
+        "local": "Bus, Subway, Tram, Car, Taxi, Walking",
+        "bestTime": "April",
+        "bestTimeReason": " for the Feria",
+        "temperatureMin": "6°C in January",
+        "temperatureMax": "36°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Safe",
+        "healthcare": "Average",
+        "foodToTry": "Tapas, Paella, Salmorejo (cold tomato soup), and Churros with Chocolate. Seville is also known for its vibrant street food scene.",
+        "advice": "Explore the Alcázar of Seville, a UNESCO World Heritage site. Visit the Seville Cathedral and climb the Giralda tower for panoramic views.",
+        "expediaLink": "https://expedia.com/affiliate/bzId2GZ",
+        "zoom": 3,
+        "center": [37.3828300, -5.9731700],
+        "images": [
+          {
+              "title": "Setas de Sevilla",
+              "image": "destinations/spain/seville/photo-1610125284424-383513e792e6.avif",
+              "author": "Marcelo Kunze",
+              "link": "https://unsplash.com/fr/@marcelokunze"
+          },
+          {
+              "title": "Plaza De España",
+              "image": "destinations/spain/seville/photo-1559564477-6e8582270002.avif",
+              "author": "Joan Oger",
+              "link": "https://unsplash.com/fr/@joanoger"
+          },
+          {
+              "title": "Torre Sevilla",
+              "image": "destinations/spain/seville/photo-1595268089103-0f2e5b9e4524.avif",
+              "author": "Agustín Núñez",
+              "link": "https://unsplash.com/fr/@agusnez"
+          },
+          {
+              "title": "Church of Santa Maria la Blanca",
+              "image": "destinations/spain/seville/photo-1509840841025-9088ba78a826.avif",
+              "author": "Henrique Ferreira",
+              "link": "https://unsplash.com/fr/@rickpsd"
+          }
+        ]
+    },
+    {
+        "id": "jp-002",
+        "location": "Tokyo",
+        "country": "Japan",
+        "description": "The bustling capital of Japan is a city where ancient traditions and futuristic innovation coexist harmoniously. From serene temples and gardens to neon-lit skyscrapers and cutting-edge technology, Tokyo offers a dynamic blend of the old and the new, creating a unique and captivating urban landscape.",
+        "currency": "JPY",
+        "budget": "Average",
+        "eat": "7",
+        "bed": "67",
+        "language": "Japanese",
+        "englishFriendly": "commonly",
+        "transportation": "Easy",
+        "reach": "Narita Airport (NRT)",
+        "local": "Metro, Train, Bus, Taxi",
+        "bestTime": "March",
+        "bestTimeReason": "to see Cherry Blossoms",
+        "temperatureMin": "2°C in January",
+        "temperatureMax": "31°C in August",
+        "visa": "Visa-free for many nationalities",
+        "safety": "One of the Safest",
+        "healthcare": "Very High",
+        "foodToTry": "Sushi at Tsukiji Fish Market, Ramen in local noodle shops, and Izakayas for a taste of Japanese pub culture. Don't miss out on matcha-flavored treats and street food delights.",
+        "advice": "Explore the historic Asakusa district, home to Senso-ji Temple. Experience the vibrant shopping districts of Shibuya and Harajuku. Enjoy panoramic views from the Tokyo Skytree or Tokyo Tower.",
+        "expediaLink": "https://expedia.com/affiliate/KSXfRQV",
+        "zoom": 3,
+        "center": [35.652832, 139.839478],
+        "images": [
+          {
+              "title": "Shibuya Crossing",
+              "image": "destinations/japan/tokyo/photo-1547448526-5e9d57fa28f7.avif",
+              "author": "Timo Volz",
+              "link": "https://unsplash.com/fr/@magict1911"
+          },
+          {
+              "title": "Tokyo Tower",
+              "image": "destinations/japan/tokyo/photo-1603647500811-f635463eff19.avif",
+              "author": "liu yi",
+              "link": "https://unsplash.com/fr/@fish_chips"
+          },
+          {
+              "title": "Tokyo Street",
+              "image": "destinations/japan/tokyo/photo-1540959733332-eab4deabeeaf.avif",
+              "author": "Jezael Melgoza",
+              "link": "https://unsplash.com/fr/@jezar"
+          },
+          {
+              "title": "Cherry Blossoms",
+              "image": "destinations/japan/tokyo/photo-1557409518-691ebcd96038.avif",
+              "author": "Yu Kato",
+              "link": "https://unsplash.com/fr/@yukato"
+          }
+        ]
+      }
 ]
   

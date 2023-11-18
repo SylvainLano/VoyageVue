@@ -9,7 +9,7 @@ Made using [Vueper Slides](https://antoniandre.github.io/vueper-slides/) by [Ant
 Icons by [Font Awesome](https://fontawesome.com/)  
 Conversion rates by [Float Rates](https://www.floatrates.com)  
 Photo from users on [Unsplash](https://unsplash.com/)   
-Flag Icons from https://flagicons.lipis.dev/  
+Flag Icons from (https://flagicons.lipis.dev/) 
 Maps made using [Vue Leaflet](https://vue2-leaflet.netlify.app/)  
 Maps providers are :
 - Default Map : (https://openstreetmap.org/)
@@ -26,11 +26,10 @@ Country Borders from : (https://www.naturalearthdata.com/)
 - Add more destinations of course !
 
 ### Futures developments and ideas
-- Create an xml map of the site for referencement purpose
 - Possibility to download a file with all the user data to recover it later or elsewhere
 - Create a link on the country name to show destinations in the same country or area
 
-## Destinations presented (51 total)
+## Destinations presented (53 total)
 - Kyoto, Japan (jp-001)  
 - Paris, France (fr-001)  
 - Dublin, Ireland (ir-001)  
@@ -82,3 +81,6 @@ Country Borders from : (https://www.naturalearthdata.com/)
 - Los Angeles, USA (us-003)  
 - Stavanger, Norway (no-001)  
 - Bora Bora, French Polynesia (pf-001)  
+- Seoul, Korea (kr-001)  
+- Seville, Spain (es-002)  
+- Tokyo, Japan (jp-002)  

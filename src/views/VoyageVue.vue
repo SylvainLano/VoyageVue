@@ -448,7 +448,7 @@
         [-90, -360], // Southwest corner of the world
         [90, 360],   // Northeast corner of the world
       ]),
-      currentUrl: 'https://sylvainlano.github.io/VoyageVue/',
+      baseURL: 'https://sylvainlano.github.io/VoyageVue/',
       showSharingOptions: false,
       socialNetworks: socialNetworks,
     }),
@@ -738,6 +738,8 @@
             }
           }
           this.updateCurrencyData(this.currentDestination.currency);
+          let baseURL = '/' + this.currentDestination.country.toLowerCase().replace(/\s+/g, '-') + '/' + this.currentDestination.location.toLowerCase().replace(/\s+/g, '-');
+          this.$router.push(baseURL);
         }, 300); // 300 milliseconds delay
       },
       previousDestination() {
@@ -1238,10 +1240,10 @@
       shareURL() {   
         if (this.currentDestination && this.currentDestination.country && this.currentDestination.location) {
           // Construct the URL with lowercase and spaces replaced by dashes
-          return `${this.currentUrl}${this.currentDestination.country.toLowerCase().replace(/\s+/g, '-')}/${this.currentDestination.location.toLowerCase().replace(/\s+/g, '-')}`;
+          return `${this.baseURL}${this.currentDestination.country.toLowerCase().replace(/\s+/g, '-')}/${this.currentDestination.location.toLowerCase().replace(/\s+/g, '-')}`;
         }
         // Default URL or handle the case when destination data is not available
-        return this.currentUrl;
+        return this.baseURL;
       },
       createHashtags( destination ) {
         let hashtags = destination.location.replace(/\s+/g, '') + ','

@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import VoyageVue from './VoyageVue.vue'
+import VoyageVue from './views/VoyageVue.vue'
 import './styles/styles.css';
 
 
@@ -24,16 +24,18 @@ library.add( solidStar, emptyStar, faLanguage, faPlane, faMoneyCheckDollar, faPa
 
 import { createRouter, createWebHistory } from 'vue-router';
 
+const destinations = require('@/assets/destinations.json');
+
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
-    {
-      path: `/:landingCountry/:landingLocation(.*)`,
+    ...destinations.map(destination => ({
+      path: `/${destination.country.toLowerCase().replace(/\s+/g, '-')}/${destination.location.toLowerCase().replace(/\s+/g, '-')}`,
       component: VoyageVue,
-      props: true,
-    },
+      props: { landingCountry: destination.country, landingLocation: destination.location },
+    })),
     {
-      path: `/:pathMatch(.*)*`,
+      path: '/:pathMatch(.*)*',
       component: VoyageVue,
       props: false,
     },
