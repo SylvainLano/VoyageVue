@@ -23,13 +23,12 @@ Country Borders from : (https://www.naturalearthdata.com/)
 ## Development
 
 ### Todos
-- Add more destinations of course !
+- Add more destinations of course
 
 ### Futures developments and ideas
 - Possibility to download a file with all the user data to recover it later or elsewhere
-- Create a link on the country name to show destinations in the same country or area
 
-## Destinations presented (53 total)
+## Destinations presented (60 total)
 - Kyoto, Japan (jp-001)  
 - Paris, France (fr-001)  
 - Dublin, Ireland (ir-001)  
@@ -84,3 +83,9 @@ Country Borders from : (https://www.naturalearthdata.com/)
 - Seoul, Korea (kr-001)  
 - Seville, Spain (es-002)  
 - Tokyo, Japan (jp-002)  
+- Las Vegas, USA (us-004)  
+- Dresden, Germany (de-001)  
+- Lucerne, Switzerland (ch-001)  
+- Page, USA (us-005)  
+- Valladolid, Mexico (mx-001)  
+- Zhangjiajie, China (cn-002)  

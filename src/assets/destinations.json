@@ -1894,6 +1894,12 @@
               "link": "https://unsplash.com/fr/@sumit_sharrma"
           },
           {
+              "title": "Chittorgarh Fort",
+              "image": "destinations/india/udaipur/photo-1593681645570-83083d750183.avif",
+              "author": "Dinesh Murmu",
+              "link": "https://unsplash.com/fr/@dineshjune"
+          },
+          {
               "title": "Flock of Pigeons",
               "image": "destinations/india/udaipur/photo-1519998994457-43c1f2c8460b.avif",
               "author": "Mitchell Ng Liang an",
@@ -2860,6 +2866,324 @@
               "link": "https://unsplash.com/fr/@yukato"
           }
         ]
-      }
+    },
+    {
+        "id": "us-004",
+        "location": "Las Vegas",
+        "country": "USA",
+        "description": "Known as the \"Entertainment Capital of the World\", Las Vegas is a dazzling oasis in the Mojave Desert, famous for its vibrant nightlife, world-class entertainment, and iconic resort-style architecture.",
+        "currency": "USD",
+        "budget": "Average",
+        "eat": "20",
+        "bed": "50",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Easy",
+        "reach": "McCarran Airport (LAS)",
+        "local": "Monorail, Deuce Bus, Taxi, Car",
+        "bestTime": "May",
+        "bestTimeReason": " for nice temperatures",
+        "temperatureMin": "-3°C in December",
+        "temperatureMax": "41°C in July",
+        "visa": "Tourist (B-2) visa required",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Buffet experiences, Celebrity chef restaurants, and a diverse cuisine available along the Strip.",
+        "advice": "Experience the iconic Las Vegas Strip with its themed resorts, casinos, and entertainment shows. Attend a world-class live performance or show, ranging from music concerts to dazzling stage productions.",
+        "expediaLink": "https://expedia.com/affiliate/UT2nnP2",
+        "zoom": 3,
+        "center": [36.169941, -115.139830],
+        "images": [
+          {
+              "title": "The Sphere",
+              "image": "destinations/usa/las-vegas/The_Sphere_as_the_Moon_2__Las_Vegas__Nevada_USA_53110393482.avif",
+              "author": "Cory Doctorow",
+              "link": "https://www.flickr.com/people/37996580417@N01"
+          },
+          {
+              "title": "The Iconic Sign",
+              "image": "destinations/usa/las-vegas/photo-1605833556294-ea5c7a74f57d.avif",
+              "author": "Grant Cai",
+              "link": "https://unsplash.com/fr/@grantcaiphoto"
+          },
+          {
+              "title": "The Strip",
+              "image": "destinations/usa/las-vegas/photo-1583207884889-d79abf0d0aa3.avif",
+              "author": "Leo",
+              "link": "https://unsplash.com/fr/@leo_visions_"
+          },
+          {
+              "title": "Night Life",
+              "image": "destinations/usa/las-vegas/photo-1549861833-c5932fd19229.avif",
+              "author": "Ameer Basheer",
+              "link": "https://unsplash.com/fr/@24ameer"
+          }
+        ]
+    },
+    {
+        "id": "de-001",
+        "location": "Dresden",
+        "country": "Germany",
+        "description": "A city of cultural richness, historical significance, and architectural splendor. Resting on the banks of the Elbe River, Dresden is renowned for its baroque and rococo architecture.",
+        "currency": "EUR",
+        "budget": "Average",
+        "eat": "15",
+        "bed": "80",
+        "language": "German",
+        "englishFriendly": "a little",
+        "transportation": "Easy",
+        "reach": "Dresden Airport (DRS)",
+        "local": "Tram, Bus, Car, Cycling",
+        "bestTime": "May",
+        "bestTimeReason": " for nice temperatures",
+        "temperatureMin": "-2°C in January",
+        "temperatureMax": "26°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Sauerbraten (marinated roast), Bratwurst (sausages), Eierschecke (a local dessert), and other traditional Saxon dishes.",
+        "advice": "Explore the historic Old Town (Altstadt) with landmarks like the Frauenkirche and Zwinger Palace. Visit the Semper Opera House and the Dresden Castle for a taste of the city's cultural heritage.",
+        "expediaLink": "https://expedia.com/affiliate/b1mbVGL",
+        "zoom": 3,
+        "center": [51.050407, 13.737262],
+        "images": [
+          {
+              "title": "Altstadt",
+              "image": "destinations/germany/dresden/photo-1619120810930-6ca5048deee1.avif",
+              "author": "Oliver Guhr",
+              "link": "https://unsplash.com/fr/@oliverguhr"
+          },
+          {
+              "title": "Bastei Bridge",
+              "image": "destinations/germany/dresden/photo-1568736333617-34903581085c.avif",
+              "author": "Alex Azabache",
+              "link": "https://unsplash.com/fr/@alexazabache"
+          },
+          {
+              "title": "Holy Trinity Cathedral",
+              "image": "destinations/germany/dresden/photo-1573044010635-9855cb2d220f.avif",
+              "author": "Zion C",
+              "link": "https://unsplash.com/fr/@jcs_chen"
+          },
+          {
+              "title": "Guardian Angel",
+              "image": "destinations/germany/dresden/photo-1576686680193-8678028d1362.avif",
+              "author": "Veit Hammer",
+              "link": "https://unsplash.com/fr/@derveit"
+          }
+        ]
+    },
+    {
+        "id": "ch-001",
+        "location": "Lucerne",
+        "country": "Switzerland",
+        "description": "Nestled amid the breathtaking Swiss Alps and hugging the shores of Lake Lucerne, Lucerne is a picturesque city that epitomizes Swiss charm. Renowned for its well-preserved medieval architecture, the city offers a magical blend of cobblestone streets, historic landmarks, and stunning natural landscapes.",
+        "currency": "CHF",
+        "budget": "Very High",
+        "eat": "30",
+        "bed": "150",
+        "language": "German",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Zurich Airport (ZRH)",
+        "local": "Boat, Ferry, Train, Bus, Car",
+        "bestTime": "January",
+        "bestTimeReason": " if you like skying or snow",
+        "temperatureMin": "-2°C in January",
+        "temperatureMax": "25°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Very Safe",
+        "healthcare": "Very High",
+        "foodToTry": "Cheese fondue, Raclette, Rösti, and the Swiss chocolate, renowned worldwide for its exquisite quality.",
+        "advice": "Take a boat cruise on Lake Lucerne, surrounded by the stunning Swiss Alps. Ascend Mt. Pilatus or Mt. Rigi for panoramic views of the Alps and lakes.",
+        "expediaLink": "https://expedia.com/affiliate/Li6fdnz",
+        "zoom": 3,
+        "center": [47.05048, 8.30635],
+        "images": [
+          {
+              "title": "Kapellbrücke",
+              "image": "destinations/switzerland/lucerne/photo-1565182242096-16033e7f1260.avif",
+              "author": "Geertje Caliguire",
+              "link": "https://unsplash.com/fr/@geertjecaliguire"
+          },
+          {
+              "title": "City at Sunset",
+              "image": "destinations/switzerland/lucerne/photo-1627594035921-3eced205042d.avif",
+              "author": "Simon Infanger",
+              "link": "https://unsplash.com/fr/@photosimon"
+          },
+          {
+              "title": "The Alps",
+              "image": "destinations/switzerland/lucerne/photo-1591815583350-228fd53be9e8.avif",
+              "author": "Andrew H",
+              "link": "https://unsplash.com/fr/@_exploratour"
+          },
+          {
+              "title": "Night from the Pilatus",
+              "image": "destinations/switzerland/lucerne/photo-1590657943199-914ea0b6aa51.avif",
+              "author": "Emanuel Kionke",
+              "link": "https://unsplash.com/fr/@emanuelkionke"
+          }
+        ]
+    },
+    {
+        "id": "us-005",
+        "location": "Page",
+        "country": "USA",
+        "description": "A small city in northern Arizona known for its proximity to breathtaking natural wonders. It's situated on the southern shores of Lake Powell, surrounded by red-rock landscapes and desert beauty. The city serves as a base for exploring the nearby slot canyons, including the famous Upper and Lower Antelope Canyons.",
+        "currency": "USD",
+        "budget": "Average",
+        "eat": "20",
+        "bed": "50",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Average",
+        "reach": "Flagstaff Pulliam Airport (FLG)",
+        "local": "Car",
+        "bestTime": "May",
+        "bestTimeReason": " for nice temperatures",
+        "temperatureMin": "-1°C in December",
+        "temperatureMax": "36°C in July",
+        "visa": "Tourist (B-2) visa required",
+        "safety": "Safe",
+        "healthcare": "Average",
+        "foodToTry": "Navajo tacos, Green chile stew, Burgers, Prickly pear cactus ice cream, Pecan pie",
+        "advice": "Explore Antelope Canyon (Upper and Lower) for its mesmerizing slot canyon formations. Hike to Horseshoe Bend for a panoramic view of the Colorado River meandering through the red rocks.",
+        "expediaLink": "https://expedia.com/affiliate/5MffebM",
+        "zoom": 3,
+        "center": [36.917839, -111.458664],
+        "images": [
+          {
+              "title": "Antelope Canyon",
+              "image": "destinations/usa/page/photo-1663879312303-99bcb4c1e2d8.avif",
+              "author": "Vlad D",
+              "link": "https://unsplash.com/fr/@hiking_corgi"
+          },
+          {
+              "title": "Horseshoe Bend",
+              "image": "destinations/usa/page/photo-1474044159687-1ee9f3a51722.avif",
+              "author": "Gert Boers",
+              "link": "https://unsplash.com/fr/@geboers"
+          },
+          {
+              "title": "Glen Canyon Dam",
+              "image": "destinations/usa/page/photo-1557355020-5e3b18d5508b.avif",
+              "author": "David Lusvardi",
+              "link": "https://unsplash.com/fr/@lusvardi"
+          },
+          {
+              "title": "Glen Canyon Dam Bridge",
+              "image": "destinations/usa/page/photo-1574970289681-157ebbe5ec16.avif",
+              "author": "Joshua Sukoff",
+              "link": "https://unsplash.com/fr/@joshuas"
+          }
+        ]
+    },
+    {
+        "id": "mx-001",
+        "location": "Valladolid",
+        "country": "Mexico",
+        "description": "A colonial-era city with colorful streets, well-preserved architecture, and a relaxed atmosphere. It's located approximately 10 miles (16 kilometers) from Chichen Itza, making it a convenient and culturally enriching place to stay while visiting the ancient Mayan ruins.",
+        "currency": "MXN",
+        "budget": "Average",
+        "eat": "9",
+        "bed": "80",
+        "language": "Spanish",
+        "englishFriendly": "often",
+        "transportation": "Average",
+        "reach": "Manuel Crescencio Rejón Airport (MID)",
+        "local": "Bus, Car, Taxi",
+        "bestTime": "February",
+        "bestTimeReason": " for the dry season",
+        "temperatureMin": "17°C in January",
+        "temperatureMax": "36°C in May",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "Average",
+        "foodToTry": "Cochinita pibil (slow-roasted pork), panuchos (tortillas filled with refried beans and topped with meat), and sopa de lima (lime soup).",
+        "advice": "Take a dip in the nearby cenotes, natural sinkholes unique to the Yucatan Peninsula. Discover the mystical Mayan ruins of Chichen Itza, including the iconic El Castillo pyramid.",
+        "expediaLink": "https://expedia.com/affiliate/wmntTr2",
+        "zoom": 3,
+        "center": [20.689640, -88.202249],
+        "images": [
+          {
+              "title": "Chichen Itza",
+              "image": "destinations/mexico/valladolid/photo-1620636607286-087f5a7b5716.avif",
+              "author": "Mario La Pergola",
+              "link": "https://unsplash.com/fr/@mlapergolaphoto"
+          },
+          {
+              "title": "Ik Kil Cenote",
+              "image": "destinations/mexico/valladolid/photo-1665617366582-ad4847f7c439.avif",
+              "author": "Laura LaBrie",
+              "link": "https://unsplash.com/fr/@lauralabrie"
+          },
+          {
+              "title": "San Servacio Church",
+              "image": "destinations/mexico/valladolid/photo-1512813195386-6cf811ad3542.avif",
+              "author": "Filip Gielda",
+              "link": "https://unsplash.com/fr/@filipovsky"
+          },
+          {
+              "title": "Las Coloradas",
+              "image": "destinations/mexico/valladolid/photo-1639615898903-0553612cb49e.avif",
+              "author": "Zyanya BMO",
+              "link": "https://unsplash.com/fr/@zyan_bmo"
+          }
+        ]
+    },
+    {
+        "id": "cn-002",
+        "location": "Zhangjiajie",
+        "country": "China",
+        "description": "Nestled in the dramatic landscapes of the Wulingyuan Scenic Area in Hunan Province, Zhangjiajie is a surreal destination renowned for its towering sandstone pillars, deep canyons, and lush greenery. Zhangjiajie offers a unique blend of natural beauty, cultural heritage, and outdoor adventures.",
+        "currency": "CNY",
+        "budget": "Average",
+        "eat": "6",
+        "bed": "60",
+        "language": "Mandarin",
+        "englishFriendly": "a little",
+        "transportation": "Easy",
+        "reach": "Zhangjiajie Hehua Airport (DYG)",
+        "local": "Taxis, Buses",
+        "bestTime": "May",
+        "bestTimeReason": " for less crowd",
+        "temperatureMin": "1°C in January",
+        "temperatureMax": "33°C in July",
+        "visa": "Visa Required",
+        "safety": "Mostly Safe",
+        "healthcare": "Average",
+        "foodToTry": "Stinky tofu, spicy fish head, and Chairman Mao's favorite, \"Red Braised Pork\".",
+        "advice": "Explore Zhangjiajie National Forest Park, known for its towering quartzite sandstone pillars. Visit the Yuanjiajie Scenic Area, where the Avatar Hallelujah Mountains are located.",
+        "expediaLink": "https://expedia.com/affiliate/y9TNkrs",
+        "zoom": 3,
+        "center": [29.117001, 110.478996],
+        "images": [
+          {
+              "title": "Sandstone Pillars",
+              "image": "destinations/china/zhangjiajie/photo-1567266565446-d9c40ccf59a4.avif",
+              "author": "Robynne Hu",
+              "link": "https://unsplash.com/fr/@robynnexy"
+          },
+          {
+              "title": "The Canyon",
+              "image": "destinations/china/zhangjiajie/photo-1596126501929-1bd88c13fb0c.avif",
+              "author": "Joshua Sortino",
+              "link": "https://unsplash.com/fr/@sortino"
+          },
+          {
+              "title": "Baofeng Lake",
+              "image": "destinations/china/zhangjiajie/photo-1624375599801-bdd41253edfd.avif",
+              "author": "Wilfredo Wesly",
+              "link": "https://unsplash.com/fr/@wilfredowesly"
+          },
+          {
+              "title": "Wulingyuan",
+              "image": "destinations/china/zhangjiajie/photo-1624375639609-ccee5748bcae.avif",
+              "author": "Wilfredo Wesly",
+              "link": "https://unsplash.com/fr/@wilfredowesly"
+          }
+        ]
+    }
 ]
   

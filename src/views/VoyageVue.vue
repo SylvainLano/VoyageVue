@@ -14,7 +14,7 @@
       v-if="!fullScreen && !showFullMap && (!showMenu || !mobileDisplay)"
       >
       <transition name="lateral-fade">
-        <div class="text-4xl bg-lime-500 cursor-pointer rounded-full" @click="toggleWorldMap">
+        <div class="text-4xl bg-lime-500 cursor-pointer rounded-full" @click="toggleWorldMap(false)">
           <span class="text-cyan-700"><font-awesome-icon :icon="['fas', 'earth-africa']" :shake="isBeating" size="xl" /></span>
         </div>
       </transition>
@@ -46,7 +46,7 @@
     <transition name="lateral-fade">
       <div :class="fullMapClass"
       v-if="showFullMap">
-        <div class="absolute h-screen w-screen top-0 left-0" @click="hideFullMap" v-if="!mobileDisplay">
+        <div class="absolute h-screen w-screen top-0 left-0" @click="toggleWorldMap(false)" v-if="!mobileDisplay">
         </div>
         <div :class="worldMapClass">
             <div class="basis-1/6 text-cyan-700 p-1 text-left flex-wrap space-x-2" @mouseover="showMapModeMenu" @mouseleave="hideMapModeMenu">
@@ -75,23 +75,25 @@
               <label for="visitedBox"  :style="{ color: visitedDestinationsStorage.length === 0 ? 'grey' : 'inherit' }">Hide {{ visitedDestinationsStorage.length }} Visited</label>
             </div>
             <div class="basis-1/6 text-right text-slate-800 text-xl pr-2">
-              <font-awesome-icon :icon="['far', 'circle-xmark']" @click="hideFullMap" />
+              <font-awesome-icon :icon="['far', 'circle-xmark']" @click="toggleWorldMap(false)" />
             </div>
         </div>
         <div class="h-[92%] w-full m-auto">
           <l-map 
             ref="starBanMap"
-            :zoom=2
+            :zoom="centerOnCurrent ? 6 : 2"
+            :bounds="centerOnCurrent ? [currentDestination.center,currentDestination.center] : maxBounds"
             :max-bounds="maxBounds"
-            :minZoom=2
+            :minZoom="2"
             :worldCopyJump=true
-            :center="[21.116772, -11.405182]"
+            :center="centerOnCurrent ? currentDestination.center : [21.116772, -11.405182]"
             :options="{ zoomControl: false, attributionControl: false }"
           >
             <l-tile-layer :url="getTileLayerUrl()"></l-tile-layer>
   
             <l-geo-json :geojson="getVisitedGeoJsonData()" :options-style="visitedGeoJsonCountries" :visible="!hideVisited"></l-geo-json>
-            
+            <l-geo-json :geojson="getCurrentGeoJsonData()" :options-style="currentGeoJsonCountries" v-if="centerOnCurrent"></l-geo-json>
+
             <l-layer-group :visible="!hideBanned">
             <l-marker
               v-for="(destination, index) in filteredBannedDestinations"
@@ -132,6 +134,20 @@
               <l-tooltip>{{ destination.location + ' - ' + destination.country }}</l-tooltip>
               </l-marker>
             </l-layer-group>
+  
+            <l-layer-group :visible="centerOnCurrent">
+              <l-marker 
+                :key="'current_' + currentDestination.id"
+                :lat-lng="currentDestination.center"
+              >
+                <l-icon
+                  :icon-url="require('@/assets/images/markers/marker-icon-pink.png')"
+                  :icon-anchor="[25/2,41]"
+                />
+                <l-tooltip>{{ currentDestination.location + ' - ' + currentDestination.country }}</l-tooltip>
+              </l-marker>
+            </l-layer-group>
+
           </l-map>
         </div>
       </div>
@@ -169,7 +185,7 @@
                 <font-awesome-icon :icon="['fas', 'share-nodes']" @click="toggleShareWindow" />
               </div>
             </div>
-            <div>
+            <div @click="toggleWorldMap(true)" class="cursor-pointer">
               <span :class="flagClass"></span>{{ currentDestination.country }}
             </div>
           </div>
@@ -180,11 +196,19 @@
             <l-map 
               ref="map"
               :zoom="currentDestination.zoom"
+              :max-bounds="[currentDestination.center,currentDestination.center]"
+              :worldCopyJump=true
               :center="currentDestination.center"
               :options="{ zoomControl: false, attributionControl: false }"
             >
-              <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></l-tile-layer>
-              <l-marker :lat-lng="currentDestination.center"></l-marker>
+              <l-tile-layer :url="getTileLayerUrl()"></l-tile-layer>
+              <l-geo-json :geojson="getCurrentGeoJsonData()" :options-style="currentGeoJsonCountries"></l-geo-json>
+              <l-marker :lat-lng="currentDestination.center" @click="toggleWorldMap(true)">
+                <l-icon
+                  :icon-url="require('@/assets/images/markers/marker-icon-pink.png')"
+                  :icon-anchor="[25/2,41]"
+                />
+              </l-marker>
             </l-map>
           </div> 
           <div :class="budgetColorClass">
@@ -451,6 +475,7 @@
       baseURL: 'https://sylvainlano.github.io/VoyageVue/',
       showSharingOptions: false,
       socialNetworks: socialNetworks,
+      centerOnCurrent: false,
     }),
     mounted() {
       setInterval(() => {
@@ -601,17 +626,17 @@
       },
       filteredStarredDestinations() {
         return this.starredDestinationData.filter((destination) => {
-          return !this.isVisited(destination.id) || !this.hideVisited;
+          return (!this.isVisited(destination.id) || !this.hideVisited) && (this.currentDestination.id != destination.id || !this.centerOnCurrent);
         });
       },
       filteredBannedDestinations() {
         return this.bannedDestinationData.filter((destination) => {
-          return !this.isVisited(destination.id) || !this.hideVisited;
+          return (!this.isVisited(destination.id) || !this.hideVisited) && (this.currentDestination.id != destination.id || !this.centerOnCurrent);
         });
       },
       filterUnmarkedDestinations() {
         return this.destinationData.filter((destination) => {
-          return !this.isVisited(destination.id) || !this.hideVisited;
+          return (!this.isVisited(destination.id) || !this.hideVisited) && (this.currentDestination.id != destination.id || !this.centerOnCurrent);
         });
       },
       shareIcons() {
@@ -642,8 +667,7 @@
           index = this.breadCrumbs.pop();
         }
   
-        this.showMenu = this.showSlides = this.showCard = this.showStarred = this.showStarredMenu =
-        this.showBanned = this.showBannedMenu = this.showFullMap = this.goThere = false;
+        this.showMenu = this.showSlides = this.showCard = this.showFullMap = this.goThere = false;
         this.fullScreenNextCounter = 0;
         // Wait for 0.3 seconds (300 milliseconds) before continuing
         setTimeout(() => {
@@ -653,12 +677,6 @@
             this.showMenu = true;
           } else {
             this.showCard = true;
-          }
-          if ( this.starredDestinationData.length > 0 ) {
-            this.showStarred = true;
-          }
-          if ( this.bannedDestinationData.length > 0 ) {
-            this.showBanned = true;
           }
   
           if ( index === "fullScreen" ) {
@@ -753,16 +771,12 @@
       },
       toggleReservationMenu() {
         if ( this.mobileDisplay ){
-          this.showStarred = false;
           if ( this.goThere ) {
             this.goThere = false;
           } else {
             this.showMenu = !this.showMenu;
             if ( !this.showMenu ) {
-              this.showCard = true;            
-              if ( this.starredDestinationData > 0 ) {
-                this.showStarred = true;
-              }
+              this.showCard = true;
             }
           }
         } else {
@@ -807,14 +821,10 @@
               this.starredDestinationsStorage = this.starredDestinationsStorage.filter(id => id !== this.currentDestination.id);
               this.moveItem(this.currentDestination, this.starredDestinationData, this.destinationData);
               this.goThere = false;
-              if ( this.starredDestinationData.length === 0 ) {
-                this.showStarred = false;
-              }
             } else {
               // Star the destination
               this.starredDestinationsStorage.push(this.currentDestination.id);
               this.moveItem(this.currentDestination, this.destinationData, this.starredDestinationData);
-              this.showStarred = true;
               this.upSwipe();
             }
             // Update the local storage with the updated starred destinations
@@ -874,14 +884,10 @@
               // Unban the destination
               this.bannedDestinationsStorage = this.bannedDestinationsStorage.filter(id => id !== this.currentDestination.id);
               this.moveItem(this.currentDestination, this.bannedDestinationData, this.destinationData);
-              if ( this.bannedDestinationData.length === 0 ) {
-                this.showBanned = false;
-              }
             } else {
               // Ban the destination
               this.bannedDestinationsStorage.push(this.currentDestination.id);
               this.moveItem(this.currentDestination, this.destinationData, this.bannedDestinationData);
-              this.showBanned = true;
               this.nextDestination();
             }          
             // Update the local storage with the updated starred destinations
@@ -1036,26 +1042,24 @@
         }
       },
       leftSwipe() {
-        this.$refs.myVueperSlides.next();
-        this.triggerSwipeCooldown();
+        if ( !this.showFullMap ) {
+          this.$refs.myVueperSlides.next();
+          this.triggerSwipeCooldown();
+        }
       },
       rightSwipe() {
-        this.$refs.myVueperSlides.previous();
-        this.triggerSwipeCooldown();
+        if ( !this.showFullMap ) {
+          this.$refs.myVueperSlides.previous();
+          this.triggerSwipeCooldown();
+        }
       },
       downSwipe() {
-        if ( !this.showStarredMenu && !this.showBannedMenu ) {
+        if ( !this.showFullMap ) {
           if ( this.goThere == true ) {
             this.goThere = false;
           } else if ( this.showMenu && this.mobileDisplay ) {
             this.showMenu = false;
             this.showCard = true;
-            if ( this.starredDestinationData.length > 0 ) {
-              this.showStarred = true;
-            }
-            if ( this.bannedDestinationData.length > 0 ) {
-              this.showBanned = true;
-            }
           } else {
             const destinationArgument = this.fullScreen ? 'fullScreen' : undefined;
             this.nextDestination(destinationArgument);
@@ -1067,8 +1071,6 @@
         if ( this.showMenu == false ) {
           this.showMenu = true;
           this.showCard = false;
-          this.showStarred = false;
-          this.showBanned = false;
         } else {
           this.goThere = true;
         }
@@ -1090,15 +1092,13 @@
           }
         }
       },
-      toggleWorldMap () {
-        this.showFullMap = true;
-        this.showStarredMenu = false;
-        this.showBannedMenu = false;
-      },
-      hideFullMap () {
-          this.showStarredMenu = false;
-          this.showBannedMenu = false;
-          this.showFullMap = false;
+      toggleWorldMap ( centerTheMap ) {
+        if ( centerTheMap ) {
+          this.centerOnCurrent = true;
+        } else {
+          this.centerOnCurrent = false;
+        }
+        this.showFullMap = !this.showFullMap;
       },
       handleKeyPress(event) {
         switch (event.key) {
@@ -1114,24 +1114,26 @@
           case 'ArrowDown':
             this.downSwipe();
             break;
-          case '*':
+          case '*', 's':
             this.starToggle();
             break;
-          case 'Delete':
+          case 'Delete', 'b':
             this.banToggle();
             break;
           case 'Enter':
+            this.visitedToggle();
+            break;
           case ' ':
             this.nextDestination();
             break;
           case 'Backspace':
             this.previousDestination();
             break;
-          case 's':
-            this.toggleStarredMenu();
+          case 'm':
+            this.toggleWorldMap(false);
             break;
-          case 'b':
-            this.toggleStarredMenu();
+          case 'c':
+            this.toggleWorldMap(true);
             break;
         }
       },
@@ -1208,7 +1210,24 @@
   
         // Create a new GeoJSON object with the filtered features
         const filteredGeoJson = {
-          type: 'FeatureCollection',
+          type: 'VisitedCollection',
+          features: filteredData,
+        };
+  
+        return filteredGeoJson;
+      },
+      getCurrentGeoJsonData() {
+        // Extract the names of visited countries from visitedDestinationsStorage
+        const currentIsoCode = this.isoMapping[this.currentDestination.id.split('-')[0].toUpperCase()]; 
+  
+        // Filter GeoJSON data to keep only features with ISO codes present in favoredIsoCodes
+        const filteredData = this.countriesGeoJsonData.features.filter(
+          (feature) => currentIsoCode.includes(feature.properties.ADM0_A3)
+        );
+  
+        // Create a new GeoJSON object with the filtered features
+        const filteredGeoJson = {
+          type: 'CurrentCollection',
           features: filteredData,
         };
   
@@ -1220,6 +1239,15 @@
           color: "#34d399",
           opacity: 1,
           fillColor: "#34d399",
+          fillOpacity: 0.1
+        };
+      },
+      currentGeoJsonCountries() {
+        return {
+          weight: 2,
+          color: "#d39934",
+          opacity: 1,
+          fillColor: "#d39934",
           fillOpacity: 0.1
         };
       },
@@ -1289,7 +1317,6 @@
         if (destination) {
           // Move the destination from destinationData to starredDestinationData
           this.moveItem(destination, this.destinationData, this.starredDestinationData);
-          this.showStarred = true;
         }
       });
       // Load banned destinations from local storage
@@ -1303,7 +1330,6 @@
         if (destination) {
           // Move the destination from destinationData to bannedDestinationData
           this.moveItem(destination, this.destinationData, this.bannedDestinationData);
-          this.showBanned = true;
         }
       });
   
