@@ -9,3 +9,54 @@ body, html {
     overflow: hidden;
     position: relative;
 }
+
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateY(400px);
+    opacity: 0;
+}
+.lateral-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.lateral-fade-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.lateral-fade-enter-from,
+.lateral-fade-leave-to {
+    transform: translateX(400px);
+    opacity: 0;
+}
+
+.custom-button {
+    @apply py-2 px-3 text-white text-sm font-semibold rounded-md shadow focus:outline-none;
+}
+
+.slide-title {
+    @apply font-mono backdrop-brightness-50 text-slate-50 p-2;
+}
+
+.destination-profile {
+    @apply font-mono text-sm text-base text-center my-5;
+}
+
+.destination-details {
+    @apply font-mono text-xs text-center italic;
+}
+
+.destination-actions {
+    @apply cursor-pointer text-xl align-bottom;
+}
+
+.destination-description {
+    @apply font-mono text-xs text-slate-700 text-justify my-5;
+}

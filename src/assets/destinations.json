@@ -3184,6 +3184,324 @@
               "link": "https://unsplash.com/fr/@wilfredowesly"
           }
         ]
+    },
+    {
+        "id": "cn-003",
+        "location": "Zhangye",
+        "country": "China",
+        "description": "A city renowned for its proximity to a mesmerizing National Geological Park, often referred to as the \"Rainbow Mountains\". Beyond the geological wonders, Zhangye offers a blend of historical sites, cultural experiences, and a welcoming atmosphere.",
+        "currency": "CNY",
+        "budget": "Cheap",
+        "eat": "6",
+        "bed": "30",
+        "language": "Mandarin",
+        "englishFriendly": "a little",
+        "transportation": "Easy",
+        "reach": "Zhangye Ganzhou Airport (YZY)",
+        "local": "Taxis, Buses",
+        "bestTime": "June",
+        "bestTimeReason": " for mild weather",
+        "temperatureMin": "-7°C in January",
+        "temperatureMax": "23°C in July",
+        "visa": "Visa Required",
+        "safety": "Mostly Safe",
+        "healthcare": "Average",
+        "foodToTry": "Lanzhou hand-pulled noodles, lamb skewers, and various noodle soups. Local markets provide a chance to taste authentic Gansu flavors.",
+        "advice": "Explore the otherworldly landscapes of Zhangye Danxia National Geological Park, known for its colorful rock formations. Visit the historic Giant Buddha Temple with its colossal reclining Buddha statue.",
+        "expediaLink": "https://expedia.com/affiliate/NmnX0Cm",
+        "zoom": 3,
+        "center": [38.925875, 100.449818],
+        "images": [
+          {
+              "title": "Landscape",
+              "image": "destinations/china/zhangye/photo-1623553188230-abfdd4ebf7d9.avif",
+              "author": "Jon Geng",
+              "link": "https://unsplash.com/fr/@jongeng"
+          },
+          {
+              "title": "Qilian Mountains",
+              "image": "destinations/china/zhangye/photo-1665239027588-b3e9bb793fca.avif",
+              "author": "Yiheng Du",
+              "link": "https://unsplash.com/fr/@duheng1127"
+          },
+          {
+              "title": "From the Parking Lot",
+              "image": "destinations/china/zhangye/photo-1533627617206-0d71da554e5a.avif",
+              "author": "zhenhao Liu",
+              "link": "https://unsplash.com/fr/@liuzhenhao"
+          },
+          {
+              "title": "Sunan Yuguzuzizhixian",
+              "image": "destinations/china/zhangye/photo-1564881558406-115eb7b8d776.avif",
+              "author": "泽新 李",
+              "link": "https://unsplash.com/fr/@lizexin1998"
+          }
+        ]
+    },
+    {
+        "id": "aw-001",
+        "location": "Orangestad",
+        "country": "Aruba",
+        "description": "The capital and largest city of Aruba, a Caribbean island nation known for its white sandy beaches, turquoise waters, and a diverse cultural atmosphere.",
+        "currency": "AWG",
+        "budget": "High",
+        "eat": "15",
+        "bed": "150",
+        "language": "Dutch, Papiamento",
+        "englishFriendly": "widely",
+        "transportation": "Easy",
+        "reach": "Queen Beatrix Airport (AUA)",
+        "local": "Taxis, Buses",
+        "bestTime": "March",
+        "bestTimeReason": " for dry season",
+        "temperatureMin": "24°C in January",
+        "temperatureMax": "33°C in September",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Keshi Yena (stuffed cheese), Funchi (cornmeal side dish), and fresh seafood dishes. Don't forget to try a refreshing Aruba Ariba cocktail.",
+        "advice": "Stroll along the colorful waterfront and past the Dutch colonial architecture in downtown Oranjestad. Explore Fort Zoutman and the historic Willem III Tower, which houses the Aruba Historical Museum.",
+        "expediaLink": "https://expedia.com/affiliate/HxoXPA3",
+        "zoom": 3,
+        "center": [12.510052, -70.009354],
+        "images": [
+          {
+              "title": "Flamingos",
+              "image": "destinations/aruba/orangestad/photo-1625869209989-058821f6c125.avif",
+              "author": "Lex Melony",
+              "link": "https://unsplash.com/fr/@lexmelony"
+          },
+          {
+              "title": "The Beach",
+              "image": "destinations/aruba/orangestad/photo-1516409134144-dd775651d24d.avif",
+              "author": "martin passchier",
+              "link": "https://unsplash.com/fr/@photosauraus_rex"
+          },
+          {
+              "title": "Sero Colorado",
+              "image": "destinations/aruba/orangestad/photo-1530131672670-57207aba31e5.avif",
+              "author": "David Troeger",
+              "link": "https://unsplash.com/fr/@jetlag"
+          },
+          {
+              "title": "Quadirikiri Cave",
+              "image": "destinations/aruba/orangestad/photo-1487541367161-c9a2bbcfad86.avif",
+              "author": "Lesly Juarez",
+              "link": "https://unsplash.com/fr/@jblesly"
+          }
+        ]
+    },
+    {
+        "id": "uy-001",
+        "location": "Punta del Este",
+        "country": "Uruguay",
+        "description": "A renowned resort city located on the southeastern coast of Uruguay, characterized by its iconic landmarks and a vibrant cultural scene.",
+        "currency": "UYU",
+        "budget": "Average",
+        "eat": "13",
+        "bed": "70",
+        "language": "Spanish",
+        "englishFriendly": "commonly",
+        "transportation": "Average",
+        "reach": "Carrasco Airport (MVD)",
+        "local": "Taxis, Buses, Car",
+        "bestTime": "March",
+        "bestTimeReason": " for dry season",
+        "temperatureMin": "9°C in July",
+        "temperatureMax": "25°C in February",
+        "visa": "Mostly free entry",
+        "safety": "Very Safe",
+        "healthcare": "Average",
+        "foodToTry": "Traditional Asado (barbecue), empanadas, and seafood dishes. Punta del Este's dining scene offers a mix of local and international flavors.",
+        "advice": "Relax on the iconic beaches, including Playa Brava and Playa Mansa, each offering a unique atmosphere. Visit the famous sculpture known as \"La Mano\" (The Hand) emerging from the sand at Brava Beach.",
+        "expediaLink": "https://expedia.com/affiliate/uzZwLun",
+        "zoom": 3,
+        "center": [-34.94747, -54.93382],
+        "images": [
+          {
+              "title": "Sea Front",
+              "image": "destinations/uruguay/punta-del-este/photo-1616959313137-186688889054.avif",
+              "author": "Pedro Slinger",
+              "link": "https://unsplash.com/fr/@pedroslinger"
+          },
+          {
+              "title": "Maldonado",
+              "image": "destinations/uruguay/punta-del-este/photo-1589550552885-7ca9f2088974.avif",
+              "author": "Anderson",
+              "link": "https://unsplash.com/fr/@amelloanizio"
+          },
+          {
+              "title": "La Mano",
+              "image": "destinations/uruguay/punta-del-este/photo-1591323803333-ea760190d6d0.avif",
+              "author": "Jared Schwitzke",
+              "link": "https://unsplash.com/fr/@jaredschwitzke"
+          },
+          {
+              "title": "Laguna Garzón Bridge",
+              "image": "destinations/uruguay/punta-del-este/Iconic_Uruguayan_Bridge_Over_Lake_Garzon_Architect_Rafael_Vinoly.avif",
+              "author": "Jimmy Baikovicius",
+              "link": "https://www.flickr.com/people/7221539@N06"
+          }
+        ]
+    },
+    {
+        "id": "vn-002",
+        "location": "Da Nang",
+        "country": "Vietnam",
+        "description": "A coastal city in central Vietnam, known for its beautiful beaches, rich history, and as a gateway to the ancient town of Hoi An, the imperial city of Hue, and the stunning Marble Mountains. The city has a vibrant atmosphere, a mix of modernity and tradition, making it a compelling destination for travelers.",
+        "currency": "VND",
+        "budget": "Cheap",
+        "eat": "3",
+        "bed": "30",
+        "language": "Vietnamese",
+        "englishFriendly": "in tourist areas",
+        "transportation": "Easy",
+        "reach": "Da Nang Airport (DAD)",
+        "local": "Taxis, Motorbike, Car",
+        "bestTime": "April",
+        "bestTimeReason": " for low rainfall",
+        "temperatureMin": "19°C in January",
+        "temperatureMax": "35°C in June",
+        "visa": "eVisa",
+        "safety": "Safe",
+        "healthcare": "High",
+        "foodToTry": "Banh Mi (Vietnamese sandwich), Mi Quang (noodle dish), and Bun Cha Ca (fish cake noodle soup).",
+        "advice": "Explore the Marble Mountains, a cluster of five limestone hills with caves, pagodas, and panoramic views. Visit My Khe Beach, a stunning stretch of coastline known for its white sands and clear waters.",
+        "expediaLink": "https://expedia.com/affiliate/mTEr7ct",
+        "zoom": 3,
+        "center": [16.054407, 108.202167],
+        "images": [
+          {
+              "title": "Ba Na Hills",
+              "image": "destinations/vietnam/da-nang/photo-1559592413-7cec4d0cae2b.avif",
+              "author": "Andreea Popa",
+              "link": "https://unsplash.com/fr/@elfcodobelf"
+          },
+          {
+              "title": "My Khe Beach",
+              "image": "destinations/vietnam/da-nang/photo-1649372315722-b6d9cc9737dc.avif",
+              "author": "Phuc Le",
+              "link": "https://unsplash.com/fr/@phucle20004"
+          },
+          {
+              "title": "Dragon Bridge",
+              "image": "destinations/vietnam/da-nang/photo-1620976128192-7181e9f91342.avif",
+              "author": "Andrea De Santis",
+              "link": "https://unsplash.com/fr/@santesson89"
+          },
+          {
+              "title": "Beach",
+              "image": "destinations/vietnam/da-nang/photo-1555979864-7a8f9b4fddf8.avif",
+              "author": "Kiril Dobrev",
+              "link": "https://unsplash.com/fr/@kirildobrev"
+          }
+        ]
+    },
+    {
+        "id": "gr-002",
+        "location": "Kalambaka",
+        "country": "Greece",
+        "description": "A picturesque town located at the base of the Meteora rock formation in central Greece. Famed for its monasteries perched atop towering rock pillars, Kalambaka offers a unique blend of natural beauty, religious history, and traditional Greek charm. ",
+        "currency": "EUR",
+        "budget": "Average",
+        "eat": "17",
+        "bed": "80",
+        "language": "Greek",
+        "englishFriendly": "a little",
+        "transportation": "Average",
+        "reach": "Thessaloniki Airport (SKG)",
+        "local": "Train, Bus, Car",
+        "bestTime": "June",
+        "bestTimeReason": "with good weather and few people",
+        "temperatureMin": "3°C in January",
+        "temperatureMax": "26°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Safe",
+        "healthcare": "Average",
+        "foodToTry": "Moussaka, souvlaki, tzatziki, and local desserts like baklava.",
+        "advice": "Explore the Meteora monasteries, perched on top of towering rock pillars, offering breathtaking views of the surroundings. Visit the Varlaam Monastery and the Great Meteoron Monastery, among others, to witness the religious and historical significance of the region.",
+        "expediaLink": "https://expedia.com/affiliate/bGnLwKJ",
+        "zoom": 3,
+        "center": [39.706618, 21.628873],
+        "images": [
+          {
+              "title": "Meteora",
+              "image": "destinations/greece/kalambaka/photo-1598192743377-72736e228eb7.avif",
+              "author": "Clement Souchet",
+              "link": "https://unsplash.com/fr/@windclems"
+          },
+          {
+              "title": "Landscape",
+              "image": "destinations/greece/kalambaka/photo-1616864393183-7068cdbd77e2.avif",
+              "author": "Yiorgos Ntrahas",
+              "link": "https://unsplash.com/fr/@yiorgosntrahas"
+          },
+          {
+              "title": "The Monastery",
+              "image": "destinations/greece/kalambaka/photo-1601800783567-e765c8d37332.avif",
+              "author": "Nata Kay",
+              "link": "https://unsplash.com/fr/@natakay"
+          },
+          {
+              "title": "Sunset",
+              "image": "destinations/greece/kalambaka/photo-1685024443398-b4967032b9a9.avif",
+              "author": "Jack Schaarschmidt",
+              "link": "https://unsplash.com/fr/@jack_schaarschmidt"
+          }
+        ]
+    },
+    {
+        "id": "pt-002",
+        "location": "Lagos",
+        "country": "Portugal",
+        "description": "A charming coastal town in the Algarve region of Portugal, known for its stunning beaches, historic sites, and lively atmosphere. With its colorful buildings, picturesque coastline, and a mix of cultural and recreational offerings, Lagos is a popular destination for sun-seekers and history enthusiasts alike.",
+        "currency": "EUR",
+        "budget": "Average",
+        "eat": "16",
+        "bed": "70",
+        "language": "Portuguese",
+        "englishFriendly": "widely",
+        "transportation": "Average",
+        "reach": "Faro Airport (FAO)",
+        "local": "Train, Bus, Car, Taxi",
+        "bestTime": "September",
+        "bestTimeReason": " for less crowd",
+        "temperatureMin": "8°C in January",
+        "temperatureMax": "26°C in August",
+        "visa": "Mostly free entry",
+        "safety": "Safe",
+        "healthcare": "Average",
+        "foodToTry": "Seafood, pastel de nata (custard tart), bacalhau (salted cod), and a glass of port wine.",
+        "advice": "Relax on the stunning beaches of Lagos, including Praia Dona Ana and Praia Camilo. Explore the historic old town, with its cobbled streets, charming squares, and historic landmarks like the Church of St. Anthony.",
+        "expediaLink": "https://expedia.com/affiliate/8ZIufXa",
+        "zoom": 3,
+        "center": [37.129665, -8.669586],
+        "images": [
+          {
+              "title": "Algarve Camilo",
+              "image": "destinations/portugal/lagos/photo-1605908082547-0ac083174627.avif",
+              "author": "Artem Zhukov",
+              "link": "https://unsplash.com/fr/@artemioz"
+          },
+          {
+              "title": "Ponta da Piedade",
+              "image": "destinations/portugal/lagos/photo-1579550229847-676fa238ec46.avif",
+              "author": "Cristiano Pinto",
+              "link": "https://unsplash.com/fr/@crispinto"
+          },
+          {
+              "title": "The Coast",
+              "image": "destinations/portugal/lagos/photo-1605908082537-50f6bec7aad9.avif",
+              "author": "Artem Zhukov",
+              "link": "https://unsplash.com/fr/@artemioz"
+          },
+          {
+              "title": "Promontory",
+              "image": "destinations/portugal/lagos/photo-1585405931222-75c1bbf6a2e3.avif",
+              "author": "Sinval Carvalho",
+              "link": "https://unsplash.com/fr/@sinvalbmx"
+          }
+        ]
     }
 ]
   

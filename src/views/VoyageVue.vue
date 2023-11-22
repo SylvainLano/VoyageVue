@@ -20,139 +20,28 @@
       </transition>
     </div>
     
-    <transition name="lateral-fade">
-      <div :class="shareIcons"
-      v-if="showSharingOptions">
-        <div class="absolute h-screen w-screen top-0 left-0" @click="toggleShareWindow">
-        </div>
-        <div class="relative m-auto bg-slate-50 p-10 text-6xl grid grid-cols-4 gap-4 w-fit">
-            <font-awesome-icon 
-              class="cursor-pointer"
-              v-for="(network, index) in socialNetworks"
-              :key="'social_' + index"
-              :icon="[network.faStyle, network.faIcon]"
-              :title="'Share ' + currentDestination.location + ' with the world using ' + network.name"
-              :style="{ color: network.color }"
-              @click="shareOnNetwork(network)"
-              />
-        </div>
-        <div :class="bottomURLShare" @click="copyToClipboard">
-          <label class="p-2 cursor-pointer" for="copyUrl">Copy:</label>
-          <input class="p-2 cursor-pointer bg-slate-300 w-full" type="text" id="copyUrl" :value="shareURL()" readonly>
-        </div>
-      </div>
-    </transition>
-    
-    <transition name="lateral-fade">
-      <div :class="fullMapClass"
-      v-if="showFullMap">
-        <div class="absolute h-screen w-screen top-0 left-0" @click="toggleWorldMap(false)" v-if="!mobileDisplay">
-        </div>
-        <div :class="worldMapClass">
-            <div class="basis-1/6 text-cyan-700 p-1 text-left flex-wrap space-x-2" @mouseover="showMapModeMenu" @mouseleave="hideMapModeMenu">
-              <font-awesome-icon class="cursor-pointer" :icon="getMapModeIcon()" size="lg" />
-              <font-awesome-icon class="cursor-pointer text-slate-700" :icon="['fas', 'street-view']" size="lg" @click="setMapMode('streets')" v-if="(isMapModeMenuVisible || mobileDisplay) && mapMode !== 'streets'" />
-              <font-awesome-icon class="cursor-pointer text-slate-700" :icon="['fas', 'bus']" size="lg" @click="setMapMode('bus')" v-if="(isMapModeMenuVisible || mobileDisplay) && mapMode !== 'bus'" />
-              <font-awesome-icon class="cursor-pointer text-slate-700" :icon="['fas', 'moon']" size="lg" @click="setMapMode('night')" v-if="isMapModeMenuVisible && !mobileDisplay && mapMode !== 'night'" />
-              <font-awesome-icon class="cursor-pointer text-slate-700" :icon="['fas', 'sun']" size="lg" @click="setMapMode('day')" v-if="(isMapModeMenuVisible || mobileDisplay) && mapMode !== 'day'" />
-              <font-awesome-icon class="cursor-pointer text-slate-700" :icon="['fas', 'map']" size="lg" @click="setMapMode('map')" v-if="(isMapModeMenuVisible || mobileDisplay) && mapMode !== 'map'" />
-              <font-awesome-icon class="cursor-pointer text-slate-700" :icon="['fas', 'pencil']" size="lg" @click="setMapMode('watercolor')" v-if="isMapModeMenuVisible && !mobileDisplay && mapMode !== 'watercolor'" />
-            </div>
-            <div class="basis-1/6 text-green-700 text-right pr-2">
-              <input class="mx-1" type="checkbox" id="starredBox" v-model="hideStarred" :disabled="starredDestinationData.length === 0" />
-              <label for="starredBox" :style="{ color: starredDestinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ starredDestinationData.length }} Starred</label>
-            </div>
-            <div class="basis-1/6 text-red-700 text-center">
-              <input class="mx-1" type="checkbox" id="bannedBox" v-model="hideBanned" :disabled="bannedDestinationData.length === 0" />
-              <label for="bannedBox" :style="{ color: bannedDestinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ bannedDestinationData.length }} Banned</label>
-            </div>
-            <div class="basis-1/6 text-cyan-700 text-left pl-2">
-              <input class="mx-1" type="checkbox" id="unmarkedBox" v-model="hideUnmarked" :disabled="destinationData.length === 0" />
-              <label for="unmarkedBox"  :style="{ color: destinationData.length === 0 ? 'grey' : 'inherit' }">Hide {{ destinationData.length }} Unmarked</label>
-            </div>
-            <div class="basis-1/6 text-emerald-700 text-left pl-2">
-              <input class="mx-1" type="checkbox" id="visitedBox" v-model="hideVisited" :disabled="visitedDestinationsStorage.length === 0" />
-              <label for="visitedBox"  :style="{ color: visitedDestinationsStorage.length === 0 ? 'grey' : 'inherit' }">Hide {{ visitedDestinationsStorage.length }} Visited</label>
-            </div>
-            <div class="basis-1/6 text-right text-slate-800 text-xl pr-2">
-              <font-awesome-icon :icon="['far', 'circle-xmark']" @click="toggleWorldMap(false)" />
-            </div>
-        </div>
-        <div class="h-[92%] w-full m-auto">
-          <l-map 
-            ref="starBanMap"
-            :zoom="centerOnCurrent ? 6 : 2"
-            :bounds="centerOnCurrent ? [currentDestination.center,currentDestination.center] : maxBounds"
-            :max-bounds="maxBounds"
-            :minZoom="2"
-            :worldCopyJump=true
-            :center="centerOnCurrent ? currentDestination.center : [21.116772, -11.405182]"
-            :options="{ zoomControl: false, attributionControl: false }"
-          >
-            <l-tile-layer :url="getTileLayerUrl()"></l-tile-layer>
-  
-            <l-geo-json :geojson="getVisitedGeoJsonData()" :options-style="visitedGeoJsonCountries" :visible="!hideVisited"></l-geo-json>
-            <l-geo-json :geojson="getCurrentGeoJsonData()" :options-style="currentGeoJsonCountries" v-if="centerOnCurrent"></l-geo-json>
+    <SharingOptions
+      :show-sharing-options="showSharingOptions"
+      :shareURL="shareURL()"
+      :current-destination="currentDestination"
+      @close-sharing-options="toggleShareWindow"
+    />
 
-            <l-layer-group :visible="!hideBanned">
-            <l-marker
-              v-for="(destination, index) in filteredBannedDestinations"
-              :key="'banned_' + index"
-              :lat-lng="destination.center"
-              @click="nextDestination(destination.id)"
-            >
-              <l-icon
-                :icon-url="require('@/assets/images/markers/marker-icon-red.png')"
-                :icon-anchor="[25/2,41]"
-              />
-              <l-tooltip>{{ destination.location + ' - ' + destination.country }}</l-tooltip>
-            </l-marker>
-            </l-layer-group>
-  
-            <l-layer-group :visible="!hideStarred">
-              <l-marker
-                v-for="(destination, index) in filteredStarredDestinations"
-                :key="'starred_' + index"
-                :lat-lng="destination.center"
-                @click="nextDestination(destination.id)"
-              >
-                <l-icon
-                  :icon-url="require('@/assets/images/markers/marker-icon-green.png')"
-                  :icon-anchor="[25/2,41]"
-                />
-                <l-tooltip>{{ destination.location + ' - ' + destination.country }}</l-tooltip>
-              </l-marker>
-            </l-layer-group>
-  
-            <l-layer-group :visible="!hideUnmarked">
-              <l-marker
-                v-for="(destination, index) in filterUnmarkedDestinations"
-                :key="'unmarked_' + index"
-                :lat-lng="destination.center"
-                @click="nextDestination(destination.id)"
-              >
-              <l-tooltip>{{ destination.location + ' - ' + destination.country }}</l-tooltip>
-              </l-marker>
-            </l-layer-group>
-  
-            <l-layer-group :visible="centerOnCurrent">
-              <l-marker 
-                :key="'current_' + currentDestination.id"
-                :lat-lng="currentDestination.center"
-              >
-                <l-icon
-                  :icon-url="require('@/assets/images/markers/marker-icon-pink.png')"
-                  :icon-anchor="[25/2,41]"
-                />
-                <l-tooltip>{{ currentDestination.location + ' - ' + currentDestination.country }}</l-tooltip>
-              </l-marker>
-            </l-layer-group>
+    <WorldMap
+      ref="worldmapRef"
+      :mobileDisplay="mobileDisplay"
+      :showFullMap="showFullMap"
+      :scaleFactor="scaleFactor"
+      :centerOnCurrent="centerOnCurrent"
+      :currentDestination="currentDestination"
+      :starredDestinationData="starredDestinationData"
+      :bannedDestinationData="bannedDestinationData"
+      :destinationData="destinationData"
+      :visitedDestinationsStorage="visitedDestinationsStorage"
+      @closeWorldMap="toggleWorldMap"
+      @nextDestination="nextDestination"
+    />
 
-          </l-map>
-        </div>
-      </div>
-    </transition>
-  
     <div class="absolute origin-top-left z-20 top-0" :style="{ width: `${widthMenuSize}px`, transform: `scale(${scaleFactor})` }">
       <transition name="slide-fade">
         <div class="relative bg-slate-50 p-4" :style="{ height: `${heightMenuSize}px`}" v-if="(showMenu && !fullScreen)">
@@ -169,19 +58,19 @@
           </div>
           <div class="font-mono text-2xl text-slate-700 text-right align-center flex justify-between pl-2">
             <div class="flex">
-              <div class="text-slate-500 cursor-pointer text-xl align-bottom" v-if="!isStarred(currentDestination.id) && !isBanned(currentDestination.id)" @click="banToggle" title="Never show this destination anymore.">
+              <div class="text-slate-500 destination-actions" v-if="!isStarred(currentDestination.id) && !isBanned(currentDestination.id)" @click="banToggle" title="Never show this destination anymore.">
                 <font-awesome-icon :icon="['far', 'circle-xmark']" :transform="'shrink-'+banShrink" />
               </div>
-              <div class="text-red-600 cursor-pointer text-xl align-bottom" v-else-if="!isStarred(currentDestination.id)" @click="banToggle" title="Bring this destination back on tracks!">
+              <div class="text-red-600 destination-actions" v-else-if="!isStarred(currentDestination.id)" @click="banToggle" title="Bring this destination back on tracks!">
                 <font-awesome-icon :icon="['fas', 'circle-xmark']" :transform="'shrink-'+banShrink" />
               </div>
-              <div class="text-slate-500 cursor-pointer text-xl align-bottom" v-if="!isVisited(currentDestination.id)" @click="visitedToggle" title="You have visited this destination.">
+              <div class="text-slate-500 destination-actions" v-if="!isVisited(currentDestination.id)" @click="visitedToggle" title="You have visited this destination.">
                 <font-awesome-icon :icon="['far', 'circle-check']" :transform="'shrink-'+visitedShrink" />
               </div>
-              <div class="text-emerald-600 cursor-pointer text-xl align-bottom" v-else-if="isVisited(currentDestination.id)" @click="visitedToggle" title="You never visited this destination.">
+              <div class="text-emerald-600 destination-actions" v-else-if="isVisited(currentDestination.id)" @click="visitedToggle" title="You never visited this destination.">
                 <font-awesome-icon :icon="['fas', 'circle-check']" :transform="'shrink-'+visitedShrink" />
               </div>
-              <div class="text-slate-500 cursor-pointer text-xl align-bottom"  title="Share">
+              <div class="text-slate-500 destination-actions"  title="Share">
                 <font-awesome-icon :icon="['fas', 'share-nodes']" @click="toggleShareWindow" />
               </div>
             </div>
@@ -189,7 +78,7 @@
               <span :class="flagClass"></span>{{ currentDestination.country }}
             </div>
           </div>
-          <div class="font-mono text-xs text-slate-700 text-justify my-5">
+          <div class="destination-description">
             {{ currentDestination.description }}
           </div>
           <div class="h-32 bg-slate-600">
@@ -215,13 +104,13 @@
             <font-awesome-icon :icon="['fas', 'money-check-dollar']" size="lg" />
             {{ currentDestination.budget }} Cost - {{ currencyData.code }}
           </div>
-          <div class="font-mono text-xs text-slate-700 text-center italic" v-if="currencyData.code != currencyData.name">
+          <div class="destination-details text-slate-700" v-if="currencyData.code != currencyData.name">
             $10 is worth {{ currencyData.equivalentInCurrency }} {{ currencyData.name }}<br />
           </div>
-          <div class="font-mono text-xs text-slate-700 text-center mb-5 italic">
-            <span class="text-amber-700">Eat for ${{ currentDestination.eat }}</span>
+          <div class="destination-details text-amber-700 mb-5">
+            Eat for ${{ currentDestination.eat }}
             -
-            <span class="text-amber-700">Sleep for ${{ currentDestination.bed }}</span>
+            Sleep for ${{ currentDestination.bed }}
           </div>
           <div class="font-mono text-sm text-slate-700 text-center">
             <span  :class="languageColorClass">
@@ -229,37 +118,37 @@
               {{ currentDestination.language }}
             </span>
           </div>
-          <div class="font-mono text-xs text-amber-700 text-center mb-5 italic" v-if="currentDestination.language.toLowerCase() !== 'english'">
+          <div class="destination-details text-amber-700 mb-5" v-if="currentDestination.language.toLowerCase() !== 'english'">
             English is spoken {{ currentDestination.englishFriendly }}
           </div>
           <div :class="transportationColorClass">
               <font-awesome-icon :icon="['fas', 'plane']" size="lg" />
               {{ currentDestination.reach }}
           </div>
-          <div class="font-mono text-xs text-slate-700 text-center mb-5 italic">
-            <span class="text-amber-700">{{ currentDestination.local }}</span>
+          <div class="destination-details text-amber-700 mb-5">
+            {{ currentDestination.local }}
           </div>
           <div class="font-mono text-sm text-green-700 text-center mt-5">
             Visit in {{ currentDestination.bestTime }} {{ currentDestination.bestTimeReason }}
           </div>
-          <div class="font-mono text-xs text-amber-700 text-center mb-5 italic">
+          <div class="destination-details text-amber-700 mb-5">
             {{ currentDestination.temperatureMin }} to {{ currentDestination.temperatureMax }}
           </div>
           <div class="absolute bottom-0 left-0 right-0 p-4 text-right">   
             <div class="font-mono text-center mt-5">
-              <button class="py-2 px-3 bg-indigo-300 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+              <button class="custom-button bg-indigo-300"
               @click="previousDestination"
               title="Go back to the previous destination!"
               v-if="breadCrumbs.length !== 0">
                 Previous
               </button>
-              <button class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+              <button class="custom-button bg-indigo-500"
               @click="nextDestination"
               title="Discover a new destination!"
               v-if="!noMoreUnseenDestination">
                 New Destination
               </button>
-              <button class="py-2 px-3 bg-slate-600 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+              <button class="custom-button bg-slate-600"
               @click="nextDestination"
               title="You've seen all destination, display a random one!"
               v-if="noMoreUnseenDestination">
@@ -270,42 +159,45 @@
         </div>
       </transition>
     </div>
+    
     <div class="absolute origin-top-left z-30" :style="{ width: `${widthMenuSize}px`, top: `${topValue}px`, transform: `scale(${scaleFactor})` }">
     <transition name="slide-fade">
       <div class="absolute left-0 h-[666px] bg-slate-50 p-4 z-30" v-if="(goThere && !fullScreen)">
-        <div :class="visaColorClass">
+        <div class="destination-profile" :class="visaColorClass">
             <font-awesome-icon :icon="['fas', 'passport']" size="lg" />
             {{ currentDestination.visa }}
         </div>
-        <div :class="safetyColorClass">
+        <div class="destination-profile" :class="safetyColorClass">
             <font-awesome-icon :icon="['fas', 'people-robbery']" size="lg" />
             {{ currentDestination.safety }} Place
         </div>
-        <div :class="healthcareColorClass">
+        <div class="destination-profile" :class="healthcareColorClass">
             <font-awesome-icon :icon="['fas', 'hospital']" size="lg" />
             {{ currentDestination.healthcare }} Healthcare
         </div>
-        <div class="font-mono text-xs text-slate-700 text-justify my-5">
+        <div class="destination-description">
             <font-awesome-icon :icon="['fas', 'bowl-food']" size="lg" /> You need to try :<br />
             <span class="italic text-amber-700">{{ currentDestination.foodToTry }}</span>
         </div>
-        <div class="font-mono text-xs text-slate-700 text-justify my-5">
+        <div class="destination-description">
             <font-awesome-icon :icon="['fas', 'user-plus']" size="lg" /> Before you go :<br />
             <span class="italic text-amber-700">{{ currentDestination.advice }}</span>
         </div>
         <div class="font-mono text-center mt-6">
-          <button class="py-2 px-3 bg-green-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none" @click="visitExpediaLink">
+          <button class="custom-button bg-green-500" @click="visitExpediaLink">
             <font-awesome-icon :icon="['fas', 'plane']" size="lg" />
             Show me on Expedia
           </button>
         </div>
         <div class="font-mono text-center mt-6">
-          <button class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none" @click="toggleReservationMenu">Go Back</button>
+          <button class="custom-button bg-indigo-500" @click="toggleReservationMenu">Go Back</button>
         </div>
       </div>
     </transition>
     </div>
+
     <div class="absolute left-0 h-screen bg-slate-50 z-10" :style="{ width:`${leftValue}px` }" v-if="(!mobileDisplay && !fullScreen)"></div>
+
     <transition name="slide-fade">
       <div class="absolute left-0 bg-slate-50 z-20 bottom-0 p-2 origin-bottom-left" :style="{ width:`${widthMenuSize}px`, transform: `scale(${scaleFactor})` }" v-if="showCard">
         <div class="font-mono text-2xl text-slate-900 text-left flex justify-between">
@@ -324,85 +216,50 @@
         </div>
       </div>
     </transition>
-    <transition name="slide-fade">
-      <div class="absolute bg-slate-50"
-        :style="{ left: `${leftValueSlides}px`, top: `${topValueSlides}px`, height: `${heightSlidesSize}px`, width: `${widthSlidesSize}px` }"
-        v-if="showSlides"
-        @mousedown="startDrag"
-        @mousemove="dragging"
-        @mouseup="endDrag"
-        @mouseleave="endDrag">
-        <vueper-slides
-          ref="myVueperSlides"
-          :autoplay="true"
-          :duration = "10000"
-          :arrows="false"
-          :bullets="false"
-          :slideRatio="0.6"
-          :touchable="false"
-          :pause-on-hover="false"
-          @autoplay-pause="internalAutoPlaying = false"
-          @autoplay-resume="internalAutoPlaying = true">
-          <vueper-slide
-              v-for="(slide, i) in currentDestination.images"
-              :key="i"
-              :image="require(`@/assets/images/${slide.image}`)"
-          >
-            <template #content>
-              <div class="absolute z-10 text-left block"
-                :style="slideTitleStyle"
-                v-if="fullScreenTitle">
-                <div class="font-mono text-4xl backdrop-brightness-50 text-slate-50 p-2" v-if="!fullScreen">
-                  {{ slide.title }}
-                </div>
-                <div class="font-mono text-xl backdrop-brightness-50 text-slate-50 p-2" v-if="!fullScreen">
-                  by <a target="_blank" class="text-pink-400" :href="slide.link">{{ slide.author }}</a>
-                </div>
-                <div class="font-mono text-lg backdrop-brightness-50 text-slate-50 p-1" v-if="fullScreen">
-                  <span class="text-pink-400">{{ slide.title }}</span> by {{ slide.author }}
-                </div>
-                <div class="font-mono text-3xl backdrop-brightness-50 text-slate-50 p-1" v-if="fullScreen">
-                  {{ currentDestination.location + ", " + currentDestination.country }}
-                </div>
-              </div>
-            </template>
-          </vueper-slide> 
-          <template #pause>
-            <i class="icon pause_circle_outline"></i>
-          </template>
-        </vueper-slides> 
-      </div> 
-    </transition>
+
+    <SlideShow
+      ref="slideshowRef"
+      :showSlides="showSlides"
+      :scaleFactor="scaleFactor"
+      :mobileDisplay="mobileDisplay"
+      :heightSize="heightSize"
+      :widthSize="widthSize"
+      :leftValue="leftValue"
+      :widthMenuSize="widthMenuSize"
+      :startDrag="startDrag"
+      :dragging="dragging"
+      :endDrag="endDrag"
+      :currentDestination="currentDestination"
+      :fullScreenTitle="fullScreenTitle"
+      :fullScreen="fullScreen"
+    />
+
   </div>
   </div>
   </template>
   
   <script>
-  import { VueperSlides, VueperSlide } from 'vueperslides';
-  import 'vueperslides/dist/vueperslides.css';
   import '@/assets/css/tailwind.css';
   import destinationData from '@/assets/destinations.json';
-  import countriesGeoJsonData from '@/assets/countries.json';
-  import isoMapping from '@/assets/iso-mapping.json';
-  import socialNetworks from '@/assets/social-networks.json';
   import axios from 'axios';
   import "leaflet/dist/leaflet.css";
-  import { latLngBounds } from "leaflet";
-  import { LMap, LTileLayer, LMarker, LIcon, LLayerGroup, LTooltip, LGeoJson } from "@vue-leaflet/vue-leaflet";
+  import { LMap, LTileLayer, LMarker, LIcon, LGeoJson } from "@vue-leaflet/vue-leaflet";
   import "/node_modules/flag-icons/css/flag-icons.min.css";
+  import SharingOptions from '@/components/SharingOptions.vue';
+  import SlideShow from '@/components/SlideShow.vue';
+  import WorldMap from '@/components/WorldMap.vue';
   
   export default {
     name: 'VoyageVue',
     components: {
-      VueperSlides,
-      VueperSlide,
       LMap,
       LTileLayer,
       LMarker,
       LIcon,
-      LLayerGroup,
-      LTooltip,
       LGeoJson,
+      SharingOptions,
+      SlideShow,
+      WorldMap
     },
     props: ['landingCountry', 'landingLocation'],
     data: () => ({
@@ -436,15 +293,8 @@
       breadCrumbs: [],
       noMoreUnseenDestination: false,
       scaleFactor: 1,
-      heightSlidesSize: 756,
-      widthSlidesSize: 1512,
-      leftValueSlides: 320,
-      topValueSlides: 0,
-      leftValueTitle: 320,
-      topValueTitle: 90,
       widthMenuSize: 320,
       heightMenuSize: 756,
-      ratioSlides: 0.6,
       screenRatio: 0.5,
       mobileDisplay: false,
       topValue: 90,
@@ -456,26 +306,15 @@
       swipeReady: true,
       swipeCooldown: 500,
       showFullMap: false,
-      hideStarred: false,
-      hideBanned: true,
-      hideUnmarked: false,
-      hideVisited: false,
       fullScreen: false,
       fullScreenNextCounter: 0,
       fullScreenTitle: true,
-      mapMode: "streets",
-      isMapModeMenuVisible: false,
       currencyDataCache: null,
-      countriesGeoJsonData: countriesGeoJsonData,
-      isoMapping: isoMapping,
-      maxBounds: latLngBounds([
-        [-90, -360], // Southwest corner of the world
-        [90, 360],   // Northeast corner of the world
-      ]),
       baseURL: 'https://sylvainlano.github.io/VoyageVue/',
       showSharingOptions: false,
-      socialNetworks: socialNetworks,
       centerOnCurrent: false,
+      heightSize: 0,
+      widthSize: 0,
     }),
     mounted() {
       setInterval(() => {
@@ -529,30 +368,30 @@
         // Determine the class based on the language spoken
         if ( this.currentDestination && this.currentDestination.visa ) {
           if (this.currentDestination.visa.toLowerCase().includes("free")) {
-            return 'font-mono text-sm text-green-700 text-base text-center my-5';
+            return 'text-green-700';
           }
         }
-        return 'font-mono text-sm text-red-700 text-base text-center my-5';
+        return 'text-red-700';
       },
       healthcareColorClass() {
         // Determine the class based on the language spoken
         if ( this.currentDestination && this.currentDestination.healthcare ) {
           if (this.currentDestination.healthcare.toLowerCase().includes("good") || this.currentDestination.healthcare.toLowerCase().includes("high")) {
-            return 'font-mono text-sm text-green-700 text-base text-center my-5';
+            return 'text-green-700';
           }
         }
-        return 'font-mono text-sm text-red-700 text-base text-center my-5';
+        return 'text-red-700';
       },
       safetyColorClass() {
         // Determine the class based on the language spoken
         if ( this.currentDestination && this.currentDestination.safety ) {
           if (this.currentDestination.safety.toLowerCase().includes("safe")) {
-            return 'font-mono text-sm text-green-700 text-base text-center my-5';
+            return 'text-green-700';
           } else if (this.currentDestination.safety.toLowerCase().includes("average")) {
-            return 'font-mono text-sm text-amber-700 text-base text-center my-5';
+            return 'text-amber-700';
           }
         }
-        return 'font-mono text-sm text-red-700 text-base text-center my-5';
+        return 'text-red-700';
       },
       transportationColorClass() {
         // Determine the class based on the language spoken
@@ -574,89 +413,7 @@
           return 'fi fi-' + countryCode + ' text-xl mx-3';
         }
         return 'fi text-xl mx-3';
-      },    
-      slideTitleStyle() {
-        const style = {
-          left: `${this.leftValueTitle}px`,
-          transform: `scale(${this.scaleFactor})`,
-        };
-        if ( this.fullScreen ) {
-          style['bottom'] = `${this.topValueTitle}px`;
-          style['transform-origin'] = `bottom left`;
-        } else {
-          style['top'] = `${this.topValueTitle}px`;
-          style['transform-origin'] = `top left`;
-        }
-        if (this.mobileDisplay) {
-          style['max-width'] = `${this.widthMenuSize}px`;
-        }
-        return style;
       },
-      worldMapClass() {
-        // Define a class object with class names as keys and conditions as values
-        let classes = {
-          'm-auto bg-slate-50 text-center flex flex-row mb-1': true, // Other classes
-        };
-  
-        if (!this.mobileDisplay) {
-          classes = {
-            ...classes,
-            'relative text-lg': this.scaleFactor >= 0.7,
-            'relative text-sm': this.scaleFactor < 0.7 && this.scaleFactor >= 0.4,
-            'relative text-xs': this.scaleFactor < 0.4,
-          };
-        } else {
-          classes = {
-            ...classes,
-            'relative text-sm': true,
-          };
-        }
-  
-        // Convert the class object to a space-separated string
-        return Object.keys(classes)
-          .filter((className) => classes[className])
-          .join(' ');
-      },
-      fullMapClass() {
-        let fullClass = 'bg-slate-50 flex-col bg-opacity-50 absolute text-slate-900 h-full w-full top-0 left-0 z-40 overflow-hidden';
-        if ( !this.mobileDisplay ) {
-          fullClass += ' p-[5%]';
-        }
-        return fullClass;
-      },
-      filteredStarredDestinations() {
-        return this.starredDestinationData.filter((destination) => {
-          return (!this.isVisited(destination.id) || !this.hideVisited) && (this.currentDestination.id != destination.id || !this.centerOnCurrent);
-        });
-      },
-      filteredBannedDestinations() {
-        return this.bannedDestinationData.filter((destination) => {
-          return (!this.isVisited(destination.id) || !this.hideVisited) && (this.currentDestination.id != destination.id || !this.centerOnCurrent);
-        });
-      },
-      filterUnmarkedDestinations() {
-        return this.destinationData.filter((destination) => {
-          return (!this.isVisited(destination.id) || !this.hideVisited) && (this.currentDestination.id != destination.id || !this.centerOnCurrent);
-        });
-      },
-      shareIcons() {
-        let shareIconsClass = 'bg-slate-50 bg-opacity-50 absolute text-slate-900 h-full w-full top-0 left-0 z-40';
-        if ( !this.mobileDisplay ) {
-          shareIconsClass += ' p-[5%]';
-        } else {
-          shareIconsClass += ' pt-[10%]';
-        }
-        return shareIconsClass;
-      },
-      bottomURLShare() {
-        let bottomURLClass = 'absolute bg-slate-50 p-2 flex mb-2';
-        if ( this.mobileDisplay ) {
-          bottomURLClass += ' w-full bottom-0 text-sm';
-        } else {
-          bottomURLClass += ' w-[90%] bottom-10 text-lg';
-        }
-        return bottomURLClass;
-      }
     },
     methods: {
       nextDestination(index = null) {
@@ -923,25 +680,25 @@
       updateScaleFactor() {
         // Calculate the scale factor based on the parent's height
         const parentContainer = this.$refs.parentContainer;
-        const heightSize = parentContainer.getBoundingClientRect().height;
-        const widthSize = parentContainer.getBoundingClientRect().width;
+        this.heightSize = parentContainer.getBoundingClientRect().height;
+        this.widthSize = parentContainer.getBoundingClientRect().width;
   
-        this.screenRatio = heightSize / widthSize;
+        this.screenRatio = this.heightSize / this.widthSize;
         if ( this.screenRatio > 1.2 ) {
           this.mobileDisplay = true;
           this.showCard = true;
           if ( !this.goThere ) {
             this.showMenu = false;
           }
-          this.scaleFactor = heightSize / 756;
-          this.heightMenuSize = heightSize / this.scaleFactor;
-          this.widthMenuSize = widthSize / this.scaleFactor;
+          this.scaleFactor = this.heightSize / 756;
+          this.heightMenuSize = this.heightSize / this.scaleFactor;
+          this.widthMenuSize = this.widthSize / this.scaleFactor;
           this.leftValue = 0;
         } else {
           this.mobileDisplay = false;
           this.showMenu = true;
           this.showCard = false;
-          this.scaleFactor = heightSize / 756;
+          this.scaleFactor = this.heightSize / 756;
           this.widthMenuSize = 320;
           this.heightMenuSize = 756;
           this.leftValue = this.widthMenuSize * this.scaleFactor;
@@ -960,30 +717,10 @@
   
         // Calculate the new top value based on scaleFactor
         this.topValue = 90 * this.scaleFactor;
-        if ( heightSize / (widthSize - this.leftValue) > this.ratioSlides ) {
-          this.heightSlidesSize = heightSize;
-          this.widthSlidesSize = heightSize / this.ratioSlides;
-          this.topValueSlides = 0;
-          this.leftValueSlides = ( this.leftValue - this.widthSlidesSize + widthSize ) / 2;
-        } else {
-          this.widthSlidesSize = (widthSize - this.leftValue);
-          this.heightSlidesSize = this.widthSlidesSize * this.ratioSlides;
-          this.topValueSlides = ( heightSize - this.heightSlidesSize ) / 2;
-          this.leftValueSlides = this.leftValue;
+        
+        if (this.$refs.slideshowRef) {
+          this.$refs.slideshowRef.updateSlidesScale();
         }
-  
-        if ( this.mobileDisplay ) {
-          this.leftValueTitle = 0 - this.leftValueSlides;
-        } else {
-          this.leftValueTitle = this.widthMenuSize * this.scaleFactor - this.leftValueSlides;
-        }
-        this.topValueTitle = this.topValue - this.topValueSlides;
-  
-        if ( this.fullScreen ) {
-          this.leftValueTitle = 0;
-          this.topValueTitle = 0 - this.topValueSlides;
-        }
-  
       },
       onTouchStart(event) {
         this.startX = event.touches[0].clientX;
@@ -1043,13 +780,13 @@
       },
       leftSwipe() {
         if ( !this.showFullMap ) {
-          this.$refs.myVueperSlides.next();
+          this.$refs.slideshowRef.nextSlide();
           this.triggerSwipeCooldown();
         }
       },
       rightSwipe() {
         if ( !this.showFullMap ) {
-          this.$refs.myVueperSlides.previous();
+          this.$refs.slideshowRef.previousSlide();
           this.triggerSwipeCooldown();
         }
       },
@@ -1137,50 +874,6 @@
             break;
         }
       },
-      getTileLayerUrl() {
-        // Your conditions to determine the tile-layer URL
-        if ( this.mapMode === "night" ) {
-          return 'https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpg';
-        } else if ( this.mapMode === "map" ) {
-          return 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}';
-        } else if ( this.mapMode === "watercolor" ) {
-          return 'https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg';
-        } else if ( this.mapMode === "day" ) {
-          return 'http://mt3.google.com/vt/lyrs=s&x={x}&y={y}&z={z}';
-        } else if ( this.mapMode === "bus" ) {
-          return 'https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png';
-        } else {
-          return 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-        }
-      },
-      setMapMode( mode ) {
-        this.mapMode = mode;
-      },
-      showMapModeMenu() {
-        this.isMapModeMenuVisible = true;
-      },
-      hideMapModeMenu() {
-        this.isMapModeMenuVisible = false;
-      },
-      getMapModeIcon() {
-        // Return the appropriate icon based on the selected mode
-        switch (this.mapMode) {
-          case 'night':
-            return ['fas', 'moon'];
-          case 'day':
-            return ['fas', 'sun'];
-          case 'map':
-            return ['fas', 'map'];
-          case 'watercolor':
-            return ['fas', 'pencil'];
-          case 'bus':
-            return ['fas', 'bus'];
-          case 'satellite':
-            return ['fas', 'satellite'];
-          default:
-            return ['fas', 'street-view'];
-        }
-      },
       async fetchCurrencyData() {
         if (!this.currencyDataCache) {
           // Fetch and update currency data using the selected currency code
@@ -1192,78 +885,8 @@
           }
         }
       },
-      getVisitedGeoJsonData() {
-        // Extract the names of visited countries from visitedDestinationsStorage
-        const visitedIsoCodes = this.visitedDestinationsStorage.map((destinationId) => {
-          // Convert destination id (e.g., "fr-001") to country code (e.g., "fr")
-          const countryCode = destinationId.split('-')[0].toUpperCase();
-          
-          // Find the ISO code in isoMapping
-          return this.isoMapping[countryCode];
-        });
-  
-  
-        // Filter GeoJSON data to keep only features with ISO codes present in favoredIsoCodes
-        const filteredData = this.countriesGeoJsonData.features.filter(
-          (feature) => visitedIsoCodes.includes(feature.properties.ADM0_A3)
-        );
-  
-        // Create a new GeoJSON object with the filtered features
-        const filteredGeoJson = {
-          type: 'VisitedCollection',
-          features: filteredData,
-        };
-  
-        return filteredGeoJson;
-      },
-      getCurrentGeoJsonData() {
-        // Extract the names of visited countries from visitedDestinationsStorage
-        const currentIsoCode = this.isoMapping[this.currentDestination.id.split('-')[0].toUpperCase()]; 
-  
-        // Filter GeoJSON data to keep only features with ISO codes present in favoredIsoCodes
-        const filteredData = this.countriesGeoJsonData.features.filter(
-          (feature) => currentIsoCode.includes(feature.properties.ADM0_A3)
-        );
-  
-        // Create a new GeoJSON object with the filtered features
-        const filteredGeoJson = {
-          type: 'CurrentCollection',
-          features: filteredData,
-        };
-  
-        return filteredGeoJson;
-      },
-      visitedGeoJsonCountries() {
-        return {
-          weight: 2,
-          color: "#34d399",
-          opacity: 1,
-          fillColor: "#34d399",
-          fillOpacity: 0.1
-        };
-      },
-      currentGeoJsonCountries() {
-        return {
-          weight: 2,
-          color: "#d39934",
-          opacity: 1,
-          fillColor: "#d39934",
-          fillOpacity: 0.1
-        };
-      },
       toggleShareWindow () {
         this.showSharingOptions = !this.showSharingOptions;
-      },
-      shareOnNetwork(network) {
-        const shareURL = this.shareURL();
-        const url = network.url
-          .replace(/@u/g, encodeURIComponent(shareURL))
-          .replace(/@t/g, encodeURIComponent("Visit " + this.currentDestination.location + " on Voyage Vue !"))
-          .replace(/@d/g, encodeURIComponent(this.currentDestination.description))
-          .replace(/@h/g, this.createHashtags(this.currentDestination));
-
-        // Open the share link in a new window or perform the desired action
-        window.open(url, '_blank');
       },
       shareURL() {   
         if (this.currentDestination && this.currentDestination.country && this.currentDestination.location) {
@@ -1273,24 +896,27 @@
         // Default URL or handle the case when destination data is not available
         return this.baseURL;
       },
-      createHashtags( destination ) {
-        let hashtags = destination.location.replace(/\s+/g, '') + ','
-        + destination.country.replace(/\s+/g, '') + ',';
-        destination.images.forEach((image) => {
-          hashtags += image.title.replace(/[^a-zA-Z0-9_]/g, '') + ',';
-        });
-        hashtags += 'VoyageVue';
-        return hashtags;
+      getTileLayerUrl() {
+        if ( this.$refs.worldmapRef ) {
+          return this.$refs.worldmapRef.getTileLayerUrl();
+        } else {
+          return 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        }
       },
-      copyToClipboard() {
-        navigator.clipboard.writeText(this.shareURL())
-          .then(() => {
-            console.log('URL copied to clipboard');
-          })
-          .catch((error) => {
-            console.error('Unable to copy to clipboard', error);
-          });
-      }
+      getCurrentGeoJsonData() {
+        if ( this.$refs.worldmapRef ) {
+          return this.$refs.worldmapRef.getCurrentGeoJsonData();
+        } else {
+          return null;
+        }
+      },
+      currentGeoJsonCountries() {
+        if ( this.$refs.worldmapRef ) {
+          return this.$refs.worldmapRef.currentGeoJsonCountries();
+        } else {
+          return null;
+        }
+      },
     },
     created() {
 
@@ -1349,33 +975,4 @@
     }, 
   }
   </script>
-  
-  <style scoped>
-  .slide-fade-enter-active {
-    transition: all 0.3s ease-out;
-  }
-  
-  .slide-fade-leave-active {
-    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-  
-  .slide-fade-enter-from,
-  .slide-fade-leave-to {
-    transform: translateY(400px);
-    opacity: 0;
-  }
-  .lateral-fade-enter-active {
-    transition: all 0.3s ease-out;
-  }
-  
-  .lateral-fade-leave-active {
-    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-  
-  .lateral-fade-enter-from,
-  .lateral-fade-leave-to {
-    transform: translateX(400px);
-    opacity: 0;
-  }
-  </style>
   

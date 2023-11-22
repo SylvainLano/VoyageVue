@@ -28,7 +28,7 @@ Country Borders from : (https://www.naturalearthdata.com/)
 ### Futures developments and ideas
 - Possibility to download a file with all the user data to recover it later or elsewhere
 
-## Destinations presented (60 total)
+## Destinations presented (66 total)
 - Kyoto, Japan (jp-001)  
 - Paris, France (fr-001)  
 - Dublin, Ireland (ir-001)  
@@ -89,3 +89,9 @@ Country Borders from : (https://www.naturalearthdata.com/)
 - Page, USA (us-005)  
 - Valladolid, Mexico (mx-001)  
 - Zhangjiajie, China (cn-002)  
+- Zhangye, China (cn-003)  
+- Orangestad, Aruba (aw-001)  
+- Punta del Este, Uruguay (uy-001)  
+- Da Nang, Vietnam (vn-002)  
+- Kalambaka, Greece (gr-002)  
+- Lagos, Portugal (pt-002)  
