@@ -22,7 +22,6 @@
       "healthcare": "Good",
       "foodToTry": "Yudofu (tofu hot pot), tempura, kaiseki multi-course meals, matcha tea and traditional Japanese sweets like wagashi.",
       "advice": "Consider getting a Japan Rail Pass if you plan to explore other cities.",
-      "expediaLink": "https://expedia.com/affiliate/8TDNSF7",
       "zoom": 3,
       "center": [35.011665, 135.768326],
       "images": [
@@ -75,7 +74,6 @@
         "healthcare": "Very Good",
         "foodToTry": "A croissant and espresso at a local cafe, a cheese and wine tasting, and a decadent dessert at a patisserie.",
         "advice": "Many museums and attractions offer free or discounted admission on the first Sunday of each month.",
-        "expediaLink": "https://expedia.com/affiliate/ze2LrNm",
         "zoom": 3,
         "center": [48.866667, 2.333333],
         "images": [
@@ -128,7 +126,6 @@
         "healthcare": "Very Good",
         "foodToTry": "Pubs play a central role in Dublin's culture, serving classic dishes like Irish stew, seafood chowder, and soda bread, alongside pints of Guinness.",
         "advice": "Dublin experiences a maritime climate, with mild winters and cool summers. Be prepared for occasional rain, so it's a good idea to pack a waterproof jacket.",
-        "expediaLink": "https://expedia.com/affiliate/qf64RDh",
         "zoom": 3,
         "center": [53.3498053, -6.2603097],
         "images": [
@@ -181,7 +178,6 @@
         "healthcare": "Very Good",
         "foodToTry": "Bagels with cream cheese and lox, New York-style pizza, hot dogs, and diverse international cuisines in neighborhoods like Chinatown and Little Italy.",
         "advice": "Consider purchasing a MetroCard for cost-effective subway and bus travel. Also, summers can be hot and humid, while winters can be cold with occasional snow. Pack accordingly.",
-        "expediaLink": "https://expedia.com/affiliate/qBi1tZK",
         "zoom": 3,
         "center": [40.730610, -73.935242],
         "images": [
@@ -234,7 +230,6 @@
         "healthcare": "Very Good",
         "foodToTry": "Carbonara, Cacio e Pepe, Roman-style pizza, and traditional Roman Jewish dishes like carciofi alla giudia (Jewish-style artichokes).",
         "advice": "Many historic sites and museums offer free or discounted admission on the first Sunday of each month. Be careful of the hot, dry summers and mild, wet winters.",
-        "expediaLink": "https://expedia.com/affiliate/HvL6Qvy",
         "zoom": 3,
         "center": [41.902784, 12.496366],
         "images": [
@@ -287,7 +282,6 @@
         "healthcare": "Good",
         "foodToTry": "Paella, tapas, churros with chocolate, and seafood dishes like \"paella de mariscos.\"",
         "advice": "Hop from one tapas bar to another: it's not just a meal; it's a social and culinary experience, so take your time, chat with locals, and savor the flavors of Barcelona.",
-        "expediaLink": "https://expedia.com/affiliate/9NYkwgO",
         "zoom": 3,
         "center": [41.390205, 2.154007],
         "images": [
@@ -340,7 +334,6 @@
         "healthcare": "Average",
         "foodToTry": "Greek salad, souvlaki, fresh grilled fish, and the famous dessert, baklava.",
         "advice": "Wear comfortable shoes for exploring the charming villages and walking along the caldera edge.",
-        "expediaLink": "https://expedia.com/affiliate/HRAgWkG",
         "zoom": 3,
         "center": [36.393154, 25.461510],
         "images": [
@@ -393,7 +386,6 @@
         "healthcare": "High",
         "foodToTry": "Enjoy a South African braai (barbecue), bobotie (spiced meat dish), and Cape Malay cuisine, particularly their aromatic curries.",
         "advice": "To take in stunning panoramic views of the city and surrounding areas, consider a trip to the top of Table Mountain via the cable car.",
-        "expediaLink": "https://expedia.com/affiliate/QVFnuqa",
         "zoom": 3,
         "center": [-33.918861, 18.423300],
         "images": [
@@ -446,7 +438,6 @@
         "healthcare": "High",
         "foodToTry": "Pad Thai, Tom Yum soup, Green Curry, Som Tum (Papaya Salad), and Mango Sticky Rice. Explore street food stalls for authentic local dishes.",
         "advice": "Bargain when shopping in markets, as it's a common practice, but respect the local customs and traditions, especially when visiting temples. Dress modestly and remove your shoes before entering.",
-        "expediaLink": "https://expedia.com/affiliate/NeUpa5h",
         "zoom": 3,
         "center": [13.736717, 100.523186],
         "images": [
@@ -499,7 +490,6 @@
         "healthcare": "Average",
         "foodToTry": "Feijoada (a black bean stew with pork), Coxinha (chicken croquettes), Açaí bowls, and, of course, Churrasco (Brazilian barbecue).",
         "advice": "Sample fresh tropical fruits and juices from local street vendors, take in the breathtaking view from the Christ the Redeemer statue on Corcovado Mountain, and enjoy the famous Copacabana and Ipanema beaches but be cautious with your belongings.",
-        "expediaLink": "https://expedia.com/affiliate/9oZYew7",
         "zoom": 3,
         "center": [-22.908333, -43.196388],
         "images": [
@@ -552,7 +542,6 @@
         "healthcare": "High",
         "foodToTry": "Tim Tams (chocolate biscuits), Vegemite (a savory spread), and local seafood including Barramundi and Sydney Rock Oysters.",
         "advice": "Enjoy a day at the world-famous Bondi Beach and coastal walk to Bronte Beach or embrace the outdoor lifestyle and join the locals in picnics, barbecues, and coastal walks.",
-        "expediaLink": "https://expedia.com/affiliate/0zOspqP",
         "zoom": 3,
         "center": [-33.8678500, 151.2073200],
         "images": [
@@ -605,7 +594,6 @@
         "healthcare": "Low",
         "foodToTry": "Koshari (rice, lentils and macaroni with tomato sauce), Shawarma, Ful Medames (mashed fava beans), and a variety of Middle Eastern desserts like Baklava and Basbousa.",
         "advice": "Respect local customs and dress modestly, especially when visiting religious sites. Take a cruise on the Nile River, visit the Pyramids of Giza and the Sphinx, and consider a camel ride around the area.",
-        "expediaLink": "https://expedia.com/affiliate/VRsSW8q",
         "zoom": 3,
         "center": [30.033333, 31.233334],
         "images": [
@@ -638,7 +626,7 @@
     {
         "id": "nl-001",
         "location": "Amsterdam",
-        "country": "Netherland",
+        "country": "Netherlands",
         "description": "A charming city known for its picturesque canals, historic architecture, and vibrant cultural scene. It's a city where you can explore world-class museums, visit iconic landmarks, and experience the laid-back atmosphere.",
         "currency": "EUR",
         "budget": "Very High",
@@ -658,31 +646,30 @@
         "healthcare": "High",
         "foodToTry": "Bitterballen (deep-fried meat-based snacks), Stroopwafels (thin waffle cookies with caramel-like syrup), Dutch herring, and traditional Dutch cheeses, such as Gouda and Edam.",
         "advice": "Rent a bike and explore the city like a local; Amsterdam is known for its bike-friendly infrastructure. Be mindful of tram tracks when walking or cycling to avoid accidents.",
-        "expediaLink": "https://expedia.com/affiliate/MrllEDE",
         "zoom": 3,
         "center": [52.377956, 4.897070],
         "images": [
           {
               "title": "The Amstel",
-              "image": "destinations/netherland/amsterdam/photo-1605101100278-5d1deb2b6498.avif",
+              "image": "destinations/netherlands/amsterdam/photo-1605101100278-5d1deb2b6498.avif",
               "author": "Max van den Oetelaar",
               "link": "http://www.maxvandenoetelaar.com"
           },
           {
               "title": "Tulips",
-              "image": "destinations/netherland/amsterdam/photo-1673707017115-70a6efba8f22.avif",
+              "image": "destinations/netherlands/amsterdam/photo-1673707017115-70a6efba8f22.avif",
               "author": "Andrei Popescu",
               "link": "https://unsplash.com/fr/@myst6395"
           },
           {
               "title": "I amsterdam",
-              "image": "destinations/netherland/amsterdam/photo-1523889310790-cb91a98b017b.avif",
+              "image": "destinations/netherlands/amsterdam/photo-1523889310790-cb91a98b017b.avif",
               "author": "Red Morley Hewitt",
               "link": "https://unsplash.com/fr/@redvers"
           },
           {
               "title": "Zaanse Schans",
-              "image": "destinations/netherland/amsterdam/photo-1698239227821-8184e85c2095.avif",
+              "image": "destinations/netherlands/amsterdam/photo-1698239227821-8184e85c2095.avif",
               "author": "Radu Iordan",
               "link": "https://unsplash.com/fr/@iordanradu"
           }
@@ -711,7 +698,6 @@
         "healthcare": "Very High",
         "foodToTry": "Shawarma, Falafel, Emirati cuisine (try Al Harees and Al Machboos), and international cuisines from around the world.",
         "advice": "Visit the Burj Khalifa, the world's tallest building, for panoramic views of the city. Shop at the traditional souks, such as the Gold Souk and Spice Souk, and dress modestly when outside of tourist areas.",
-        "expediaLink": "https://expedia.com/affiliate/Mq3V4gP",
         "zoom": 3,
         "center": [25.276987, 55.296249],
         "images": [
@@ -764,7 +750,6 @@
         "healthcare": "Very Good",
         "foodToTry": "Goulash, trdelník (sweet pastry), Svíčková (marinated beef), and a variety of traditional Czech beers.",
         "advice": "Stroll through the charming Old Town Square and watch the astronomical clock's hourly show and explore the historic Prague Castle complex and enjoy panoramic views of the city.",
-        "expediaLink": "https://expedia.com/affiliate/mJfRBiG",
         "zoom": 3,
         "center": [50.073658, 14.418540],
         "images": [
@@ -817,7 +802,6 @@
         "healthcare": "Very Good",
         "foodToTry": "Wiener Schnitzel (breaded and fried veal or pork), Sachertorte (chocolate cake), Apfelstrudel (apple strudel), and a variety of Austrian wines.",
         "advice": "Enjoy a leisurely coffee in a traditional Viennese coffeehouse and savor a piece of cake. Visit Schönbrunn Palace, Belvedere Palace, and St. Stephen's Cathedral in the historic city center.",
-        "expediaLink": "https://expedia.com/affiliate/Xtb6ZWX",
         "zoom": 3,
         "center": [48.210033, 16.363449],
         "images": [
@@ -870,7 +854,6 @@
         "healthcare": "Good",
         "foodToTry": "Smørrebrød (open-faced sandwiches), Frikadeller (Danish meatballs), and traditional pastries like Wienerbrød (Danish pastries).",
         "advice": "Explore the Tivoli Gardens, one of the world's oldest amusement parks. Visit the colorful Nyhavn waterfront and the iconic Little Mermaid statue by Hans Christian Andersen.",
-        "expediaLink": "https://expedia.com/affiliate/KJTKGg8",
         "zoom": 3,
         "center": [55.676098, 12.568337],
         "images": [
@@ -923,7 +906,6 @@
         "healthcare": "Low",
         "foodToTry": "Tagine (slow-cooked stew), Couscous, Moroccan mint tea, Harira (a traditional soup), and pastries like Baklava.",
         "advice": "Bargain when shopping in the souks; haggling is a common practice. Dress modestly and ask for permission before taking photos of people. Visit the Bahia Palace.",
-        "expediaLink": "https://expedia.com/affiliate/yy4zDNc",
         "zoom": 3,
         "center": [31.6341600, -7.9999400],
         "images": [
@@ -976,7 +958,6 @@
         "healthcare": "High",
         "foodToTry": "Lamb, seafood (Green-lipped mussels and Bluff oysters), Pavlova (meringue dessert), and Maori hangi (traditional method of cooking).",
         "advice": "Enjoy a day trip to the Waitakere Ranges for rainforest walks and waterfalls. Experience the indigenous Maori culture and attend a cultural performance. Take a ferry to Waiheke Island for wine tasting and beautiful beaches.",
-        "expediaLink": "https://expedia.com/affiliate/xWhMxpL",
         "zoom": 3,
         "center": [-36.848461, 174.763336],
         "images": [
@@ -1029,7 +1010,6 @@
         "healthcare": "High",
         "foodToTry": "Haggis, Neeps and Tatties (haggis, turnips, and potatoes), Scottish Salmon, Shortbread, and Whisky.",
         "advice": "Wander through Holyrood Palace and the adjacent Holyrood Park, which includes Arthur's Seat, an ancient volcano and visit the historic Edinburgh Castle, perched on an extinct volcano, and take in the panoramic views.",
-        "expediaLink": "https://expedia.com/affiliate/XPFcbPR",
         "zoom": 3,
         "center": [55.953252, -3.188267],
         "images": [
@@ -1082,7 +1062,6 @@
         "healthcare": "High",
         "foodToTry": "Peka (roasted meat and vegetables), seafood dishes, Crni Rižot (black risotto), and traditional sweets like Rozata (caramel flan).",
         "advice": "Visit the ancient Fort Lovrijenac, which offers great views and is known for its role in the TV series \"Game of Thrones\". Take a boat trip to the nearby Elafiti Islands and enjoy pristine beaches and clear waters.",
-        "expediaLink": "https://expedia.com/affiliate/W8G2AbN",
         "zoom": 3,
         "center": [42.640278, 18.108334],
         "images": [
@@ -1135,7 +1114,6 @@
         "healthcare": "Average",
         "foodToTry": "Mansaf (traditional Jordanian dish), Falafel, Shawarma, Knafeh (sweet dessert), and Jordanian tea with herbs.",
         "advice": "Take a day trip to Petra, the Rose City, to see its famous archaeological site. Be mindful of local customs, dress modestly, and ask for permission before taking photos of people.",
-        "expediaLink": "https://expedia.com/affiliate/puHAZAa",
         "zoom": 3,
         "center": [31.963158, 35.930359],
         "images": [
@@ -1188,7 +1166,6 @@
         "healthcare": "Very High",
         "foodToTry": "Meatballs (Köttbullar), Gravad lax (cured salmon), Herring, Swedish cinnamon buns, and try traditional dishes like Raggmunk (potato pancakes).",
         "advice": "Explore the historic Gamla Stan (Old Town) with its narrow cobblestone streets and colorful buildings. Take a boat tour of the Stockholm archipelago and explore its islands.",
-        "expediaLink": "https://expedia.com/affiliate/BIJJ4h0",
         "zoom": 3,
         "center": [59.334591, 18.063240],
         "images": [
@@ -1241,7 +1218,6 @@
         "healthcare": "Average",
         "foodToTry": "Pierogi (dumplings), Bigos (hunter's stew), Kielbasa (sausage), and enjoy Polish desserts like Makowiec (poppy seed cake).",
         "advice": "Take a day trip to the stunning Wieliczka Salt Mine, an underground marvel. Explore the historic Old Town and visit Main Market Square and Wawel Castle.",
-        "expediaLink": "https://expedia.com/affiliate/n9yMFIe",
         "zoom": 3,
         "center": [50.049683, 19.944544],
         "images": [
@@ -1294,7 +1270,6 @@
         "healthcare": "High",
         "foodToTry": "Poutine, Nanaimo Bars, Wild Salmon, and a variety of international cuisines in the city's diverse restaurants.",
         "advice": "Visit Granville Island Public Market for artisan foods and unique crafts. Explore Stanley Park, a massive urban park with seawall biking and walking trails.",
-        "expediaLink": "https://expedia.com/affiliate/63fM9sF",
         "zoom": 3,
         "center": [49.2496600, -123.1193400],
         "images": [
@@ -1347,7 +1322,6 @@
         "healthcare": "High",
         "foodToTry": "Pastéis de Nata (custard tarts), Bacalhau à Brás (salted cod), Sardines, and the famous Portuguese wines.",
         "advice": "Visit Belém to see iconic landmarks like the Jerónimos Monastery and Belém Tower. Take a tram ride through the hilly streets of Lisbon for picturesque views.",
-        "expediaLink": "https://expedia.com/affiliate/iPcDze5",
         "zoom": 3,
         "center": [38.736946, -9.142685],
         "images": [
@@ -1400,7 +1374,6 @@
         "healthcare": "Average",
         "foodToTry": "Goulash, Lángos (deep-fried flatbread), Chimney Cake (Kürtőskalács), Hungarian wines and palinka (fruit brandy).",
         "advice": "Visit the Széchenyi Thermal Bath or Gellért Thermal Bath for a relaxing spa experience. Stroll along the Danube Promenade to see historic landmarks and beautiful views.",
-        "expediaLink": "https://expedia.com/affiliate/9O7chv3",
         "zoom": 3,
         "center": [47.497913, 19.040236],
         "images": [
@@ -1453,7 +1426,6 @@
         "healthcare": "Low",
         "foodToTry": "Ceviche, Lomo Saltado, and Aji de Gallina, Quinoa and the refreshing Pisco Sour cocktail.",
         "advice": "Hike the famous Inca Trail for a challenging and rewarding journey to Machu Picchu. Visit the Sun Gate (Inti Punku) for stunning views of the citadel.",
-        "expediaLink": "https://expedia.com/affiliate/rmTB6lD",
         "zoom": 3,
         "center": [-13.163068, -72.545128],
         "images": [
@@ -1506,7 +1478,6 @@
         "healthcare": "Average",
         "foodToTry": "Nasi Goreng (fried rice), Mie Goreng (fried noodles), Satay (grilled skewers), and savory rendang.",
         "advice": "Explore the picturesque rice terraces of Ubud. Visit the stunning Uluwatu Temple perched on a cliff overlooking the Indian Ocean.",
-        "expediaLink": "https://expedia.com/affiliate/6wZz236",
         "zoom": 3,
         "center": [-8.409518, 115.188919],
         "images": [
@@ -1559,7 +1530,6 @@
         "healthcare": "Low",
         "foodToTry": "Biryani, Zanzibar Mix (a spicy seafood and noodle dish), and exotic fruits like jackfruit and passionfruit.",
         "advice": "Explore the historic Stone Town, the Sultan's Palace, the House of Wonders, and the Old Fort. Snorkel or dive in the clear waters to discover vibrant coral reefs and marine life.",
-        "expediaLink": "https://expedia.com/affiliate/H5bN4Q9",
         "zoom": 3,
         "center": [-6.16394, 39.19793],
         "images": [
@@ -1612,7 +1582,6 @@
         "healthcare": "Low",
         "foodToTry": "Empanadas, Asado (barbecue), and traditional Patagonian lamb dishes.",
         "advice": "Hike the famous W Circuit or the longer O Circuit to witness the park's iconic granite peaks, glaciers, and turquoise lakes. Marvel at the three granite towers (Torres del Paine) that give the park its name.",
-        "expediaLink": "https://expedia.com/affiliate/oWfWIV5",
         "zoom": 3,
         "center": [-51.72363, -72.48745],
         "images": [
@@ -1665,7 +1634,6 @@
         "healthcare": "Low",
         "foodToTry": "Pelmeni (dumplings), Smoked omul fish, and Siberian soups.",
         "advice": "Explore Olkhon Island, the largest island on Lake Baikal, known for its dramatic landscapes and Shaman Rock. Hike along the Great Baikal Trail for stunning views of the lake and surrounding mountains.",
-        "expediaLink": "https://expedia.com/affiliate/MuPQvIb",
         "zoom": 3,
         "center": [52.29778, 104.29639],
         "images": [
@@ -1718,7 +1686,6 @@
         "healthcare": "Low",
         "foodToTry": "Benachin (one-pot rice dish), Domoda (peanut stew), and local specialties like yassa (marinated grilled meat or fish) and tapalapa bread.",
         "advice": "Explore Albert Market, one of the busiest markets in Banjul, offering a variety of goods and local crafts. Visit Arch 22, a notable landmark with panoramic views of the city.",
-        "expediaLink": "https://expedia.com/affiliate/FLyqQLm",
         "zoom": 3,
         "center": [13.454876, -16.579032],
         "images": [
@@ -1771,7 +1738,6 @@
         "healthcare": "Low",
         "foodToTry": "Pepián (a meat and vegetable stew), Rellenitos (sweet plantain and black bean dessert), and local coffee, which is known for its rich flavor.",
         "advice": "Visit the iconic landmarks such as the Santa Catalina Arch, La Merced Church, and San Francisco Church. Climb to the top of Cerro de la Cruz for panoramic views of the city and surrounding volcanoes.",
-        "expediaLink": "https://expedia.com/affiliate/P82686j",
         "zoom": 3,
         "center": [14.56111, -90.73444],
         "images": [
@@ -1824,7 +1790,6 @@
         "healthcare": "Low",
         "foodToTry": "Plov (pilaf with rice, meat, and vegetables), Manti (dumplings), and Samsa (savory pastries). Also, the local green tea and traditional sweets.",
         "advice": "Marvel at the grandeur of Registan Square, surrounded by three madrasahs adorned with intricate tilework. Visit the Bibi-Khanym Mosque, a historic mosque and one of the largest in the Islamic world.",
-        "expediaLink": "https://expedia.com/affiliate/VfKR2xI",
         "zoom": 3,
         "center": [39.652451, 66.970139],
         "images": [
@@ -1877,7 +1842,6 @@
         "healthcare": "Low",
         "foodToTry": "Dal Baati Churma, Gatte ki Sabzi, and Laal Maas. Also, traditional sweets like Ghewar and Malpua.",
         "advice": "Visit the iconic City Palace, a sprawling complex of palaces, courtyards, and gardens. Take a boat ride on Lake Pichola to admire the scenic views of the city and the Lake Palace.",
-        "expediaLink": "https://expedia.com/affiliate/ILwMbyB",
         "zoom": 3,
         "center": [24.571270, 73.691544],
         "images": [
@@ -1936,7 +1900,6 @@
         "healthcare": "Average",
         "foodToTry": "West Lake Fish in Sweet and Sour Sauce, Beggar's Chicken, and Longjing tea-infused dishes. Also, the city's famous Longjing tea itself.",
         "advice": "Explore the Lingyin Temple, one of the oldest and most significant Buddhist temples in China. Wander through the historic Hefang Street for traditional architecture, street food, and local crafts.",
-        "expediaLink": "https://expedia.com/affiliate/syg6Zhd",
         "zoom": 3,
         "center": [30.250000, 120.166664],
         "images": [
@@ -1989,7 +1952,6 @@
         "healthcare": "Average",
         "foodToTry": "Clam Chowder in a sourdough bread bowl, Mission-style burritos, and fresh seafood from the local markets.",
         "advice": "Walk or bike across the iconic Golden Gate Bridge and enjoy panoramic views of the city and bay. Ride the historic cable cars and explore neighborhoods like Chinatown and North Beach.",
-        "expediaLink": "https://expedia.com/affiliate/MLgPg3S",
         "zoom": 3,
         "center": [37.787994, -122.407437],
         "images": [
@@ -2042,7 +2004,6 @@
         "healthcare": "Average",
         "foodToTry": "Lamb, green-lipped mussels, and iconic desserts like pavlova. Also, the local wines from the Central Otago region.",
         "advice": "Take a scenic cruise on Lake Wakatipu and enjoy the stunning mountainous backdrop. Explore the nearby Fiordland National Park for its fjords, waterfalls, and diverse wildlife.",
-        "expediaLink": "https://expedia.com/affiliate/7mNLEih",
         "zoom": 3,
         "center": [-45.031162, 168.662643],
         "images": [
@@ -2095,7 +2056,6 @@
         "healthcare": "Average",
         "foodToTry": "Pad Thai, Tom Yum Goong (spicy shrimp soup), Green Curry, and fresh seafood from local markets.",
         "advice": "Visit Railay Beach and its stunning limestone cliffs. Explore the Thung Teao Forest Natural Park and swim in the famous Emerald Pool.",
-        "expediaLink": "https://expedia.com/affiliate/O2zK4zz",
         "zoom": 3,
         "center": [8.086300, 98.906283],
         "images": [
@@ -2148,7 +2108,6 @@
         "healthcare": "Low",
         "foodToTry": "Arepas, Empanadas, Bandeja Paisa, and try the local specialty, ceviche.",
         "advice": "Wander through the historic Old Town with its well-preserved colonial architecture and charming squares like Plaza de Bolívar. Visit the San Felipe de Barajas Castle for panoramic views of the city.",
-        "expediaLink": "https://expedia.com/affiliate/teSl9JT",
         "zoom": 3,
         "center": [10.39972, -75.51444],
         "images": [
@@ -2201,7 +2160,6 @@
         "healthcare": "Low",
         "foodToTry": "Pho, Banh Mi, fresh seafood, and traditional Vietnamese spring rolls.",
         "advice": "Take a cruise to explore the stunning limestone karsts and islets of Halong Bay. Visit the Thien Cung Cave (Heavenly Palace Cave) and Sung Sot Cave to witness impressive rock formations.",
-        "expediaLink": "https://expedia.com/affiliate/odVxm0b",
         "zoom": 3,
         "center": [20.959902, 107.042542],
         "images": [
@@ -2254,7 +2212,6 @@
         "healthcare": "Average",
         "foodToTry": "Peka (slow-cooked meat and vegetables), pasticada (beef stew), and sataruša (cheese and spinach pastry).",
         "advice": "Explore the network of lakes and waterfalls, including the Veliki Slap, the highest waterfall in the park. Walk along the wooden pathways that crisscross the park, offering breathtaking views of the crystal-clear lakes.",
-        "expediaLink": "https://expedia.com/affiliate/VRxflPE",
         "zoom": 3,
         "center": [44.8817, 15.6196],
         "images": [
@@ -2307,7 +2264,6 @@
         "healthcare": "High",
         "foodToTry": "Wiener Schnitzel, Sachertorte (chocolate cake), and traditional Alpine dishes.",
         "advice": "Explore the historic Old Town (Altstadt) with its narrow streets and medieval architecture. Visit the Hohensalzburg Fortress for panoramic views of the city and surrounding Alps.",
-        "expediaLink": "https://expedia.com/affiliate/6dfDaK8",
         "zoom": 3,
         "center": [47.811195, 13.033229],
         "images": [
@@ -2360,7 +2316,6 @@
         "healthcare": "Average",
         "foodToTry": "Gözleme (stuffed flatbread), Kebabs, Meze (appetizers), and Turkish delight.",
         "advice": "Take a hot air balloon ride over the surreal landscapes of Cappadocia during sunrise. Explore the Göreme Open-Air Museum, showcasing cave churches and dwellings.",
-        "expediaLink": "https://expedia.com/affiliate/lCJwIxf",
         "zoom": 3,
         "center": [38.6486, 34.8639],
         "images": [
@@ -2413,7 +2368,6 @@
         "healthcare": "Very High",
         "foodToTry": "Lamb soup, Fermented Shark, Skyr (Icelandic yogurt), and the famous hot dogs from Bæjarins Beztu Pylsur.",
         "advice": "Visit in June for a Midnight Sun, or in December for an almost Polar Night. Witness Northern Lights during night time. Take a day trip to witness natural wonders like the Golden Circle or the nearby geysers and waterfalls.",
-        "expediaLink": "https://expedia.com/affiliate/KluG7b0",
         "zoom": 3,
         "center": [64.128288, -21.827774],
         "images": [
@@ -2466,7 +2420,6 @@
         "healthcare": "Low",
         "foodToTry": "Enjoy local fish dishes, lamb, and traditional desserts.",
         "advice": "Visit in June for a Midnight Sun, or in December for an almost Polar Night. Witness Northern Lights during night time. Explore the iconic Reynisfjara Black Sand Beach with its basalt columns and Reynisdrangar sea stacks.",
-        "expediaLink": "https://expedia.com/affiliate/GNMWeen",
         "zoom": 3,
         "center": [63.4194, -19.0097],
         "images": [
@@ -2519,7 +2472,6 @@
         "healthcare": "Average",
         "foodToTry": "Höfn's renowned lobster dishes, including lobster soup, grilled lobster, and lobster pasta.",
         "advice": "Visit in June for a Midnight Sun, or in December for an almost Polar Night. Witness Northern Lights during night time. Experience the breathtaking views of Vatnajökull Glacier, Europe's largest glacier, and explore nearby glacial lagoons.",
-        "expediaLink": "https://expedia.com/affiliate/qrbeXpY",
         "zoom": 3,
         "center": [64.2497026, -15.2020076],
         "images": [
@@ -2572,7 +2524,6 @@
         "healthcare": "High",
         "foodToTry": " Try In-N-Out Burger, street tacos, sushi in Little Tokyo, and trendy brunch spots.",
         "advice": "Explore Hollywood and visit the Hollywood Walk of Fame. Relax on the beautiful beaches, such as Santa Monica and Venice Beach. Hike to the iconic Hollywood Sign for panoramic views of the city.",
-        "expediaLink": "https://expedia.com/affiliate/Md3FMsi",
         "zoom": 3,
         "center": [34.003342, -118.485832],
         "images": [
@@ -2625,7 +2576,6 @@
         "healthcare": "Very High",
         "foodToTry": "Lutefisk (dried fish), Raspeballer (potato dumplings), and fresh seafood, including salmon and cod.",
         "advice": "Visit the Stavanger Cathedral, one of the oldest cathedrals in Norway. Hike to the iconic Preikestolen (Pulpit Rock) for panoramic views of the Lysefjord.",
-        "expediaLink": "https://expedia.com/affiliate/WQhg1G0",
         "zoom": 3,
         "center": [58.969975, 5.733107],
         "images": [
@@ -2678,7 +2628,6 @@
         "healthcare": "High",
         "foodToTry": "Tahitian and French-inspired cuisine with dishes like poisson cru (raw fish marinated in coconut milk), mahi-mahi, and tropical fruits.",
         "advice": "Snorkel or dive in the vibrant coral gardens of the lagoon. Take a boat tour to explore Mount Otemanu, the island's extinct volcano. Relax on Matira Beach, known for its powdery white sand.",
-        "expediaLink": "https://expedia.com/affiliate/R2VsSQl",
         "zoom": 1,
         "center": [-16.499701, -151.770538],
         "images": [
@@ -2731,7 +2680,6 @@
         "healthcare": "High",
         "foodToTry": "Korean barbecue, bibimbap (mixed rice dish), kimchi, bulgogi (marinated beef), and street food delicacies like tteokbokki (spicy rice cakes) and hotteok (sweet pancakes).",
         "advice": "Explore the historic Gyeongbokgung Palace and Changdeokgung Palace. Wander through the vibrant districts of Myeongdong and Insadong. Visit the iconic N Seoul Tower for panoramic city views.",
-        "expediaLink": "https://expedia.com/affiliate/pxS4e1i",
         "zoom": 3,
         "center": [37.5660000, 126.9784000],
         "images": [
@@ -2784,7 +2732,6 @@
         "healthcare": "Average",
         "foodToTry": "Tapas, Paella, Salmorejo (cold tomato soup), and Churros with Chocolate. Seville is also known for its vibrant street food scene.",
         "advice": "Explore the Alcázar of Seville, a UNESCO World Heritage site. Visit the Seville Cathedral and climb the Giralda tower for panoramic views.",
-        "expediaLink": "https://expedia.com/affiliate/bzId2GZ",
         "zoom": 3,
         "center": [37.3828300, -5.9731700],
         "images": [
@@ -2837,7 +2784,6 @@
         "healthcare": "Very High",
         "foodToTry": "Sushi at Tsukiji Fish Market, Ramen in local noodle shops, and Izakayas for a taste of Japanese pub culture. Don't miss out on matcha-flavored treats and street food delights.",
         "advice": "Explore the historic Asakusa district, home to Senso-ji Temple. Experience the vibrant shopping districts of Shibuya and Harajuku. Enjoy panoramic views from the Tokyo Skytree or Tokyo Tower.",
-        "expediaLink": "https://expedia.com/affiliate/KSXfRQV",
         "zoom": 3,
         "center": [35.652832, 139.839478],
         "images": [
@@ -2890,7 +2836,6 @@
         "healthcare": "High",
         "foodToTry": "Buffet experiences, Celebrity chef restaurants, and a diverse cuisine available along the Strip.",
         "advice": "Experience the iconic Las Vegas Strip with its themed resorts, casinos, and entertainment shows. Attend a world-class live performance or show, ranging from music concerts to dazzling stage productions.",
-        "expediaLink": "https://expedia.com/affiliate/UT2nnP2",
         "zoom": 3,
         "center": [36.169941, -115.139830],
         "images": [
@@ -2943,7 +2888,6 @@
         "healthcare": "High",
         "foodToTry": "Sauerbraten (marinated roast), Bratwurst (sausages), Eierschecke (a local dessert), and other traditional Saxon dishes.",
         "advice": "Explore the historic Old Town (Altstadt) with landmarks like the Frauenkirche and Zwinger Palace. Visit the Semper Opera House and the Dresden Castle for a taste of the city's cultural heritage.",
-        "expediaLink": "https://expedia.com/affiliate/b1mbVGL",
         "zoom": 3,
         "center": [51.050407, 13.737262],
         "images": [
@@ -2996,7 +2940,6 @@
         "healthcare": "Very High",
         "foodToTry": "Cheese fondue, Raclette, Rösti, and the Swiss chocolate, renowned worldwide for its exquisite quality.",
         "advice": "Take a boat cruise on Lake Lucerne, surrounded by the stunning Swiss Alps. Ascend Mt. Pilatus or Mt. Rigi for panoramic views of the Alps and lakes.",
-        "expediaLink": "https://expedia.com/affiliate/Li6fdnz",
         "zoom": 3,
         "center": [47.05048, 8.30635],
         "images": [
@@ -3049,7 +2992,6 @@
         "healthcare": "Average",
         "foodToTry": "Navajo tacos, Green chile stew, Burgers, Prickly pear cactus ice cream, Pecan pie",
         "advice": "Explore Antelope Canyon (Upper and Lower) for its mesmerizing slot canyon formations. Hike to Horseshoe Bend for a panoramic view of the Colorado River meandering through the red rocks.",
-        "expediaLink": "https://expedia.com/affiliate/5MffebM",
         "zoom": 3,
         "center": [36.917839, -111.458664],
         "images": [
@@ -3102,7 +3044,6 @@
         "healthcare": "Average",
         "foodToTry": "Cochinita pibil (slow-roasted pork), panuchos (tortillas filled with refried beans and topped with meat), and sopa de lima (lime soup).",
         "advice": "Take a dip in the nearby cenotes, natural sinkholes unique to the Yucatan Peninsula. Discover the mystical Mayan ruins of Chichen Itza, including the iconic El Castillo pyramid.",
-        "expediaLink": "https://expedia.com/affiliate/wmntTr2",
         "zoom": 3,
         "center": [20.689640, -88.202249],
         "images": [
@@ -3155,7 +3096,6 @@
         "healthcare": "Average",
         "foodToTry": "Stinky tofu, spicy fish head, and Chairman Mao's favorite, \"Red Braised Pork\".",
         "advice": "Explore Zhangjiajie National Forest Park, known for its towering quartzite sandstone pillars. Visit the Yuanjiajie Scenic Area, where the Avatar Hallelujah Mountains are located.",
-        "expediaLink": "https://expedia.com/affiliate/y9TNkrs",
         "zoom": 3,
         "center": [29.117001, 110.478996],
         "images": [
@@ -3208,7 +3148,6 @@
         "healthcare": "Average",
         "foodToTry": "Lanzhou hand-pulled noodles, lamb skewers, and various noodle soups. Local markets provide a chance to taste authentic Gansu flavors.",
         "advice": "Explore the otherworldly landscapes of Zhangye Danxia National Geological Park, known for its colorful rock formations. Visit the historic Giant Buddha Temple with its colossal reclining Buddha statue.",
-        "expediaLink": "https://expedia.com/affiliate/NmnX0Cm",
         "zoom": 3,
         "center": [38.925875, 100.449818],
         "images": [
@@ -3261,7 +3200,6 @@
         "healthcare": "High",
         "foodToTry": "Keshi Yena (stuffed cheese), Funchi (cornmeal side dish), and fresh seafood dishes. Don't forget to try a refreshing Aruba Ariba cocktail.",
         "advice": "Stroll along the colorful waterfront and past the Dutch colonial architecture in downtown Oranjestad. Explore Fort Zoutman and the historic Willem III Tower, which houses the Aruba Historical Museum.",
-        "expediaLink": "https://expedia.com/affiliate/HxoXPA3",
         "zoom": 3,
         "center": [12.510052, -70.009354],
         "images": [
@@ -3314,7 +3252,6 @@
         "healthcare": "Average",
         "foodToTry": "Traditional Asado (barbecue), empanadas, and seafood dishes. Punta del Este's dining scene offers a mix of local and international flavors.",
         "advice": "Relax on the iconic beaches, including Playa Brava and Playa Mansa, each offering a unique atmosphere. Visit the famous sculpture known as \"La Mano\" (The Hand) emerging from the sand at Brava Beach.",
-        "expediaLink": "https://expedia.com/affiliate/uzZwLun",
         "zoom": 3,
         "center": [-34.94747, -54.93382],
         "images": [
@@ -3367,7 +3304,6 @@
         "healthcare": "High",
         "foodToTry": "Banh Mi (Vietnamese sandwich), Mi Quang (noodle dish), and Bun Cha Ca (fish cake noodle soup).",
         "advice": "Explore the Marble Mountains, a cluster of five limestone hills with caves, pagodas, and panoramic views. Visit My Khe Beach, a stunning stretch of coastline known for its white sands and clear waters.",
-        "expediaLink": "https://expedia.com/affiliate/mTEr7ct",
         "zoom": 3,
         "center": [16.054407, 108.202167],
         "images": [
@@ -3420,7 +3356,6 @@
         "healthcare": "Average",
         "foodToTry": "Moussaka, souvlaki, tzatziki, and local desserts like baklava.",
         "advice": "Explore the Meteora monasteries, perched on top of towering rock pillars, offering breathtaking views of the surroundings. Visit the Varlaam Monastery and the Great Meteoron Monastery, among others, to witness the religious and historical significance of the region.",
-        "expediaLink": "https://expedia.com/affiliate/bGnLwKJ",
         "zoom": 3,
         "center": [39.706618, 21.628873],
         "images": [
@@ -3473,7 +3408,6 @@
         "healthcare": "Average",
         "foodToTry": "Seafood, pastel de nata (custard tart), bacalhau (salted cod), and a glass of port wine.",
         "advice": "Relax on the stunning beaches of Lagos, including Praia Dona Ana and Praia Camilo. Explore the historic old town, with its cobbled streets, charming squares, and historic landmarks like the Church of St. Anthony.",
-        "expediaLink": "https://expedia.com/affiliate/8ZIufXa",
         "zoom": 3,
         "center": [37.129665, -8.669586],
         "images": [

@@ -1,11 +1,13 @@
+import './styles/styles.css';
 import { createApp } from 'vue'
 import App from './App.vue'
 import VoyageVue from './views/VoyageVue.vue'
-import './styles/styles.css';
 
 
 /* import the fontawesome core */
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library, config } from '@fortawesome/fontawesome-svg-core'
+/* Font Awesome's CSS is imported in styles.css instead of being injected at runtime */
+config.autoAddCss = false
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
@@ -21,13 +23,14 @@ library.add( solidStar, emptyStar, faLanguage, faPlane, faMoneyCheckDollar, faPa
 
 import { createRouter, createWebHistory } from 'vue-router';
 
-const destinations = require('@/assets/destinations.json');
+import destinations from '@/assets/destinations.json';
+import { destinationPath } from '@/utils/slug.js';
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     ...destinations.map(destination => ({
-      path: `/${destination.country.toLowerCase().replace(/\s+/g, '-')}/${destination.location.toLowerCase().replace(/\s+/g, '-')}`,
+      path: destinationPath(destination),
       component: VoyageVue,
       props: { landingCountry: destination.country, landingLocation: destination.location },
     })),

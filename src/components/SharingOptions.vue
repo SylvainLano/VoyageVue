@@ -37,7 +37,7 @@
     }),
     computed: {
       shareIcons() {
-        let shareIconsClass = 'bg-slate-50 bg-opacity-50 absolute text-slate-900 h-full w-full top-0 left-0 z-40';
+        let shareIconsClass = 'bg-slate-50/50 absolute text-slate-900 h-full w-full top-0 left-0 z-40';
         if ( !this.mobileDisplay ) {
           shareIconsClass += ' p-[5%]';
         } else {

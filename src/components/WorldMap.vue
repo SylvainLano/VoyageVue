@@ -6,7 +6,7 @@
           <div class="absolute h-screen w-screen top-0 left-0" @click="closeWorldMap()" v-if="!mobileDisplay">
           </div>
           <div :class="worldMapClass">
-              <div class="basis-1/6 text-cyan-700 p-1 text-left flex-wrap space-x-2" @mouseover="showMapModeMenu" @mouseleave="hideMapModeMenu">
+              <div class="basis-1/6 text-cyan-700 p-1 text-left flex-wrap [&>:not([hidden])~:not([hidden])]:ml-2" @mouseover="showMapModeMenu" @mouseleave="hideMapModeMenu">
                 <font-awesome-icon class="cursor-pointer" :icon="getMapModeIcon()" size="lg" />
                 <font-awesome-icon class="cursor-pointer text-slate-700" :icon="['fas', 'street-view']" size="lg" @click="setMapMode('streets')" v-if="(isMapModeMenuVisible || mobileDisplay) && mapMode !== 'streets'" />
                 <font-awesome-icon class="cursor-pointer text-slate-700" :icon="['fas', 'bus']" size="lg" @click="setMapMode('bus')" v-if="(isMapModeMenuVisible || mobileDisplay) && mapMode !== 'bus'" />
@@ -59,7 +59,7 @@
                 @click="nextDestination(destination.id)"
               >
                 <l-icon
-                  :icon-url="require('@/assets/images/markers/marker-icon-red.png')"
+                  :icon-url="markerIconRed"
                   :icon-anchor="[25/2,41]"
                 />
                 <l-tooltip>{{ destination.location + ' - ' + destination.country }}</l-tooltip>
@@ -74,7 +74,7 @@
                   @click="nextDestination(destination.id)"
                 >
                   <l-icon
-                    :icon-url="require('@/assets/images/markers/marker-icon-green.png')"
+                    :icon-url="markerIconGreen"
                     :icon-anchor="[25/2,41]"
                   />
                   <l-tooltip>{{ destination.location + ' - ' + destination.country }}</l-tooltip>
@@ -98,7 +98,7 @@
                   :lat-lng="currentDestination.center"
                 >
                   <l-icon
-                    :icon-url="require('@/assets/images/markers/marker-icon-pink.png')"
+                    :icon-url="markerIconPink"
                     :icon-anchor="[25/2,41]"
                   />
                   <l-tooltip>{{ currentDestination.location + ' - ' + currentDestination.country }}</l-tooltip>
@@ -112,11 +112,13 @@
 </template>
 
 <script>
-import "leaflet/dist/leaflet.css";
 import { latLngBounds } from "leaflet";
 import { LMap, LTileLayer, LMarker, LIcon, LLayerGroup, LTooltip, LGeoJson } from "@vue-leaflet/vue-leaflet";
 import isoMapping from '@/assets/iso-mapping.json';
 import countriesGeoJsonData from '@/assets/countries.json';
+import markerIconRed from '@/assets/images/markers/marker-icon-red.png';
+import markerIconGreen from '@/assets/images/markers/marker-icon-green.png';
+import markerIconPink from '@/assets/images/markers/marker-icon-pink.png';
 
 export default {
   props: {
@@ -152,10 +154,13 @@ export default {
       hideVisited: false,
       isoMapping: isoMapping,
       countriesGeoJsonData: countriesGeoJsonData,
+      markerIconRed: markerIconRed,
+      markerIconGreen: markerIconGreen,
+      markerIconPink: markerIconPink,
   }),
   computed: {
       fullMapClass() {
-        let fullClass = 'bg-slate-50 flex-col bg-opacity-50 absolute text-slate-900 h-full w-full top-0 left-0 z-40 overflow-hidden';
+        let fullClass = 'bg-slate-50/50 flex-col absolute text-slate-900 h-full w-full top-0 left-0 z-40 overflow-hidden';
         if ( !this.mobileDisplay ) {
           fullClass += ' p-[5%]';
         }

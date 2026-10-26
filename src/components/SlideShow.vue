@@ -24,7 +24,7 @@
           <vueper-slide
             v-for="(slide, i) in currentDestination.images"
             :key="i"
-            :image="require(`@/assets/images/${slide.image}`)"
+            :image="imageURL(slide.image)"
           >
             <template #content>
               <div class="absolute z-10 text-left block"
@@ -54,7 +54,12 @@
   
   <script>
   import { VueperSlides, VueperSlide } from 'vueperslides';
-  import 'vueperslides/dist/vueperslides.css';
+
+  // URLs of every destination photo, keyed by their path relative to src/assets/images/ (as stored in destinations.json)
+  const imageURLs = Object.fromEntries(
+    Object.entries(import.meta.glob('../assets/images/destinations/**/*.{avif,jpg,jpeg,png,webp}', { eager: true, query: '?url', import: 'default' }))
+      .map(([path, url]) => [path.replace('../assets/images/', ''), url])
+  );
 
   export default {
     components: {
@@ -111,6 +116,9 @@
       },
     },
     methods: {
+        imageURL(image) {
+            return imageURLs[image];
+        },
         updateSlidesScale() {
             if ( this.heightSize / (this.widthSize - this.leftValue) > this.ratioSlides ) {
                 this.heightSlidesSize = this.heightSize;

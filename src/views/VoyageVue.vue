@@ -13,11 +13,9 @@
       :style="{ transform: `scale(${scaleFactor})` }"
       v-if="!fullScreen && !showFullMap && (!showMenu || !mobileDisplay)"
       >
-      <transition name="lateral-fade">
-        <div class="text-4xl bg-lime-500 cursor-pointer rounded-full" @click="toggleWorldMap(false)">
-          <span class="text-cyan-700"><font-awesome-icon :icon="['fas', 'earth-africa']" :shake="isBeating" size="xl" /></span>
-        </div>
-      </transition>
+      <div class="text-4xl bg-lime-500 cursor-pointer rounded-full" @click="toggleWorldMap(false)">
+        <span class="text-cyan-700"><font-awesome-icon :icon="['fas', 'earth-africa']" :shake="isBeating" size="xl" /></span>
+      </div>
     </div>
     
     <SharingOptions
@@ -94,7 +92,7 @@
               <l-geo-json :geojson="getCurrentGeoJsonData()" :options-style="currentGeoJsonCountries"></l-geo-json>
               <l-marker :lat-lng="currentDestination.center" @click="toggleWorldMap(true)">
                 <l-icon
-                  :icon-url="require('@/assets/images/markers/marker-icon-pink.png')"
+                  :icon-url="markerIconPink"
                   :icon-anchor="[25/2,41]"
                 />
               </l-marker>
@@ -184,12 +182,6 @@
             <span class="italic text-amber-700">{{ currentDestination.advice }}</span>
         </div>
         <div class="font-mono text-center mt-6">
-          <button class="custom-button bg-green-500" @click="visitExpediaLink">
-            <font-awesome-icon :icon="['fas', 'plane']" size="lg" />
-            Show me on Expedia
-          </button>
-        </div>
-        <div class="font-mono text-center mt-6">
           <button class="custom-button bg-indigo-500" @click="toggleReservationMenu">Go Back</button>
         </div>
       </div>
@@ -239,15 +231,14 @@
   </template>
   
   <script>
-  import '@/assets/css/tailwind.css';
   import destinationData from '@/assets/destinations.json';
   import axios from 'axios';
-  import "leaflet/dist/leaflet.css";
   import { LMap, LTileLayer, LMarker, LIcon, LGeoJson } from "@vue-leaflet/vue-leaflet";
-  import "/node_modules/flag-icons/css/flag-icons.min.css";
   import SharingOptions from '@/components/SharingOptions.vue';
   import SlideShow from '@/components/SlideShow.vue';
   import WorldMap from '@/components/WorldMap.vue';
+  import { destinationPath } from '@/utils/slug.js';
+  import markerIconPink from '@/assets/images/markers/marker-icon-pink.png';
   
   export default {
     name: 'VoyageVue',
@@ -315,6 +306,7 @@
       centerOnCurrent: false,
       heightSize: 0,
       widthSize: 0,
+      markerIconPink: markerIconPink,
     }),
     mounted() {
       setInterval(() => {
@@ -470,7 +462,7 @@
             // Check if it's banned
             const isBanned = this.bannedDestinationsStorage.includes(index);
   
-            let targetDestination = null;
+            let targetDestination;
   
             if (isStarred) {
               targetDestination = this.starredDestinationData.find(destination => destination.id === index);
@@ -513,8 +505,7 @@
             }
           }
           this.updateCurrencyData(this.currentDestination.currency);
-          let baseURL = '/' + this.currentDestination.country.toLowerCase().replace(/\s+/g, '-') + '/' + this.currentDestination.location.toLowerCase().replace(/\s+/g, '-');
-          this.$router.push(baseURL);
+          this.$router.push(destinationPath(this.currentDestination));
         }, 300); // 300 milliseconds delay
       },
       previousDestination() {
@@ -539,10 +530,6 @@
         } else {
           this.goThere = !this.goThere;
         }
-      },  
-      visitExpediaLink() {
-        // Redirect to the external website when the button is clicked
-        window.open(this.currentDestination.expediaLink, "_blank");
       },  
       async updateCurrencyData(currencyCode) {
         if ( currencyCode === "USD" ) {
@@ -890,8 +877,8 @@
       },
       shareURL() {   
         if (this.currentDestination && this.currentDestination.country && this.currentDestination.location) {
-          // Construct the URL with lowercase and spaces replaced by dashes
-          return `${this.baseURL}${this.currentDestination.country.toLowerCase().replace(/\s+/g, '-')}/${this.currentDestination.location.toLowerCase().replace(/\s+/g, '-')}`;
+          // Same path as the router, without its leading slash (baseURL already ends with one)
+          return this.baseURL + destinationPath(this.currentDestination).slice(1);
         }
         // Default URL or handle the case when destination data is not available
         return this.baseURL;
@@ -963,10 +950,8 @@
   
       if ( this.landingCountry && this.landingLocation ) {
         // Find the destination that matches the specified criteria
-        const foundDestination = this.allDestinationsData.find((destination) => {
-          return destination.country.toLowerCase().replace(/\s/g, '-') === this.landingCountry.toLowerCase().replace(/\s/g, '-')
-           && destination.location.toLowerCase().replace(/\s/g, '-') === this.landingLocation.toLowerCase().replace(/\s/g, '-');
-        });
+        const landingPath = destinationPath({ country: this.landingCountry, location: this.landingLocation });
+        const foundDestination = this.allDestinationsData.find((destination) => destinationPath(destination) === landingPath);
         landingId = foundDestination.id;
       }
 
