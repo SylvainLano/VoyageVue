@@ -31,7 +31,7 @@
     <loc>https://sylvainlano.github.io/VoyageVue/brazil/rio-de-janeiro</loc>
   </url>
   <url>
-    <loc>https://sylvainlano.github.io/VoyageVue/australia/sidney</loc>
+    <loc>https://sylvainlano.github.io/VoyageVue/australia/sydney</loc>
   </url>
   <url>
     <loc>https://sylvainlano.github.io/VoyageVue/egypt/cairo</loc>
@@ -197,5 +197,14 @@
   </url>
   <url>
     <loc>https://sylvainlano.github.io/VoyageVue/portugal/lagos</loc>
+  </url>
+  <url>
+    <loc>https://sylvainlano.github.io/VoyageVue/spain/madrid</loc>
+  </url>
+  <url>
+    <loc>https://sylvainlano.github.io/VoyageVue/italy/milan</loc>
+  </url>
+  <url>
+    <loc>https://sylvainlano.github.io/VoyageVue/singapore/singapore</loc>
   </url>
 </urlset>
