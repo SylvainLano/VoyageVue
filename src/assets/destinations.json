@@ -104,7 +104,7 @@
         ]
     },
     {
-        "id": "ir-001",
+        "id": "ie-001",
         "location": "Dublin",
         "country": "Ireland",
         "description": "The lively and charismatic capital of Ireland is a city that effortlessly combines rich history, vibrant culture, and a warm, welcoming spirit. With its historic architecture, literary heritage, and a bustling pub scene, Dublin is a destination that offers both a journey through time and a vibrant contemporary experience.",
@@ -521,7 +521,7 @@
     },
     {
         "id": "au-001",
-        "location": "Sidney",
+        "location": "Sydney",
         "country": "Australia",
         "description": "A dynamic and multicultural city known for its iconic landmarks, stunning harbor, and beautiful beaches. It's a thriving metropolis that offers a perfect blend of urban and outdoor experiences.",
         "currency": "AUD",
@@ -3434,6 +3434,162 @@
               "image": "destinations/portugal/lagos/photo-1585405931222-75c1bbf6a2e3.avif",
               "author": "Sinval Carvalho",
               "link": "https://unsplash.com/fr/@sinvalbmx"
+          }
+        ]
+    },
+    {
+        "id": "es-003",
+        "location": "Madrid",
+        "country": "Spain",
+        "description": "Spain's sunny capital charms with grand boulevards, world-class art and a legendary nightlife. Between the Prado, the Royal Palace and the green expanses of Retiro Park, the city lives late: tapas bars fill up at dusk and the streets stay lively well past midnight.",
+        "currency": "EUR",
+        "budget": "High",
+        "eat": "15",
+        "bed": "120",
+        "language": "Spanish",
+        "englishFriendly": "in tourist areas",
+        "transportation": "Easy",
+        "reach": "Barajas Airport (MAD)",
+        "local": "Bus, Metro, Train, Taxi, Bicycle",
+        "bestTime": "May",
+        "bestTimeReason": "for the San Isidro festival",
+        "temperatureMin": "3°C in January",
+        "temperatureMax": "33°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Safe",
+        "healthcare": "Good",
+        "foodToTry": "Cocido madrileño (chickpea stew), bocadillo de calamares, huevos rotos, and churros with chocolate.",
+        "advice": "The Prado and the Reina Sofía offer free entry during the last hours of the day. Dinner is served late: locals rarely eat before 9 pm.",
+        "zoom": 3,
+        "center": [40.416775, -3.703790],
+        "images": [
+          {
+              "title": "Gran Vía",
+              "image": "destinations/spain/madrid/photo-1539037116277-4db20889f2d4.avif",
+              "author": "Florian Wehde",
+              "link": "https://unsplash.com/fr/@florianwehde"
+          },
+          {
+              "title": "Crystal Palace",
+              "image": "destinations/spain/madrid/photo-1631755676775-e5e7084dc0e6.avif",
+              "author": "Diego Allen",
+              "link": "https://unsplash.com/fr/@dalleng"
+          },
+          {
+              "title": "Cibeles Palace",
+              "image": "destinations/spain/madrid/photo-1672771346408-aab1678430a3.avif",
+              "author": "Layla Ortega Fernandez",
+              "link": "https://unsplash.com/fr/@laylaort_"
+          },
+          {
+              "title": "Retiro Park",
+              "image": "destinations/spain/madrid/photo-1564565946561-e738711bdbd1.avif",
+              "author": "Javier Martinez",
+              "link": "https://unsplash.com/fr/@iermartinez"
+          }
+        ]
+    },
+    {
+        "id": "it-002",
+        "location": "Milan",
+        "country": "Italy",
+        "description": "Italy's capital of fashion and design pairs a dazzling Gothic cathedral with a bold modern skyline. Beyond the Duomo and Leonardo's Last Supper, Milan reveals elegant shopping arcades, world-class opera at La Scala and lively evenings along the canals of the Navigli.",
+        "currency": "EUR",
+        "budget": "Very High",
+        "eat": "20",
+        "bed": "150",
+        "language": "Italian",
+        "englishFriendly": "in tourist areas",
+        "transportation": "Easy",
+        "reach": "Malpensa Airport (MXP)",
+        "local": "Metro, Tram, Bus, Train, Bicycle",
+        "bestTime": "April",
+        "bestTimeReason": "for the Design Week",
+        "temperatureMin": "0°C in January",
+        "temperatureMax": "30°C in July",
+        "visa": "Schengen visa required",
+        "safety": "Mostly Safe",
+        "healthcare": "Very Good",
+        "foodToTry": "Risotto alla milanese (saffron risotto), cotoletta alla milanese, ossobuco, panettone, and an evening aperitivo with a Negroni sbagliato.",
+        "advice": "Book Leonardo's Last Supper weeks in advance, as visits are limited to small timed groups. Around 7 pm, join the locals for aperitivo along the Navigli.",
+        "zoom": 3,
+        "center": [45.464211, 9.191383],
+        "images": [
+          {
+              "title": "Naviglio Grande",
+              "image": "destinations/italy/milan/photo-1513581166391-887a96ddeafd.avif",
+              "author": "Cristina Gottardi",
+              "link": "https://unsplash.com/fr/@cristina_gottardi"
+          },
+          {
+              "title": "Milan Cathedral",
+              "image": "destinations/italy/milan/photo-1572602648934-1d98de6dab48.avif",
+              "author": "Daryan Shamkhali",
+              "link": "https://unsplash.com/fr/@daryan"
+          },
+          {
+              "title": "Galleria Vittorio Emanuele II",
+              "image": "destinations/italy/milan/photo-1617102827974-c3f440b2ed70.avif",
+              "author": "Federico Di Dio",
+              "link": "https://unsplash.com/fr/@didiofederico_photographer"
+          },
+          {
+              "title": "Bosco Verticale",
+              "image": "destinations/italy/milan/photo-1565599573128-ae3ef5c9f478.avif",
+              "author": "Gábor Molnár",
+              "link": "https://unsplash.com/fr/@gabormolnar92"
+          }
+        ]
+    },
+    {
+        "id": "sg-001",
+        "location": "Singapore",
+        "country": "Singapore",
+        "description": "A gleaming city-state where futuristic architecture meets lush tropical gardens. From the Supertrees of Gardens by the Bay to the hawker centers and colorful shophouses of Chinatown, Little India and Kampong Glam, Singapore blends cultures, flavors and greenery like nowhere else.",
+        "currency": "SGD",
+        "budget": "Very High",
+        "eat": "10",
+        "bed": "150",
+        "language": "English",
+        "englishFriendly": "everywhere",
+        "transportation": "Easy",
+        "reach": "Changi Airport (SIN)",
+        "local": "MRT, Bus, Taxi, Bicycle",
+        "bestTime": "February",
+        "bestTimeReason": "for drier and sunnier days",
+        "temperatureMin": "24°C in January",
+        "temperatureMax": "32°C in May",
+        "visa": "Mostly free entry",
+        "safety": "Very Safe",
+        "healthcare": "Very High",
+        "foodToTry": "Hainanese chicken rice, chili crab, laksa, satay, and kaya toast with kopi for breakfast, best enjoyed at a hawker center.",
+        "advice": "Fill in the free SG Arrival Card online before landing. Eating and drinking are banned on the MRT, and littering brings heavy fines.",
+        "zoom": 3,
+        "center": [1.290270, 103.851959],
+        "images": [
+          {
+              "title": "Gardens by the Bay",
+              "image": "destinations/singapore/singapore/photo-1546258608-68797ef96fc8.avif",
+              "author": "Y K",
+              "link": "https://unsplash.com/fr/@yokeboy"
+          },
+          {
+              "title": "Marina Bay Sands",
+              "image": "destinations/singapore/singapore/photo-1525625293386-3f8f99389edd.avif",
+              "author": "Hu Chen",
+              "link": "https://unsplash.com/fr/@huchenme"
+          },
+          {
+              "title": "Merlion",
+              "image": "destinations/singapore/singapore/photo-1775306963755-8897be3967bb.avif",
+              "author": "Jayjayli",
+              "link": "https://unsplash.com/fr/@jayjayli"
+          },
+          {
+              "title": "Joo Chiat Road",
+              "image": "destinations/singapore/singapore/photo-1585482672579-c91ee75ccad1.avif",
+              "author": "Winel Sutanto",
+              "link": "https://unsplash.com/fr/@weenail"
           }
         ]
     }
